@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="mb-5" style="color:black">Create a sporty event</h1>
+    <%= simple_form_for @event do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category, :collection =>  %w[Basketball Weightlifting Tennis Soccer Yoga Hiking Running] %>
+    <%= f.input :description %>
+    <%= f.input :capacity %>
+    <%= f.input :location %>
+    <%= f.input :skill_level, :collection => %w[Absolute-Newbie Beginner I-know-some-stuff Intermediate This-is-my-hobby I-breathe-this-sport]%>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.submit class: 'btn btn-primary mt-3' %>
+    <% end %>
+</div>

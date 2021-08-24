@@ -1,30 +1,24 @@
+<strong><h1>Check out all these events in your area</h1> </strong>
+<%= link_to "Create your own event", new_event_path %>
 
 
-<div class="container">
-  <div>
-      <h1>Hey <% if current_user %>
-        <%= current_user.fullname %>
-        <% end %>, check out <br> these events in your area 🏀🏋🏽‍♀️🚴🏼‍♂️</h1>
-  </div>
-</div>
 
-<div>
-  <div><%= link_to "Create your own event", new_event_path %></div>
-</div>
+<div >
+  <% @events.each do |event|  %>
 
-
-  <div>
-    <% @events.each do |event|  %>
-      <%= link_to event_path(event) do %>
-        <div>
-          <h5><%= link_to event.name, event_path(event) %></h5>
-        </div>
-
-        <div>
-          <h5><%= event.name %></h5>
-          <p><%= event.description %></p>
-        </div>
-      <% end %>
+    <%= link_to event_path(event) do %>
+      <div>
+        <h3><%= link_to event.name, event_path(event) %></h3>
+        <h5><%= event.description %></h5>
+      </div>
+      <div>
+        <%if event.availability? %>
+          <h3>It's not too late yet...You can still <strong>join this event 🥅!</strong></h3>
+        <%else %>
+          <h3>Unfortunately, this event is <strong>fully booked</strong>.</h3>
+        <%end %>
+      </div>
     <% end %>
-  </div>
+
+  <% end %>
 </div>
