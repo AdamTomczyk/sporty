@@ -16,6 +16,7 @@ $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
+$link-color: white;
 
 // Buttons & inputs' radius
 $border-radius:    2px;
@@ -23,3 +24,5 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+// Navbar Links
+$nav-link-color:      $link-color !default;
