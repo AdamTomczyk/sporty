@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
-    #@markers = @events.geocoded.map do |event|
-      # {
+      # @markers = @events.geocoded.map do |event|
+        # {
         # lat: event.latitude,
         # lng: event.longitude,
         # info_window: render_to_string(partial: "info_window", locals: { event: event })
@@ -30,8 +31,8 @@ class EventsController < ApplicationController
   # POST /events
   def create
     @event = Event.new(event_params)
-    @event.icon_path = @event.set_icon_path
     @event.user = current_user
+    @event.availability = true
 
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
