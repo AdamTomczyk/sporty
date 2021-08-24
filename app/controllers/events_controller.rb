@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   def index
     #@markers = @events.geocoded.map do |event|
       # {
