@@ -1,0 +1,30 @@
+
+
+<div class="container">
+  <div>
+      <h1>Hey <% if current_user %>
+        <%= current_user.fullname %>
+        <% end %>, check out <br> these events in your area 🏀🏋🏽‍♀️🚴🏼‍♂️</h1>
+  </div>
+</div>
+
+<div>
+  <div><%= link_to "Create your own event", new_event_path %></div>
+</div>
+
+
+  <div>
+    <% @events.each do |event|  %>
+      <%= link_to event_path(event) do %>
+        <div>
+          <h5><%= link_to event.name, event_path(event) %></h5>
+        </div>
+
+        <div>
+          <h5><%= event.name %></h5>
+          <p><%= event.description %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
