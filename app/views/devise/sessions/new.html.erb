@@ -1,6 +1,7 @@
 <div class="bgLogIn">
 <%= render "shared/navbar" %>
 
+
   <div class="wrapper_login">
     <div class="container">
       <div class="row">
@@ -19,7 +20,6 @@
                               <hr>
                   <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 </div>
-
                 <div class="form-actions">
                  <%= f.button :submit, "Log in", class: "btn-grad mt-5 mb-5", style:"padding:10px 30px"%>
 
