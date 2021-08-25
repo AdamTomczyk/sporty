@@ -10,11 +10,10 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
-      <p style="padding:0; margin: 0;" class="notice"><%= notice %></p>
-      <p style="padding:0; margin: 0;" class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
