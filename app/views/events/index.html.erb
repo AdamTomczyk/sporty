@@ -1,7 +1,11 @@
-<div class="eventIndexBg">
+<strong><h1>Check out all these events in your area</h1> </strong>
 
+<div id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
-  <strong><h1>Check out all these events in your area</h1> </strong>
   <%= link_to "Create your own event", new_event_path %>
   <div >
     <% @events.each do |event|  %>
@@ -20,7 +24,6 @@
         </div>
       <% end %>
 
-
     <%= link_to event_path(event) do %>
       <div>
         <h3><%= link_to event.name, event_path(event) %></h3>
@@ -34,17 +37,5 @@
         <%end %>
       </div>
     <% end %>
-
-<div id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
-
-
     <% end %>
   </div>
-</div>
-
-<%# <% raise %> %>
