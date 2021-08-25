@@ -85,7 +85,7 @@ void main(void)
     vec2 uv =  v_texcoord;
 
 
-    float strength = smoothstep(0.1, 3.1, uv.x);
+    float strength = smoothstep(0.1, 5.1, uv.x);
 
     vec2 surface = strength * vec2(
     mix(-0.3, 0.3, fbm(5.0 * uv + 0.5 *  u_time)),
