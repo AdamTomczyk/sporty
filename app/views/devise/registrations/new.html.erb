@@ -1,25 +1,67 @@
-<h2>Sign up</h2>
+<div class="bgSignUp">
+  <%= render "shared/navbar" %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <div class="wrapper_signup">
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+    <div class="container">
+    <h1 style="color:white" class="mb-5">Sign up</h1>
+      <div class="row d-flex justify-content-between">
+        <div class="col-5">
+
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <div class="form-inputs">
+                <%= f.input :email,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                            <hr>
+                <%= f.input :password,
+                            required: true,
+                            input_html: { autocomplete: "new-password" } %>
+                            <hr>
+                <%= f.input :password_confirmation,
+                            required: true,
+                            input_html: { autocomplete: "new-password" } %>
+                            <hr>
+                 <%= f.input :first_name,
+                            required: true,
+                            label: "Name" %>
+                            <hr>
+
+              </div>
+        </div>
+
+        <div class="col-1"></div>
+
+      <div class="col-5">
+        <div class="form-inputs">
+                <%= f.input :preference, collection: %w[⚽️ 🎾 🏋️ ⛹🏽‍♀️ 🏓 🏃🏻‍♂️],
+                            required: true,
+                            label: "Your Sport" %>
+                            <hr>
+                <%= f.input :weight,
+                            required: true,
+                            label: "Weight in Kg" %>
+                            <hr>
+                <%= f.input :height,
+                            required: true,
+                            label: "Height in cm" %>
+                            <hr>
+                <%= f.input :location, collection: %w[Mitte Charlottenburg Wedding Kreuzberg Steglitz Spandau Grünewald Marzahn P-Berg Neuköln],
+                            required: true,
+                            label: "Your Kiez" %>
+                            <hr>
+
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-actions">
+                <%= f.button :submit, "Sign up", class: "btn-grad-signup mt-5" %>
+        </div>
+
+      <% end %>
+        </div>
+      </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
