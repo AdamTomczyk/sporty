@@ -1,23 +1,21 @@
 class EventsController < ApplicationController
-
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-      # @markers = @events.geocoded.map do |event|
-        # {
-        # lat: event.latitude,
-        # lng: event.longitude,
-        # info_window: render_to_string(partial: "info_window", locals: { event: event })
-      # }
-    #end
     if params[:query].present?
       @events = Event.where(category: params[:query])
     else
       @events = Event.all
+      # the `geocoded` scope filters only events with coordinates (latitude & longitude)
+      @markers = @events.geocoded.map do |event|
+        {
+          lat: event.latitude,
+          lng: event.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { event: event })
+        }
+      end
     end
   end
-
-  # the `geocoded` scope filters only events with coordinates (latitude & longitude)
 
   def show
     @event = Event.find(params[:id])
