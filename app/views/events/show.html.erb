@@ -1,23 +1,75 @@
-<div>
-  <div>
-    <h2>Check out this sporty event:</h2>
-    <h1><%= @event.name %></h1>
-    <h5> HOST: <%= @event.user%></h5>
-    <h5><%= @event.user%> is seeking pals for <strong><%= @event.category%></strong></h5> <br>
-    <h5> WHEN? ⏱ <%= @event.start_time.strftime("%b %e %Y")%></h5>
-    <h5> WHERE? ⛳️ <%= @event.location%></h5>
-    <h5>WHAT? 🧘🏿‍♂️ <%= @event.description %></h5>
-    <h5> SKILL LEVEL? 🏋🏽‍♀️ <%= @event.skill_level %></h5>
+<div class="eventShowBg">
+<%= render "shared/navbar" %>
+  <div class="eventShowDark"></div>
 
- </div>
+    <div class="wrapper_show">
+      <div class="container">
+          <div class="row">
 
- <p><%= notice %></p>
+            <div class="col-12 mb-5">
+              <div class="evenShowHeader">
+                <div>
+                <h1 class="display-3" style="-webkit-text-stroke: 1.5px #ffff;-webkit-text-fill-color: transparent;color: transparent;"><%= @event.category%></h1>
+                <h1 class="display-3" style="-webkit-text-stroke: 1.5px #3E1DFD;-webkit-text-fill-color: transparent;color: transparent;"><%= @event.category%></h1>
+                <h1 class="display-3"style="-webkit-text-stroke: 1.5px #E05C3E;-webkit-text-fill-color: transparent;color: transparent;"><%= @event.category%></h1>
+                </div>
+                <div>
+                <h1 class="display-3 glow"style="-webkit-text-stroke: 1.5px #ffff;-webkit-text-fill-color: transparent;color: transparent;">78% <br> Reliability</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 mt-5 mb-5">
+                <div class="d-flex justify-content-between">
+
+                <div>
+                  <%= image_tag "icons/pin.png", class: "mb-3"%>
+                  <h5 style="color:white"><%= @event.location%></h5>
+                  <h5 style="color:white">10115 Berlin</h5>
+                </div>
+                <div>
+                  <%= image_tag "icons/clock.png", class: "mb-3"%>
+                  <h5 style="color:white"><%= @event.start_time.strftime("%b %e %Y")%></h5>
+                  <h5 style="color:white">16:30</h5>
+                </div>
+                <div>
+                    <%= image_tag "icons/calories.png", class: "mb-3"%>
+                  <h5 style=" background: -webkit-linear-gradient(#FD9D9E, #2622FF);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">1400</h5>
+                  <h5 style="color:white">Kcal</h5>
+                </div>
+                <div>
+                    <%= image_tag "icons/sun.png", class: "mb-3"%>
+                  <h5 style="color:white">23°</h5>
+                  <h5 style="color:white">30% Rain</h5>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-12">
+              <h4 style="font-weight:lighter; color:white; line-height:35px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h4>
+                        <%= link_to 'Join', new_user_session_path, class:"joineventbtn mt-4 mb-3" %>
+            </div>
+          </div>
+            <p><%= notice %></p>
 
 
-  <%= link_to 'Back', events_path %> |
+    <%= link_to 'Back', events_path %> |
 
-  <%= link_to 'Edit', edit_event_path(@event) %> |
+    <%= link_to 'Edit', edit_event_path(@event) %> |
 
-  <%= link_to 'Delete this brain', event_path(@event), method: :delete,  data: { confirm: 'Are you sure you want to delete this brain?' }  %>
+    <%= link_to 'Delete this my Event', event_path(@event), method: :delete,  data: { confirm: 'Are you sure you want to delete your event?' }  %>
+        </div>
+
+
+    </div>
+
+
+
 
 </div>
