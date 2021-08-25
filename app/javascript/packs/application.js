@@ -31,6 +31,11 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
+import { initChatroomCable } from '../channels/chatroom_channel';
+document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
+})
+
 // Canvas
 function canvas() {
   const canvas = document.querySelector(".bg");
