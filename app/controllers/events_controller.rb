@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
   def index
     if params[:query].present?
       @events = Event.where(category: params[:query])
@@ -19,6 +18,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @chatroom = @event.chatroom
+    @message = Message.new
   end
 
   def new
