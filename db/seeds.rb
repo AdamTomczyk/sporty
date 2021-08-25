@@ -11,8 +11,8 @@ Event.destroy_all
 
 user_1 = User.create!(
   email: "test@joinsporty.com",
-  fullname: "123",
-  password: "123"
+  first_name: "Jonny",
+  password: "123456"
 )
 
 # 01
