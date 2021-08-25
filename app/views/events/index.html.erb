@@ -20,11 +20,27 @@
         </div>
       <% end %>
 
+
+    <%= link_to event_path(event) do %>
+      <div>
+        <h3><%= link_to event.name, event_path(event) %></h3>
+        <h5><%= event.description %></h5>
+      </div>
+      <div>
+        <%if event.availability? %>
+          <h3>It's not too late yet...You can still <strong>join this event!</strong></h3>
+        <%else %>
+          <h3>Unfortunately, this event is <strong>fully booked</strong>.</h3>
+        <%end %>
+      </div>
+    <% end %>
+
 <div id="map"
   style="width: 100%; height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
 
 
     <% end %>
