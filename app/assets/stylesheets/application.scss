@@ -11,6 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+html, body{
+  background-color: grey;
+}
 
 html, body {
   background-color: black;
@@ -168,3 +171,6 @@ background: black;
      border-radius: 10px;
      border: none;
    }
+
+
+   //
