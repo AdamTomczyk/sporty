@@ -1,0 +1,40 @@
+<h1>Hey
+<% if current_user %>
+  <%= current_user.first_name %>
+<%end%>, <h1><br>here is your dashboard 🏓 </h1>
+
+
+
+<h2>Your join requests</h3>
+<% @outgoing_requests.each do |request|  %>
+  <h3><%= request.event.name %></h3>
+  <h5>Where?⛳️ <%= request.event.location %></h5>
+  <h5>When?⏱ <%= request.event.start_time %></h5>
+  <h5>Your host 🤠:<%= request.event.user_id %></h5>
+  <%if request.pending?%>
+    <p>Your join request is currently being processed.</p>
+  <% else %>
+    <p>Your request got <%= request.status %>!</p>
+  <% end %>
+
+<% end %>
+
+
+<h2>INBOX</h3>
+<% @incoming_requests.each do |request|  %>
+  <% if request.status == "pending" %>
+    <h3>Pending Join Request</h3>
+    <h5>From sporty pal: <%= request.user %></h5>
+
+    <h5>For this event: <%= request.event.name %></h5>
+    <%= link_to "(see event in detail)", event_path(request.event) %>
+    <%= link_to "(accept ✅)", accept_join_request_path(request), method: :patch %>
+    <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch %> <%#= by default link is get request, need to make this patch %>
+
+  <% elsif %>
+    <h3>Your next hosted events</h3>
+    <h5>When? :<%= request.event.start_time%></h5>
+    <h5>Where? :<%= request.event.location %></h5>
+  <% end %>
+
+<% end %>
