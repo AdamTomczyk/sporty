@@ -1,7 +1,5 @@
 class EventsController < ApplicationController
-
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
   def index
       # @markers = @events.geocoded.map do |event|
         # {
@@ -21,6 +19,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @chatroom = @event.chatroom
+    @message = Message.new
   end
 
   def new
