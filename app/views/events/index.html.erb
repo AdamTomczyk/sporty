@@ -16,7 +16,9 @@
           <h5><%= event.description %></h5>
         </div>
         <div>
-          <%if event.availability? %>
+          <% if event.join_requests.where(user: current_user).exists? %>
+          <h3>Your request for this event is still pending</h3>
+          <%elsif event.availability? %>
             <h3>It's not too late yet...You can still <strong>join this event 🥅!</strong></h3>
           <%else %>
             <h3>Unfortunately, this event is <strong>fully booked</strong>.</h3>
