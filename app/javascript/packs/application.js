@@ -38,10 +38,12 @@ const showChatBox = () => {
   const chatButton = document.querySelector(".chatbutton");
   const chatbox = document.querySelector(".chatbox");
   console.log(chatButton)
+  if (chatButton) {
   chatButton.addEventListener("click", (event) => {
     event.preventDefault
     chatbox.classList.toggle("showchat");
   })
+  }
 }
 
 
