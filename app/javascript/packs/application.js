@@ -33,6 +33,16 @@ import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { canvas } from '../pages/home';
 
+const showChatBox = () => {
+
+  const chatButton = document.querySelector(".chatbutton");
+  const chatbox = document.querySelector(".chatbox");
+  console.log(chatButton)
+  chatButton.addEventListener("click", (event) => {
+    event.preventDefault
+    chatbox.classList.toggle("showchat");
+  })
+}
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -41,5 +51,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initChatroomCable();
   canvas()
+  showChatBox()
 
 });
