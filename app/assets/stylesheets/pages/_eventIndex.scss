@@ -6,3 +6,21 @@
   overflow: hidden;
   background: black;
 }
+
+.event_card {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.event_card.Tennis {
+  background: linear-gradient(45deg, #5FE1EB, #B4EC93);
+}
+
+.event_card.Basketball {
+  background: linear-gradient(45deg, #FEB09E, #F953D4);
+}
+
+.event_card.Soccer {
+  background: linear-gradient(45deg, #CA7CFF, #5414D7);
+}

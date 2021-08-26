@@ -1,41 +1,40 @@
-<strong><h1>Check out all these events in your area</h1> </strong>
+<div class="container">
+  <div class="row">
 
-<div id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+    <div style = "margin: 20px 0px;">
+      <h1>Check out all these events in your area</h1>
+      <p><%= link_to "Create your own event", new_event_path %></p>
+    </div>
 
-  <%= link_to "Create your own event", new_event_path %>
-  <div >
-    <% @events.each do |event|  %>
-
-      <%= link_to event_path(event) do %>
-        <div>
-          <h3><%= link_to event.name, event_path(event) %></h3>
-          <h5><%= event.description %></h5>
-        </div>
-        <div>
-          <%if event.availability? %>
-            <h3>It's not too late yet...You can still <strong>join this event 🥅!</strong></h3>
-          <%else %>
-            <h3>Unfortunately, this event is <strong>fully booked</strong>.</h3>
-          <%end %>
-        </div>
-      <% end %>
-
-    <%= link_to event_path(event) do %>
+    <div class="col-sm-5">
       <div>
-        <h3><%= link_to event.name, event_path(event) %></h3>
-        <h5><%= event.description %></h5>
+        <% @events.each do |event| %>
+          <%= link_to event_path(event) do %>
+              <div style = "display: flex; align-items: center;" class = "event_card <%=event.category%>">
+
+              <div>
+                <%= image_tag "#{event.category}_photo.jpeg", style: "width: 180px; padding: 20px"%>
+              </div>
+
+              <div>
+                <p style = "margin-bottom: 0px;">🗓 <%= event.start_time.strftime("%d of %B, %Y") %></p>
+                <p style = "margin-bottom: 0px;">⏰ <%= event.start_time.strftime("%I:%M %p") %></p>
+                <p>📍 <%= event.location %></p>
+              </div>
+
+              </div>
+          <% end %>
+        <% end %>
       </div>
-      <div>
-        <%if event.availability? %>
-          <h3>It's not too late yet...You can still <strong>join this event!</strong></h3>
-        <%else %>
-          <h3>Unfortunately, this event is <strong>fully booked</strong>.</h3>
-        <%end %>
+    </div>
+
+    <div class="col-sm-7">
+      <div id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    <% end %>
-    <% end %>
+    </div>
+
   </div>
+</div>

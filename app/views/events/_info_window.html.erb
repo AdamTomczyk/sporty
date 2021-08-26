@@ -1,3 +1,14 @@
-<h2><%= event.name %></h2>
-<p><%= event.location %></p>
-<p>test</p>
+<div class="container" style = "background: linear-gradient(to right top, #5FE1EB, #B4EC93);">
+  <h3><%= link_to event.name, event_path(event) %></h3>
+  <div class="row">
+
+    <div class="col-sm-12">
+      <p>Up for a game of <%= event.category %>?</p>
+      <p style = "margin-bottom: 0px;">🗓 <%= event.start_time.strftime("%d of %B, %Y") %></p>
+      <p style = "margin-bottom: 0px;">⏰ <%= event.start_time.strftime("%I:%M %p") %></p>
+      <p>📍 <%= event.location %></p>
+      <p><%= event.capacity %> places left...</p>
+    </div>
+
+  </div>
+</div>
