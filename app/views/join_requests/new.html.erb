@@ -1,7 +1,7 @@
 
 <h1>JOIN</h1>
 <%= simple_form_for [ @event, @join_request ] do |f| %>
-  <%= f.input :skill_level, :collection => %w[Absolute-Newbie Beginner I-know-some-stuff Intermediate This-is-my-hobby I-breathe-this-sport], label: "What's your skill-level?" %>
+  <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport], label: "What's your skill-level?" %>
   <%= f.submit "Join this event", class: "btn btn-primary mt-3", data: { confirm: "Are you sure you want to join this event? The host set this event's skill-level as '#{@event.skill_level}'' "} %>
   <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
 
