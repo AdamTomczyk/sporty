@@ -1,7 +1,7 @@
 <div class="eventShowBg">
   <%= render "shared/navbar" %>
-  <div class="chatbox  <%= 'showchat' if coming_ajax %> ">
-        <div class="container">
+  <div class="chatbox  <%= 'showchat' if coming_ajax %>">
+        <div class="container"  id="messages" data-event-id="<%= @event.id %>">
 
                 <% @chatroom.messages.each do |message| %>
                   <%= render 'messages/message', message: message %>
