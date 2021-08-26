@@ -13,5 +13,4 @@ class Event < ApplicationRecord
     Chatroom.create(event: self)
   end
 
-
 end
