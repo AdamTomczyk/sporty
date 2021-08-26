@@ -35,7 +35,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 
 
-
 // Canvas
 function canvas() {
   const canvas = document.querySelector(".bg");
@@ -119,6 +118,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initChatroomCable();
   canvas()
-  
+
 
 });

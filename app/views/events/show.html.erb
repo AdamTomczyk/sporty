@@ -85,7 +85,6 @@
     </div>
 
 
-
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
 
   <% @chatroom.messages.each do |message| %>
@@ -97,4 +96,3 @@
   <%= f.input :content, label: false, placeholder: "Send a message" %>
   <%= f.button :submit %>
 <% end %>
-
