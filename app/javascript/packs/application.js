@@ -40,7 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initChatroomCable();
-
   canvas()
-
 });
