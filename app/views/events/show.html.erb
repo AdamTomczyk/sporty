@@ -1,6 +1,6 @@
 
 <h2>Check out this sporty event:</h2>
-<h1><%= @event.name %></h1>
+<h1 style="color:white;"><%= @event.name %></h1>
 <h5> HOST: <%= @event.user%></h5>
 <h5><%= @event.user%> is seeking pals for <strong><%= @event.category%></strong></h5> <br>
 <h5> WHEN? ⏱ <%= @event.start_time.strftime("%b %e %Y")%></h5>
@@ -97,4 +97,3 @@
   <%= f.input :content, label: false, placeholder: "Send a message" %>
   <%= f.button :submit %>
 <% end %>
-

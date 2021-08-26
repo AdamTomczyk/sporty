@@ -3,7 +3,8 @@ class JoinRequestsController < ApplicationController
     @outgoing_requests = JoinRequest.where(user: current_user) # bookings i made
     if current_user.events.any? # checking if user is host of events
       @my_events = current_user.events # returns collection of events
-      @incoming_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where.not(status: "rejected")
+      @confirmed_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "accepted")
+      @pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending")
     end
     # @pending_requests = Join.Request.where(event_id:...).where(status:"pending")
     @requests = JoinRequest.all
