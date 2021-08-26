@@ -1,7 +1,7 @@
 <h1 style="color:white">Hey
 <% if current_user %>
   <%= current_user.first_name %>
-<%end%>, <h1 style="color:white"><br>here is your dashboard 🏓 </h1>
+<%end%>, <h1 style="color:white"><br>DASHBOARD 🏓 </h1>
 
 
 <h2 style="color:white">Your upcoming events as a host</h2>
@@ -10,7 +10,7 @@
   <h5 style="color:white">Where? :<%= request.event.location %></h5>
 <%end %>
 
-<h2 style="color:white">Your join requests</h2>
+<h2 style="color:white">Your most recent join requests</h2>
 <% @outgoing_requests.each do |request|  %>
   <h3 style="color:white"><%= request.event.name %></h3>
   <h5 style="color:white">Where?⛳️ <%= request.event.location %></h5>
@@ -25,13 +25,11 @@
 <% end %>
 
 
-<h2 style="color:white">INBOX with </h3>
+<h2 style="color:white">INBOX </h3>
 
 <% @pending_requests.each do |request|  %>
-  <h3 style="color:white">Pending Join Request</h3>
-  <h5 style="color:white">From sporty pal: <%= request.user %></h5>
-
-  <h5 style="color:white">For this event: <%= request.event.name %></h5>
+  <h3 style="color:white"><%= request.user.first_name %> wants to join</h3>
+  <h5 style="color:white">this event you created: <%= request.event.name %>!</h5>
   <%= link_to "(see event in detail)", event_path(request.event), style: "color:white;" %>
   <%= link_to "(accept ✅)", accept_join_request_path(request), method: :patch, style: "color:white;" %>
   <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
