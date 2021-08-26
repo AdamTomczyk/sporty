@@ -6,13 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 User.destroy_all
 Event.destroy_all
 
 user_1 = User.create!(
   email: "test@joinsporty.com",
-  fullname: "123",
-  password: "123"
+  first_name: "test",
+  last_name: "test",
+  password: "123456"
 )
 
 # 01
@@ -193,4 +195,5 @@ Event.create!(
   end_time: 20000000,
   user_id: user_1.id,
   availability: true,
+
 )

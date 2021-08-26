@@ -23,18 +23,18 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import "animate.css"
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initMapbox } from '../plugins/init_mapbox';
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
-
 import { initChatroomCable } from '../channels/chatroom_channel';
-document.addEventListener('turbolinks:load', () => {
-  initChatroomCable();
-})
+import { initMapbox } from '../plugins/init_mapbox';
+
+
+
+
 
 // Canvas
 function canvas() {
@@ -116,5 +116,9 @@ void main(void)
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initMapbox();
+  initChatroomCable();
   canvas()
+  
+
 });
