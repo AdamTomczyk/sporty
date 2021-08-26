@@ -29,10 +29,9 @@ import "animate.css"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
+
 
 
 
@@ -117,6 +116,13 @@ void main(void)
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+<<<<<<< HEAD
   // canvas()
+=======
+  initMapbox();
+  initChatroomCable();
+  canvas()
+  
+>>>>>>> f3f1ad3c875309a4544de695a481c9cc150dc098
 
 });

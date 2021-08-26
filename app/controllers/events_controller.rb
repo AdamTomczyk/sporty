@@ -6,13 +6,14 @@ class EventsController < ApplicationController
     else
       @events = Event.all
       # the `geocoded` scope filters only events with coordinates (latitude & longitude)
-      @markers = @events.geocoded.map do |event|
-        {
-          lat: event.latitude,
-          lng: event.longitude,
-          info_window: render_to_string(partial: "info_window", locals: { event: event })
-        }
-      end
+    end
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: event }),
+        image_url: helpers.asset_url('map_icon.png')
+      }
     end
   end
 
