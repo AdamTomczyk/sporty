@@ -20,14 +20,14 @@ user_1 = User.create!(
 # 01
 
 Event.create!(
-  name: "First Test Event",
+  name: "Test Event 01",
   capacity: "10",
   description: "First Test Description",
   category: "Basketball",
   location: "Checkpoint Charlie, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/01/2021 17:00"),
+  end_time: DateTime.parse("09/01/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -35,14 +35,14 @@ Event.create!(
 # 02
 
 Event.create!(
-  name: "Second Test Event",
+  name: "Test Event 02",
   capacity: "10",
   description: "Second Test Description",
-  category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  category: "Tennis",
+  location: "Fernsehturm, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/02/2021 17:00"),
+  end_time: DateTime.parse("09/02/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -50,14 +50,14 @@ Event.create!(
 # 03
 
 Event.create!(
-  name: "Third Test Event",
+  name: "Test Event 03",
   capacity: "10",
   description: "Third Test Description",
-  category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  category: "Soccer",
+  location: "Brandenburger Tor, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/03/2021 17:00"),
+  end_time: DateTime.parse("09/03/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -65,14 +65,14 @@ Event.create!(
 # 04
 
 Event.create!(
-  name: "Fourth Test Event",
+  name: "Test Event 04",
   capacity: "10",
   description: "Fourth Test Description",
   category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  location: "Tiergarten, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/04/2021 17:00"),
+  end_time: DateTime.parse("09/04/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -80,14 +80,14 @@ Event.create!(
 # 05
 
 Event.create!(
-  name: "Fifth Test Event",
+  name: "Test Event 05",
   capacity: "10",
   description: "Fifth Test Description",
-  category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  category: "Tennis",
+  location: "East Side Gallery, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/05/2021 17:00"),
+  end_time: DateTime.parse("09/05/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -95,14 +95,14 @@ Event.create!(
 # 06
 
 Event.create!(
-  name: "Sixth Test Event",
+  name: "Test Event 06",
   capacity: "10",
   description: "Sixth Test Description",
-  category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  category: "Soccer",
+  location: "Boxhagener Platz, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/06/2021 17:00"),
+  end_time: DateTime.parse("09/06/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -110,14 +110,14 @@ Event.create!(
 # 07
 
 Event.create!(
-  name: "Seventh Test Event",
+  name: "Test Event 07",
   capacity: "10",
   description: "Seventh Test Description",
   category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  location: "Schillerpark, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/07/2021 17:00"),
+  end_time: DateTime.parse("09/07/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -125,14 +125,14 @@ Event.create!(
 # 08
 
 Event.create!(
-  name: "Eighth Test Event",
+  name: "Test Event 08",
   capacity: "10",
   description: "Eigth Test Description",
-  category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  category: "Tennis",
+  location: "Tempelhofer Feld, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/08/2021 17:00"),
+  end_time: DateTime.parse("09/08/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -140,14 +140,14 @@ Event.create!(
 # 09
 
 Event.create!(
-  name: "Nineth Test Event",
+  name: "Test Event 09",
   capacity: "10",
   description: "Nineth Test Description",
-  category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  category: "Soccer",
+  location: "Monumentenstrasse, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/09/2021 17:00"),
+  end_time: DateTime.parse("09/09/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -155,14 +155,14 @@ Event.create!(
 # 10
 
 Event.create!(
-  name: "Tenth Test Event",
+  name: "Test Event 10",
   capacity: "10",
   description: "Tenth Test Description",
   category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  location: "Hauptbahnhof, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/10/2021 17:00"),
+  end_time: DateTime.parse("09/10/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -170,14 +170,14 @@ Event.create!(
 # 11
 
 Event.create!(
-  name: "Eleventh Test Event",
+  name: "Test Event 11",
   capacity: "10",
   description: "Eleventh Test Description",
-  category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  category: "Tennis",
+  location: "Zoologischer Garten, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/11/2021 17:00"),
+  end_time: DateTime.parse("09/11/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 )
@@ -185,14 +185,14 @@ Event.create!(
 # 12
 
 Event.create!(
-  name: "Twelveth Test Event",
+  name: "Test Event 12",
   capacity: "10",
   description: "Twelveth Test Description",
-  category: "Basketball",
-  location: "Checkpoint Charlie, Berlin",
+  category: "Soccer",
+  location: "Neukölln, Berlin",
   skill_level: "Beginner",
-  start_time: 10000000,
-  end_time: 20000000,
+  start_time: DateTime.parse("09/12/2021 17:00"),
+  end_time: DateTime.parse("09/12/2021 21:00"),
   user_id: user_1.id,
   availability: true,
 
