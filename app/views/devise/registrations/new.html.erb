@@ -4,11 +4,12 @@
   <div class="wrapper_signup">
 
     <div class="container">
-    <h1 style="color:white" class="mb-5">Sign up</h1>
-      <div class="row d-flex justify-content-between">
-        <div class="col-5">
+      <h1 style="color:white" class="mb-5">Sign up</h1>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="row d-flex justify-content-between">
+          <div class="col-5">
 
-            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
               <div class="form-inputs">
                 <%= f.input :email,
                             required: true,
@@ -28,8 +29,8 @@
                             label: "Name" %>
                             <hr>
 
-              </div>
-        </div>
+            </div>
+          </div>
 
         <div class="col-1"></div>
 
@@ -59,9 +60,9 @@
         <div class="form-actions">
                 <%= f.button :submit, "Sign up", class: "btn-grad-signup mt-5" %>
         </div>
-
-      <% end %>
-        </div>
       </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
