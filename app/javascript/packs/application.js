@@ -116,9 +116,13 @@ void main(void)
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+<<<<<<< HEAD
+  // canvas()
+=======
   initMapbox();
   initChatroomCable();
   canvas()
   
+>>>>>>> f3f1ad3c875309a4544de695a481c9cc150dc098
 
 });
