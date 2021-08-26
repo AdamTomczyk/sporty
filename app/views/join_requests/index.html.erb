@@ -4,37 +4,36 @@
 <%end%>, <h1 style="color:white"><br>here is your dashboard 🏓 </h1>
 
 
+<h2 style="color:white">Your upcoming events as a host</h2>
+<% @confirmed_requests.each do |request|  %>
+  <h5 style="color:white">When? :<%= request.event.start_time%></h5>
+  <h5 style="color:white">Where? :<%= request.event.location %></h5>
+<%end %>
 
-<h2>Your join requests</h3>
+<h2 style="color:white">Your join requests</h2>
 <% @outgoing_requests.each do |request|  %>
-  <h3><%= request.event.name %></h3>
+  <h3 style="color:white"><%= request.event.name %></h3>
   <h5 style="color:white">Where?⛳️ <%= request.event.location %></h5>
   <h5 style="color:white">When?⏱ <%= request.event.start_time %></h5>
   <h5 style="color:white">Your host 🤠:<%= request.event.user.first_name %></h5>
   <%if request.pending?%>
-    <p>Your join request is currently being processed.</p>
+    <p style="color:white">Your join request is currently being processed.</p>
   <% else %>
-    <p>Your request got <%= request.status %>!</p>
+    <p style="color:white">Your request got <%= request.status %>!</p>
   <% end %>
 
 <% end %>
 
 
 <h2 style="color:white">INBOX</h3>
-<% @incoming_requests.each do |request|  %>
-  <% if request.status == "pending" %>
-    <h3 style="color:white">Pending Join Request</h3>
-    <h5 style="color:white">From sporty pal: <%= request.user %></h5>
 
-    <h5 style="color:white">For this event: <%= request.event.name %></h5>
-    <%= link_to "(see event in detail)", event_path(request.event) %>
-    <%= link_to "(accept ✅)", accept_join_request_path(request), method: :patch, style: "color:white;" %>
-    <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
+<% @pending_requests.each do |request|  %>
+  <h3 style="color:white">Pending Join Request</h3>
+  <h5 style="color:white">From sporty pal: <%= request.user %></h5>
 
-  <% elsif %>
-    <h3 style="color:white">Your next hosted events</h3>
-    <h5 style="color:white">When? :<%= request.event.start_time%></h5>
-    <h5 style="color:white">Where? :<%= request.event.location %></h5>
-  <% end %>
+  <h5 style="color:white">For this event: <%= request.event.name %></h5>
+  <%= link_to "(see event in detail)", event_path(request.event), style: "color:white;" %>
+  <%= link_to "(accept ✅)", accept_join_request_path(request), method: :patch, style: "color:white;" %>
+  <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
 
 <% end %>
