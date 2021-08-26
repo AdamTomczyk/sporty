@@ -7,7 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+import GlslCanvas from "glslCanvas";
 
 Rails.start()
 Turbolinks.start()
@@ -31,7 +31,7 @@ import "animate.css"
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
-import { canvas } from '../pages/home.js';
+import { canvas } from '../pages/home';
 
 
 
@@ -41,4 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initChatroomCable();
   canvas()
+
 });
