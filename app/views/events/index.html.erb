@@ -8,21 +8,24 @@
 
     <div class="col-sm-5">
       <div>
-        <% @events.each do |event| %>
-          <%= link_to event_path(event) do %>
-              <div style = "display: flex; align-items: center;" class = "event_card <%=event.category%>">
+        <%@events.each do |event| %>
+          <%if event.user != current_user %>
+            <%= link_to event_path(event) do %>
+                <div style = "display: flex; align-items: center;" class = "event_card <%=event.category%>">
 
-              <div>
-                <%= image_tag "#{event.category}_photo.jpeg", style: "width: 180px; padding: 20px"%>
-              </div>
+                  <div>
+                    <%= image_tag "#{event.category}_photo.jpeg", style: "width: 180px; padding: 20px"%>
+                  </div>
 
-              <div>
-                <p style = "margin-bottom: 0px;">🗓 <%= event.start_time.strftime("%d of %B, %Y") %></p>
-                <p style = "margin-bottom: 0px;">⏰ <%= event.start_time.strftime("%I:%M %p") %></p>
-                <p>📍 <%= event.location %></p>
-              </div>
+                  <div>
+                    <p style = "margin-bottom: 0px;">🗓 <%= event.start_time.strftime("%d of %B, %Y") %></p>
+                    <p style = "margin-bottom: 0px;">⏰ <%= event.start_time.strftime("%I:%M %p") %></p>
+                    <p>📍 <%= event.location %></p>
+                    <p>🏃🏽 <%= event.name %></p>
+                  </div>
 
-              </div>
+                </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>

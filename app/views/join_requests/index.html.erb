@@ -9,11 +9,10 @@
   <h5 style="color:white">Where?⛳️ <%= request.location %></h5>
   <h5 style="color:white">When?⏱ <%= request.start_time %></h5>
   <h5 style="color:white">Your host 🤠:<%= request.user.first_name %></h5>
-
 <% end %>
 
 
-<!--
+<h3>pending requests</h3>
 
 <% @pending_requests.each do |request|  %>
   <h3 style="color:white"><%= request.user.first_name %> wants to join</h3>
@@ -23,4 +22,3 @@
   <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
 
 <% end %>
--->
