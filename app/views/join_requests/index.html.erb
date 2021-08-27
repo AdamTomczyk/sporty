@@ -1,3 +1,9 @@
+<%= render "shared/navbar" %>
+<div class="container">
+<div class="row">
+
+
+<div class="col-12">
 <h1 style="color:white">Hey
 <% if current_user %>
   <%= current_user.first_name %>
@@ -5,16 +11,18 @@
 
 
 <% @events.each do |request|  %>
+<div style = "display: flex; align-items: center;" class = "request_card <%=request.category%>" >
   <h3 style="color:white"><%= request.name %></h3>
-  <h5 style="color:white">It's time for <i><%= request.category %></i></h3>
-  <h5 style="color:white">Where?⛳️ <%= request.location %></h5>
-  <h5 style="color:white">When?⏱ <%= request.start_time %></h5>
-  <h5 style="color:white">
+  <p style="color:white;margin-bottom:0;">It's time for <i><%= request.category %></p>
+  <p style="color:white;margin-bottom:0;">Where?⛳️ <%= request.location %></p>
+  <p style="color:white;margin-bottom:0;">When?⏱ <%= request.start_time %></p>
+  <p style="color:white">
   <%if request.user == current_user %>
-    <h5 style="color:white">You are the <strong> host </strong> of this event! Get ready for some sporty activity!</h5>
+    <h5 style="color:white;">You are the <strong> host </strong> of this event! Get ready for some sporty activity!</h5>
   <%else %>
     <h5 style="color:white">Your host is 🤠: <%= request.user.first_name %></h5>
   <%end %>
+  </div>
 <% end %>
 
 
@@ -28,3 +36,6 @@
   <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
 
 <% end %>
+</div>
+</div>
+</div>
