@@ -104,5 +104,14 @@
         </div>
         </div> <!--- Row Close --->
       </div> <!--- Container Close --->
+
+
+
+    <% if @event.join_requests.where(status: 1).any? || @event.user == current_user %>
+
+    <h1 style="color:white; z-index: 1001;" class="chatbutton">Chat</h1>
+  <%# show_the_button%>
+    <% end %>
+
     </div> <!--- Centering Wrapper --->
 </div> <!--- Background Image --->
