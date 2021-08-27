@@ -9,7 +9,7 @@
     <div class="col-sm-5">
       <div>
         <%@events.each do |event| %>
-          <%if event.user != current_user %>
+
             <%= link_to event_path(event) do %>
                 <div style = "display: flex; align-items: center;" class = "event_card <%=event.category%>">
 
@@ -26,7 +26,7 @@
 
                 </div>
             <% end %>
-          <% end %>
+
         <% end %>
       </div>
     </div>
