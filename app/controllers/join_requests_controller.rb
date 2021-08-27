@@ -10,17 +10,15 @@ class JoinRequestsController < ApplicationController
     #ALL EVENTS THAT WILL HAPPEN:
 
     # all accepted requests
-    # @upcoming_events = []
     # @confirmed_requests = JoinRequest.where(user: current_user).where(status: "accepted")
 
     # all hosted events
     # @hosted_events = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "accepted")
-    # @upcoming_events << @confirmed_requests[0]
-    # @upcoming_events << @hosted_events
+
     # ORDER BY TIME
     # @upcoming_events.order(event_id: @upcoming_events.events.pluck(:start_time) :desc).last(6)
     # EVENT last 6
-    @events = Event.includes(:join_requests).where(join_requests: { user: current_user }).or(Event.where(user: current_user)).order(start_time: :desc).limit(6)
+    @events = Event.includes(:join_requests).where(join_requests: { user: current_user, status: "accepted" }).or(Event.where(user: current_user)).order(start_time: :desc).limit(6)
   end
 
   def new
