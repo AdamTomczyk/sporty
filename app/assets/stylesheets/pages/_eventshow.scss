@@ -1,6 +1,6 @@
 .eventShowBg{
   width: 100vw;
-  // height: 100vh;
+  height: 100vh;
   position: relative;
   display: flex;
   // overflow: hidden;
@@ -22,7 +22,7 @@
 
 .wrapper_show{
   width: 100%;
-  // height: 100%;
+  height: 100%;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -94,8 +94,7 @@
    }
 
    .showchat {
-     display: flex;
-     align-items: flex-end;
+     display: inline-block;
    }
 
    .buttonMove{
