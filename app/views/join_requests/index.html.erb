@@ -1,31 +1,18 @@
 <h1 style="color:white">Hey
 <% if current_user %>
   <%= current_user.first_name %>
-<%end%>, <h1 style="color:white"><br>DASHBOARD 🏓 </h1>
+<%end%>, <h1 style="color:white"><br>GAMES 🏓 </h1>
 
 
-<h2 style="color:white">Your upcoming events as a host</h2>
-<% @confirmed_requests.each do |request|  %>
-  <h5 style="color:white">When? :<%= request.event.start_time%></h5>
-  <h5 style="color:white">Where? :<%= request.event.location %></h5>
-<%end %>
-
-<h2 style="color:white">Your most recent join requests</h2>
-<% @outgoing_requests.each do |request|  %>
-  <h3 style="color:white"><%= request.event.name %></h3>
-  <h5 style="color:white">Where?⛳️ <%= request.event.location %></h5>
-  <h5 style="color:white">When?⏱ <%= request.event.start_time %></h5>
-  <h5 style="color:white">Your host 🤠:<%= request.event.user.first_name %></h5>
-  <%if request.pending?%>
-    <p style="color:white">Your join request is currently being processed.</p>
-  <% else %>
-    <p style="color:white">Your request got <%= request.status %>!</p>
-  <% end %>
-
+<% @events.each do |request|  %>
+  <h3 style="color:white"><%= request.name %></h3>
+  <h5 style="color:white">Where?⛳️ <%= request.location %></h5>
+  <h5 style="color:white">When?⏱ <%= request.start_time %></h5>
+  <h5 style="color:white">Your host 🤠:<%= request.user.first_name %></h5>
 <% end %>
 
 
-<h2 style="color:white">INBOX </h3>
+<h3>pending requests</h3>
 
 <% @pending_requests.each do |request|  %>
   <h3 style="color:white"><%= request.user.first_name %> wants to join</h3>

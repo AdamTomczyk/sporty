@@ -14,10 +14,10 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/dashboard", to: "join_requests#index", as: :join_requests
+  get "/games", to: "join_requests#index", as: :join_requests
   # resources: default + _path, as : through join_requests to get to that page
 
-  resources :chatrooms do
+  resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
 end

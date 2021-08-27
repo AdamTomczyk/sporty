@@ -1,6 +1,8 @@
 <div class="eventShowBg">
   <%= render "shared/navbar" %>
-    <div class="chatbox <%= 'showchat' if coming_ajax %> ">
+
+  <div class="chatbox  <%= 'showchat' if coming_ajax %>">
+        <div class="container"  id="messages" data-event-id="<%= @event.id %>">
 
                 <div class="container">
                   <% @chatroom.messages.each do |message| %>
@@ -12,6 +14,7 @@
                       <%= f.button :submit %>
                     <% end %>
 
+                </div>
           </div>
     </div>
 

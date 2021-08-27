@@ -39,6 +39,7 @@ const showChatBox = () => {
 
 
   console.log(chatButton)
+  if (chatButton) {
   chatButton.addEventListener("click", (event) => {
     event.preventDefault
     chatbox.classList.toggle("showchat");
@@ -47,8 +48,6 @@ const showChatBox = () => {
       chatButton.innerText = "X"
     }
   })
-
-
 
 }
 
