@@ -31,25 +31,8 @@ import "animate.css"
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { canvas } from '../pages/home';
+import { showChatBox } from '../pages/show'
 
-const showChatBox = () => {
-
-  const chatButton = document.querySelector(".chatbutton");
-  const chatbox = document.querySelector(".chatbox");
-
-
-  console.log(chatButton)
-  if (chatButton) {
-  chatButton.addEventListener("click", (event) => {
-    event.preventDefault
-    chatbox.classList.toggle("showchat");
-    if (chatbox.classList.contains("showchat")){
-      chatButton.classList.toggle("buttonMove")
-      chatButton.innerText = "X"
-    }
-  })
-  }
-}
 
 
 document.addEventListener('turbolinks:load', () => {
