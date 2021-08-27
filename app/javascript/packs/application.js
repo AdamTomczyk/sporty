@@ -7,7 +7,6 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import GlslCanvas from "glslCanvas";
 
 Rails.start()
 Turbolinks.start()
@@ -37,11 +36,20 @@ const showChatBox = () => {
 
   const chatButton = document.querySelector(".chatbutton");
   const chatbox = document.querySelector(".chatbox");
+
+
   console.log(chatButton)
   chatButton.addEventListener("click", (event) => {
     event.preventDefault
     chatbox.classList.toggle("showchat");
+    if (chatbox.classList.contains("showchat")){
+      chatButton.classList.toggle("buttonMove")
+      chatButton.innerText = "X"
+    }
   })
+
+
+
 }
 
 
