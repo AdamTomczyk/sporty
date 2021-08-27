@@ -12,5 +12,4 @@ class Event < ApplicationRecord
   def initialize_chat
     Chatroom.create(event: self)
   end
-
 end
