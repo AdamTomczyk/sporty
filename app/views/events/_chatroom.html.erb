@@ -1,20 +1,22 @@
 <div class="eventShowBg">
   <%= render "shared/navbar" %>
+
   <div class="chatbox  <%= 'showchat' if coming_ajax %>">
         <div class="container"  id="messages" data-event-id="<%= @event.id %>">
 
-                <% @chatroom.messages.each do |message| %>
-                  <%= render 'messages/message', message: message %>
+                <div class="container">
+                  <% @chatroom.messages.each do |message| %>
+                    <%= render 'messages/message', message: message %>
+                      <% end %>
+
+                    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+                      <%= f.input :content, label: false, placeholder: "Send a message" %>
+                      <%= f.button :submit %>
                     <% end %>
 
-                  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-                    <%= f.input :content, label: false, placeholder: "Send a message" %>
-                    <%= f.button :submit %>
-                  <% end %>
-
-
-        </div>
-  </div>
+                </div>
+          </div>
+    </div>
 
   <div class="eventShowDark"></div> <!--- Dark Background Absolute --->
 
@@ -86,7 +88,7 @@
 
 
           <div class="col-12">
-                <h1 style="color:white; z-index: 1001;position:relative" class="chatbutton">Chat</h1>
+
           </div>
 
       </div> <!--- Container Close --->
@@ -94,7 +96,7 @@
 
 
 
-
+      <h1 style="color:white; z-index: 1001;" class="chatbutton">Chat</h1>
 
       </div> <!--- Centering Wrapper --->
 
