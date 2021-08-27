@@ -9,7 +9,12 @@
   <h5 style="color:white">It's time for <i><%= request.category %></i></h3>
   <h5 style="color:white">Where?⛳️ <%= request.location %></h5>
   <h5 style="color:white">When?⏱ <%= request.start_time %></h5>
-  <h5 style="color:white">Your host 🤠:<%= request.user.first_name %></h5>
+  <h5 style="color:white">
+  <%if request.user == current_user %>
+    <h5 style="color:white">You are the <strong> host </strong> of this event! Get ready for some sporty activity!</h5>
+  <%else %>
+    <h5 style="color:white">Your host is 🤠: <%= request.user.first_name %></h5>
+  <%end %>
 <% end %>
 
 

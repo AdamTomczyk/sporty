@@ -202,5 +202,19 @@ Event.create!(
   end_time: DateTime.parse("09/12/2021 21:00"),
   user_id: user_1.id,
   availability: true
+)
 
+  #13
+
+  Event.create!(
+  name: "Test Event 13",
+  capacity: 10,
+  description: "Twelveth Test Description",
+  category: "Soccer",
+  location: "Neukölln, Berlin",
+  skill_level: "Beginner",
+  start_time: DateTime.parse("09/12/2021 17:00"),
+  end_time: DateTime.parse("09/12/2021 21:00"),
+  user_id: user_2.id,
+  availability: true
 )
