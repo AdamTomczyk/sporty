@@ -48,7 +48,7 @@ const showChatBox = () => {
       chatButton.innerText = "X"
     }
   })
-
+  }
 }
 
 
