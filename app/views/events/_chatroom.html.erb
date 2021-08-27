@@ -1,7 +1,7 @@
 <div class="eventShowBg">
   <%= render "shared/navbar" %>
 
-  <div class="chatbox  <%= 'showchat' if coming_ajax %>">
+  <div class="chatbox<%= 'showchat' if coming_ajax %>">
     <div class="container" id="messages" data-event-id="<%= @event.id %>">
       <div class="container">
         <% @chatroom.messages.each do |message| %>
@@ -31,6 +31,7 @@
               <div>
               <h1 class="display-3 glow"style="-webkit-text-stroke: 1.5px #ffff;-webkit-text-fill-color: transparent;color: transparent;">78% <br> Reliability</h1>
             </div>
+
           </div>
 
         <div class="col-12 mt-5 mb-5">
@@ -61,7 +62,9 @@
 
         <div class="col-12">
           <h4 style="font-weight:lighter; color:white; line-height:35px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h4>
-            <% unless JoinRequest.where(user: current_user, event: @event).exists?%>
+            <% if @event.user == current_user %>
+              <h2 style="color:white">You are the host of this event.</h2>
+            <% elsif JoinRequest.find_by(user: current_user, event: @event).nil? %>
               <%= link_to 'Join', new_event_join_request_path(@event), class:"joineventbtn mt-4 mb-3" %>
             <% else %>
               <p style="color:white">You cannot join this event twice</p>
@@ -75,14 +78,15 @@
               <%= link_to 'Delete this event', event_path(@event), method: :delete,  data: { confirm: 'Are you sure you want to delete this event?' }  %>
             <% end %></p>
         </div>
+        <div class="col-12">
+      <h1 style="color:white; z-index: 1001;" class="chatbutton">Chat</h1>
 
+        </div>
       </div> <!--- Container Close --->
 
 
 
 
-      <h1 style="color:white; z-index: 1001;" class="chatbutton">Chat</h1>
 
     </div> <!--- Centering Wrapper --->
-  </div>
 </div> <!--- Background Image --->
