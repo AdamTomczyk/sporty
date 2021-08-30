@@ -1,104 +1,59 @@
-.eventShowBg{
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+.flexer{
   display: flex;
-  // overflow: hidden;
-  background-image: asset-url('backgrounds/signup.jpg');
 
-  img {
+.imageHolder{
+  width: 33vw;
+  height: 34vh;
+  background-image: asset-url('basketball_game.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.infobox {
+  margin-left: 80px;
+
+  .bottominfo{
+    display: flex;
+  }
+
+.flexwrapper{
+display: flex;
+}
+
+  img{
     width: 40px;
   }
 }
 
-.eventShowDark{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: black;
-  opacity: 0.8;
+
+
 }
 
-
-.wrapper_show{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  // overflow: hidden;
-  flex-direction: column;
-}
-
-.evenShowHeader{
+.headline{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
 
-.glow {
-  color: #fff;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e4e4e4, 0 0 40px #e9e9e9, 0 0 50px #e9e9e9, 0 0 60px #e9e9e9, 0 0 70px #e9e9e9;
+  img{
+    border-radius: 50%;
+    width: 40px;
+    object-fit: fit;
   }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #e9e9e9, 0 0 40px #e9e9e9, 0 0 50px #e9e9e9, 0 0 60px #e9e9e9, 0 0 70px #e9e9e9, 0 0 80px #e9e9e9;
+
+  .circle {
+     display: block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+
+    -moz-border-radius: 40px; /* or 50% */
+    border-radius: 40px; /* or 50% */
+
+    background-image: asset-url('icons/user1.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    font-size: 2em;
   }
 }
-
-.joineventbtn {background-image: linear-gradient(to right, #7769fe 0%, #bb61ec  51%, #7769fe  100%)}
-
-.joineventbtn{
-            padding: 10px 55px;
-            text-align: center;
-            border: none;
-            transition: 0.5s;
-            background-size: 200% auto;
-            color: white;
-            border-radius: 10px;
-            display: inline-block;
-            box-shadow: 0 5px 80px rgba(200, 179, 221, 0.8);
-            font-size: 1.4rem;
-    }
-
-  .joineventbtn:hover {
-            background-position: right center; /* change the direction of the change here */
-            color: #fff;
-            text-decoration: none;
-   }
-
-
-   .chatbox {
-     width: 100%;
-     height: 100%;
-     position: absolute;
-     background: rgb(35,24,52);
-     background: linear-gradient(90deg, rgba(35,24,52,1) 0%, rgba(25,30,44,1) 35%, rgba(18,14,24,1) 100%);
-     z-index: 1000;
-     display: none;
-
-
-    .message-container{
-      border-radius: 10px;
-      color: white;
-      display: inline;
-      margin-top: 10px;
-    }
-
-   }
-
-   .showchat {
-     display: inline-block;
-   }
-
-   .buttonMove{
-     position: absolute;
-     top: 10px;
-     right:60px
-   }
