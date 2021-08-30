@@ -34,6 +34,16 @@ import { canvas } from '../pages/home';
 import { showChatBox } from '../pages/show'
 
 
+function transition () {
+  const cards = document.querySelectorAll(".event_card")
+
+  cards.forEach((element) => {
+    element.addEventListener("click", () => {
+      element.classList.toggle("Tennis")
+    })
+  })
+}
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -42,5 +52,5 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   canvas()
   showChatBox()
-
+  transition()
 });
