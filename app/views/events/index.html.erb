@@ -1,9 +1,8 @@
 <%= render "shared/navbar" %>
 <div class="container">
   <div class="row">
-
-    <div style = "margin: 20px 0px; width:100%;box-shadow: 20px white;box-shadow: 3px 45px 1em #000000b5;z-index: 100">
-      <h1>Check out all these events in your area</h1>
+    <div style = "margin: 40px 0px;">
+      <h1>Hey sporty! Up for an event in your neighbourhood?</h1>
       <p><%= link_to "Create your own event", new_event_path %></p>
     </div>
 
@@ -11,16 +10,19 @@
       <div>
         <% @events.each do |event| %>
           <%= link_to event_path(event) do %>
+
               <div style = "display: flex; align-items: center;" class = "event_card <%=event.category%>">
 
               <div>
-                <%= image_tag "#{event.category}_photo.jpeg", style: "border-radius: 25px; width: 180px; padding: 20px"%>
+                <%= image_tag "#{event.category}_sketch.png", style: "border-radius: 25px; width: 100px; padding: 20px; margin-right: 15px;"%>
               </div>
 
               <div>
-                <p style = "margin-bottom: 0px;">🗓 <%= event.start_time.strftime("%d of %B, %Y") %></p>
-                <p style = "margin-bottom: 0px;">⏰ <%= event.start_time.strftime("%I:%M %p") %></p>
-                <p>📍 <%= event.location %></p>
+                <p style = "margin-bottom: 0px; font-weight: bold;"> <%=event.category%> at <%= event.location.chomp(", Berlin") %></p>
+                <p style = "font-size: 10pt; font-style: italic;"> <%= event.start_time.strftime("%m/%d/%Y at %I:%M%p") %></p>
+                <div style="display: flex; justify-content: flex-start; align-items: center">
+                  <a class="card-button <%=event.category%>" href="#"> Join us </a>
+                </div>
               </div>
 
               </div>
@@ -30,7 +32,7 @@
     </div>
 
     <div class="col-sm-7" id="sticky sidebar">
-      <div id="map" style="width: 100%; height: 100vh; border-radius: 5px; position: sticky; top: 0;"
+      <div id="map" style="width: 100%; height: 100vh; border-radius: 5px; margin-bottom: 25px; position: sticky; top: 0;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>

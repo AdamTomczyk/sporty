@@ -58,6 +58,7 @@ class EventsController < ApplicationController
     redirect_to events_path, notice: 'Event was successfully deleted.'
   end
 
+
   private
 
   def set_event

@@ -3,6 +3,10 @@
   margin: 0px;
 }
 
+map:hover{
+  box-shadow: 0px 0px 5px 0px lightgray;
+}
+
 .mapboxgl-popup-content {
   text-align: left;
   font-family: 'Open Sans', sans-serif;
@@ -19,4 +23,9 @@ ul {
 
 a, p, h3 {
   color: white;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
 }

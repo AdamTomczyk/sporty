@@ -31,10 +31,22 @@ import "animate.css"
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { canvas } from '../pages/home';
-import { showChatBox } from '../pages/show';
+
+import { showChatBox } from '../pages/show'
+import { initWeatherApi } from '../plugins/init_weather_api';
 
 
 
+
+function transition () {
+  const cards = document.querySelectorAll(".event_card")
+
+  cards.forEach((element) => {
+    element.addEventListener("click", () => {
+      element.classList.toggle("Tennis")
+    })
+  })
+}
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -45,5 +57,9 @@ document.addEventListener('turbolinks:load', () => {
   canvas();
   showChatBox();
 
+
+
+
+  initWeatherApi();
 
 });
