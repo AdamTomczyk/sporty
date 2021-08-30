@@ -10,7 +10,14 @@ const showChatBox = () => {
       if (chatbox.classList.contains("showchat")) {
         chatButton.classList.toggle("buttonMove")
         chatButton.innerText = "X"
+
+        if (chatButton.classList.contains("buttonMove") ){
+          console.log("I am here now")
+        }
       }
+
+
+
     })
   }
 }

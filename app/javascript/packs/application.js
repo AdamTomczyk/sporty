@@ -32,6 +32,8 @@ import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { canvas } from '../pages/home';
 import { showChatBox } from '../pages/show'
+import { initWeatherApi } from '../plugins/init_weather_api';
+
 
 
 function transition () {
@@ -50,7 +52,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initChatroomCable();
-  canvas()
-  showChatBox()
-  transition()
+  canvas();
+  showChatBox();
+  initWeatherApi();
 });

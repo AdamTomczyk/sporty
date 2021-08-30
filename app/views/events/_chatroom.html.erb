@@ -1,7 +1,97 @@
-<div class="eventShowBg">
   <%= render "shared/navbar" %>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <div class="flexer">
+            <div class="imageHolder"></div>
+              <div class="infobox">
+                <div class="flexwrapper">
 
-  <div class="chatbox<%= 'showchat' if coming_ajax %>">
+                  <div class="mr-5">
+                      <div class="mb-5">
+                        <%= image_tag "icons/clock.png" %>
+                        <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter">16:30</h5>
+                      </div>
+
+                    <div>
+                        <%= image_tag "icons/calories.png" %>
+                        <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter"><span style="color:#E85AFF;">1400</span> kCal</h5>
+                      </div>
+                  </div>
+
+                  <div class="ml-5">
+                      <div class="mb-5">
+                        <%= image_tag "icons/pin.png" %>
+                        <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter">Rudi Duschke Str</h5>
+                      </div>
+                    <div>
+                        <%= image_tag "icons/sun.png" %>
+                        <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter">23° Cloud</h5>
+                      </div>
+                  </div>
+              </div>
+
+                <div class="bottominfo mt-5">
+                  <div>
+                      <div class="mb-5">
+                        <%= image_tag "icons/sec.png" %>
+                        <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter"><span style="color:#85FFAB">73%</span> Reliability</h5>
+                      </div>
+                  </div>
+                  <div class="mb-5 ml-5">
+                        <button class="homebutton mr-5">Join</button>
+                      </div>
+
+                  <div>
+
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-1">
+          <div class="headline">
+            <span class="circle"></span>
+            <h1 class="ml-3" style="color:white">Basketball 2 v 2</h1>
+          </div>
+          <div><h6 style="margin-left: 58px; color:#5E5C69">Claire</h6></div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="container mt-4">
+      <div class="d-flex align-items-center row">
+        <div class="col-7">
+          <h5 style="color:#5E5C69;line-height:30px;font-weight:lighter;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h5>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2">
+           <%= image_tag "icons/volleyball_white.png", style: "width:100px;position:relative;left:-55px" %>
+        </div>
+         <div class="col-1"></div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 style="color:#323238">Other Players</h2>
+          <% if @event.user == current_user %>
+            <%= render "host_event" %>
+          <% else %>
+           <%= render "user_event" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+<!---
+
+
+  <div class="chatbox <%= 'showchat' if coming_ajax %>">
     <div class="container" id="messages" data-event-id="<%= @event.id %>">
       <div class="container">
         <% @chatroom.messages.each do |message| %>
@@ -16,23 +106,24 @@
       </div>
     </div>
 
-  <div class="eventShowDark"></div> <!--- Dark Background Absolute --->
+  <div class="eventShowDark"></div>
 
     <div class="wrapper_show">
       <div class="container">
           <div class="row">
             <div class="col-12 mb-5">
               <div class="evenShowHeader">
+
                 <div>
                   <h1 class="display-3" style="-webkit-text-stroke: 1.5px #ffff;-webkit-text-fill-color: transparent;color: transparent;"><%= @event.category%></h1>
                   <h1 class="display-3" style="-webkit-text-stroke: 1.5px #3E1DFD;-webkit-text-fill-color: transparent;color: transparent;"><%= @event.category%></h1>
                   <h1 class="display-3"style="-webkit-text-stroke: 1.5px #E05C3E;-webkit-text-fill-color: transparent;color: transparent;"><%= @event.category%></h1>
                 </div>
-              <div>
-              <h1 class="display-3 glow"style="-webkit-text-stroke: 1.5px #ffff;-webkit-text-fill-color: transparent;color: transparent;">78% <br> Reliability</h1>
+                  <div>
+                  <h1 class="display-3 glow"style="-webkit-text-stroke: 1.5px #ffff;-webkit-text-fill-color: transparent;color: transparent;">78% <br> Reliability</h1>
+                </div>
+              </div>
             </div>
-
-          </div>
 
         <div class="col-12 mt-5 mb-5">
           <div class="d-flex justify-content-between">
@@ -57,17 +148,23 @@
               <h5 style="color:white">23°</h5>
               <h5 style="color:white">30% Rain</h5>
             </div>
-          </div> <!--- flex Close --->
-        </div> <!--- Col 12 Close --->
+
+          </div>
+        </div>
 
         <div class="col-12">
-          <h4 style="font-weight:lighter; color:white; line-height:35px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h4>
+          <h4 style="font-weight:lighter; color:white; line-height:35px"> <%= @event.description %> </h4>
+          <%# Sport pertains to any form of competitive physical activity or game that aims to use, maintain or improve physical ability and skills while providing enjoyment to participants and, in some cases, entertainment to spectators. Sports can, through casual or organized participation, improve one's physical health. Hundreds of sports exist, from those between single contestants, through to those with hundreds of simultaneous participants, either in teams or competing as individuals. %>
+
             <% if @event.user == current_user %>
-            <%# if user is the host, they should see all the pending requests and accept or reject them. Once accepted,
-            user should be able to see all the users %>
+
+              <h2 style="color:white">You are the host of this event.</h2>
+              <%# if user is the host, they should see all the pending requests and accept or reject them. Once accepted,
+              user should be able to see all the users %>
               <%@my_events = current_user.events # returns collection of my events
                 @pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending") %>
 
+              <h2 style="color:white">Requests</h2>
 
                 <% @pending_requests.each do |request|  %>
                   <h3 style="color:white"><%= request.user.first_name %> wants to join</h3>
@@ -77,17 +174,33 @@
                   <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
                 <% end %>
 
+              <h2 style="color:white"> Ballers</h2>
 
-              <h2 style="color:white">You are the host of this event.</h2>
-              <%# ACCEPTED PLAYERS: @players = User.includes(:join_requests).where(join_requests: { event: @event, status: "accepted" })%>
-              <%#= @players iteration to show each player%>
+                <% @event.attendees.each do |request|  %>
+                <h5 style="color:white"><%= request.user.first_name %></h5>
+                <% end %>
+
+              <%#= code for when capacity full %>
+            <% elsif @event.attendees.count == @event.capacity %>
+              <p style="color:white">This event is full</p>
+
             <% elsif JoinRequest.find_by(user: current_user, event: @event).nil? %>
               <%= link_to 'Join', new_event_join_request_path(@event), class:"joineventbtn mt-4 mb-3" %>
+
+              <%# other ballers that joined this event: %>
+
+              <h2 style="color:white"> Other Ballers</h2>
+
+              <% @event.attendees.each do |request|  %>
+                <h5 style="color:white"><%= request.user.first_name %></h5>
+                <% end %>
+
             <% else %>
-              <p style="color:white">You cannot join this event twice</p>
+              <p style="color:white">Your request is pending</p>
             <% end %>
         </div>
-        <div class="col-12">
+
+       <div class="col-12">
             <p style="color:white"><%= notice %></p>
             <p style="color:white"><%= link_to 'Back', events_path %> |
             <% if @event.user == current_user %>
@@ -95,15 +208,15 @@
               <%= link_to 'Delete this event', event_path(@event), method: :delete,  data: { confirm: 'Are you sure you want to delete this event?' }  %>
             <% end %></p>
         </div>
+
         <div class="col-12">
-      <h1 style="color:white; z-index: 1001;" class="chatbutton">Chat</h1>
+
+      <% if @event.join_requests.where(status: 1).any? || @event.user == current_user %>
+        <h1 style="color:white; z-index: 1001;" class="chatbutton">Chat</h1>
+      <% end %>
 
         </div>
-      </div> <!--- Container Close --->
+      </div>
 
 
-
-
-
-    </div> <!--- Centering Wrapper --->
-</div> <!--- Background Image --->
+    </div>

@@ -1,14 +1,28 @@
-<div class="container">
-  <h1 class="mb-5" style="color:black">Create a sporty event</h1>
-    <%= simple_form_for @event do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category, :collection => %w[Basketball Tennis Soccer] %>
-    <%= f.input :description %>
-    <%= f.input :capacity %>
-    <%= f.input :location %>
-    <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport]%>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
-    <%= f.submit class: 'btn btn-primary mt-3' %>
-    <% end %>
+<div class="bgEventNew">
+  <div class="vantaBG"></div>
+  <%= render "shared/navbar_home" %>
+
+  <div class="container">
+
+    <h1 class="mb-5" style="color:black">Create a sporty event</h1>
+      <%= simple_form_for @event do |f| %>
+      <%= f.input :name %>
+
+      <%= f.input :category, :collection => %w[Basketball Tennis Soccer] %>
+
+      <%= f.input :description %>
+
+      <%= f.input :capacity %>
+
+      <%= f.input :location %>
+
+      <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport]%>
+      <%= f.input :start_time %>
+
+      <%= f.input :end_time %>
+
+      <%= f.submit class: 'homebutton mt-5' %>
+      <% end %>
+  </div>
+
 </div>
