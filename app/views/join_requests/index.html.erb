@@ -4,38 +4,65 @@
 
 
 <div class="col-12">
-<h1 style="color:white">Hey
-<% if current_user %>
-  <%= current_user.first_name %>
-<%end%>, <h1 style="color:white"><br>GAMES 🏓 </h1>
+  <h1 style="color:white">Hey
+  <% if current_user %>
+    <%= current_user.first_name %>
+  <%end%>, <h1 style="color:white"><br>GAMES 🏓 </h1>
 
-
-<% @events.each do |request|  %>
-<div style = "display: flex; align-items: center;" class = "request_card <%=request.category%>" >
-  <h3 style="color:white"><%= request.name %></h3>
-  <p style="color:white;margin-bottom:0;">It's time for <i><%= request.category %></p>
-  <p style="color:white;margin-bottom:0;">Where?⛳️ <%= request.location %></p>
-  <p style="color:white;margin-bottom:0;">When?⏱ <%= request.start_time %></p>
+<h2 style="color:white">Upcoming events</h2>
+<% @upcoming_events.each do |event|  %>
+<div style = "display: flex; align-items: center;" class = "request_card <%=event.category%>" >
+  <h3 style="color:white"><%= event.name %></h3>
+  <p style="color:white;margin-bottom:0;">It's time for <i><%= event.category %></p>
+  <p style="color:white;margin-bottom:0;">Where?⛳️ <%= event.location %></p>
+  <p style="color:white;margin-bottom:0;">When?⏱ <%= event.start_time %></p>
   <p style="color:white">
-  <%if request.user == current_user %>
+  <%if event.user == current_user %>
     <h5 style="color:white;">You are the <strong> host </strong> of this event! Get ready for some sporty activity!</h5>
   <%else %>
-    <h5 style="color:white">Your host is 🤠: <%= request.user.first_name %></h5>
+    <h5 style="color:white">Your host is 🤠: <%= event.user.first_name %></h5>
   <%end %>
   </div>
 <% end %>
 
+<h2 style="color:white">Past events</h2>
+<% @past_events.each do |event|  %>
+<div style = "display: flex; align-items: center;" class = "request_card <%=event.category%>" >
+  <h3 style="color:white"><%= event.name %></h3>
+  <p style="color:white;margin-bottom:0;">It's time for <i><%= event.category %></p>
+  <p style="color:white;margin-bottom:0;">Where?⛳️ <%= event.location %></p>
+  <p style="color:white;margin-bottom:0;">When?⏱ <%= event.start_time %></p>
+  <p style="color:white">
+  <%if event.user == current_user %>
+    <h5 style="color:white;">You are the <strong> host </strong> of this event! Get ready for some sporty activity!</h5>
+  <%else %>
 
-<h3>pending requests</h3>
-
-<% @pending_requests.each do |request|  %>
-  <h3 style="color:white"><%= request.user.first_name %> wants to join</h3>
-  <h5 style="color:white">this event you created: <%= request.event.name %>!</h5>
-  <%= link_to "(see event in detail)", event_path(request.event), style: "color:white;" %>
-  <%= link_to "(accept ✅)", accept_join_request_path(request), method: :patch, style: "color:white;" %>
-  <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
+    <h5 style="color:white">Your host is 🤠: <%= event.user.first_name %></h5>
+  <%end %>
+  <button type="button" class="btn btn-primary monday" data-toggle="modal" data-target="#reviewModal">Review</button>
+  </div>
+  <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reviewModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <#%= render "reviews/review_partial", event: event%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>
+</div>
 </div>
 </div>
 </div>

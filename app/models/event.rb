@@ -7,6 +7,10 @@ class Event < ApplicationRecord
 
   after_create :initialize_chat
 
+  def participants
+    User.includes(:join_requests).where(join_requests: {event: self, status: "accepted"})
+  end
+
   private
 
   def initialize_chat

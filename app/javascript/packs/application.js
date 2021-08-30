@@ -31,7 +31,8 @@ import "animate.css"
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { canvas } from '../pages/home';
-import { showChatBox } from '../pages/show'
+import { showChatBox } from '../pages/show';
+
 
 
 
@@ -41,6 +42,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initChatroomCable();
-  canvas()
-  showChatBox()
+  canvas();
+  showChatBox();
+
+
 });
