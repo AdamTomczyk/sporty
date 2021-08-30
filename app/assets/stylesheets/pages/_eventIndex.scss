@@ -8,23 +8,52 @@
 }
 
 .event_card {
-  padding: 10px;
+  background-color: #232631;
+  padding: 20px;
   border-radius: 5px;
   margin-bottom: 25px;
 }
 
-.event_card.Tennis {
+.event_card.Tennis:hover {
   background: linear-gradient(45deg, #5FE1EB, #B4EC93);
+  box-shadow: 0px 0px 5px 0px #B4EC93;
 }
 
-.event_card.Basketball {
+.event_card.Basketball:hover {
   background: linear-gradient(45deg, #FEB09E, #F953D4);
+  box-shadow: 0px 0px 5px 0px #F953D4;
 }
 
-.event_card.Soccer {
+.event_card.Soccer:hover {
   background: linear-gradient(45deg, #CA7CFF, #5414D7);
+  box-shadow: 0px 0px 5px 0px #CA7CFF;
 }
 
 #map {
   height: 100vh;
+}
+
+.card-button {
+  border: solid white 1px;
+  border-radius: 5px;
+  padding: 3px 15px;
+  margin-right: 10px;
+}
+
+.card-button.Soccer:hover {
+  background-color: white;
+  color: #5414D7;
+  box-shadow: 0px 0px 3px 0px snow;
+}
+
+.card-button.Basketball:hover {
+  background-color: white;
+  color: #F953D4;
+  box-shadow: 0px 0px 3px 0px snow;
+}
+
+.card-button.Tennis:hover {
+  background-color: white;
+  color: #5FE1EB;
+  box-shadow: 0px 0px 3px 0px snow;
 }

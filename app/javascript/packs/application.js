@@ -36,6 +36,16 @@ import { initWeatherApi } from '../plugins/init_weather_api';
 
 
 
+function transition () {
+  const cards = document.querySelectorAll(".event_card")
+
+  cards.forEach((element) => {
+    element.addEventListener("click", () => {
+      element.classList.toggle("Tennis")
+    })
+  })
+}
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
