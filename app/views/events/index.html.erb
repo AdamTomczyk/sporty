@@ -20,12 +20,15 @@
 
               <div>
 
-                <p><%= event.attendees.count %> attending </p>
+                <p><%= event.attendees.count+1%> attending </p>
                 <p style = "margin-bottom: 0px;">🗓 <%= event.start_time.strftime("%d of %B, %Y") %></p>
                 <p style = "margin-bottom: 0px;">⏰ <%= event.start_time.strftime("%I:%M %p") %></p>
                 <p>📍 <%= event.location %></p>
                 <% if event.join_requests.find_by(user: current_user, event: event).nil? && event.user != current_user && event.attendees.count != event.capacity%>
                   <%= link_to 'Join', new_event_join_request_path(event), class:"joineventbtn mt-4 mb-3" %>
+
+                <% else event.attendees.count == event.capacity %>
+                  <p> full</p> <!-- Full Button comes here -->
                 <% end %>
 
               </div>
