@@ -22,8 +22,8 @@
   <%else %>
     <h5 style="color:white">Your host is 🤠: <%= event.user.first_name %></h5>
   <%end %>
-  </div>
 <% end %>
+</div>
 
 <h2 style="color:white">Past events</h2>
 <% @past_events.each do |event|  %>
@@ -38,7 +38,7 @@
   <%else %>
 
     <h5 style="color:white">Your host is 🤠: <%= event.user.first_name %></h5>
-  <%end %>
+  <%end%>
   <button type="button" class="btn btn-primary monday" data-toggle="modal" data-target="#reviewModal">Review</button>
   </div>
   <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
@@ -59,9 +59,8 @@
       </div>
     </div>
   </div>
+  <% end %>
 </div>
-
-<% end %>
 </div>
 </div>
 </div>
