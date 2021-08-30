@@ -1,1 +1,4 @@
 <%= render "chatroom", coming_ajax: params[:coming_ajax] %>
+
+<%# API bit for weather, insert into code where weather will be dsiplayed %>
+<div id="weather" data-lon="<%= @event.longitude %>" data-lat="<%= @event.latitude %>"></div>
