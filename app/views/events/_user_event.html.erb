@@ -1,0 +1,19 @@
+
+  <%#= code for when capacity full %>
+<% if @event.attendees.count == @event.capacity %>
+  <p style="color:white">This event is full</p>
+
+<% elsif JoinRequest.find_by(user: current_user, event: @event).nil? %>
+  <%= link_to 'Join', new_event_join_request_path(@event), class:"joineventbtn mt-4 mb-3" %>
+
+  <%# other ballers that joined this event: %>
+
+  <h2 style="color:white"> Other Ballers</h2>
+
+  <% @event.attendees.each do |request|  %>
+    <h5 style="color:white"><%= request.user.first_name %></h5>
+    <% end %>
+
+<% else %>
+  <p style="color:white">Your request is pending</p>
+<% end %>

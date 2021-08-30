@@ -79,6 +79,11 @@
       <div class="row">
         <div class="col-12">
           <h2 style="color:#323238">Other Players</h2>
+          <% if @event.user == current_user %>
+            <%= render "host_event" %>
+          <% else %>
+           <%= render "user_event" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -153,9 +158,9 @@
 
             <% if @event.user == current_user %>
 
-            <h2 style="color:white">You are the host of this event.</h2>
-            <%# if user is the host, they should see all the pending requests and accept or reject them. Once accepted,
-            user should be able to see all the users %>
+              <h2 style="color:white">You are the host of this event.</h2>
+              <%# if user is the host, they should see all the pending requests and accept or reject them. Once accepted,
+              user should be able to see all the users %>
               <%@my_events = current_user.events # returns collection of my events
                 @pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending") %>
 
