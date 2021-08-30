@@ -63,15 +63,18 @@
         </div> <!--- Col 12 Close --->
 
         <div class="col-12">
-          <h4 style="font-weight:lighter; color:white; line-height:35px">Sport pertains to any form of competitive physical activity or game that aims to use, maintain or improve physical ability and skills while providing enjoyment to participants and, in some cases, entertainment to spectators. Sports can, through casual or organized participation, improve one's physical health. Hundreds of sports exist, from those between single contestants, through to those with hundreds of simultaneous participants, either in teams or competing as individuals. </h4>
-
+          <h4 style="font-weight:lighter; color:white; line-height:35px"> <%= @event.description %> </h4>
+          <%# Sport pertains to any form of competitive physical activity or game that aims to use, maintain or improve physical ability and skills while providing enjoyment to participants and, in some cases, entertainment to spectators. Sports can, through casual or organized participation, improve one's physical health. Hundreds of sports exist, from those between single contestants, through to those with hundreds of simultaneous participants, either in teams or competing as individuals. %>
 
             <% if @event.user == current_user %>
+
+            <h2 style="color:white">You are the host of this event.</h2>
             <%# if user is the host, they should see all the pending requests and accept or reject them. Once accepted,
             user should be able to see all the users %>
               <%@my_events = current_user.events # returns collection of my events
                 @pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending") %>
 
+              <h2 style="color:white">Requests</h2>
 
                 <% @pending_requests.each do |request|  %>
                   <h3 style="color:white"><%= request.user.first_name %> wants to join</h3>
@@ -81,14 +84,29 @@
                   <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
                 <% end %>
 
+              <h2 style="color:white"> Ballers</h2>
 
-              <h2 style="color:white">You are the host of this event.</h2>
-              <%# ACCEPTED PLAYERS: @players = User.includes(:join_requests).where(join_requests: { event: @event, status: "accepted" })%>
-              <%#= @players iteration to show each player%>
+                <% @event.attendees.each do |request|  %>
+                <h5 style="color:white"><%= request.user.first_name %></h5>
+                <% end %>
+
+              <%#= code for when capacity full %>
+            <% elsif @event.attendees.count == @event.capacity %>
+              <p style="color:white">This event is full</p>
+
             <% elsif JoinRequest.find_by(user: current_user, event: @event).nil? %>
               <%= link_to 'Join', new_event_join_request_path(@event), class:"joineventbtn mt-4 mb-3" %>
+
+              <%# other ballers that joined this event: %>
+
+              <h2 style="color:white"> Other Ballers</h2>
+
+              <% @event.attendees.each do |request|  %>
+                <h5 style="color:white"><%= request.user.first_name %></h5>
+                <% end %>
+
             <% else %>
-              <p style="color:white">You cannot join this event twice</p>
+              <p style="color:white">Your request is pending</p>
             <% end %>
         </div>
 
