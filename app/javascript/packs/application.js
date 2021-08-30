@@ -31,8 +31,10 @@ import "animate.css"
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { canvas } from '../pages/home';
+
 import { showChatBox } from '../pages/show'
 import { initWeatherApi } from '../plugins/init_weather_api';
+
 
 
 
@@ -54,5 +56,10 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   canvas();
   showChatBox();
+
+
+
+
   initWeatherApi();
+
 });
