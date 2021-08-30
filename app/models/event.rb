@@ -10,6 +10,7 @@ class Event < ApplicationRecord
 
   def participants
     User.includes(:join_requests).where(join_requests: {event: self, status: "accepted"})
+  end
 
   def attendees
     # returns accepted people
