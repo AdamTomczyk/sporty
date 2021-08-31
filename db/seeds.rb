@@ -12,19 +12,45 @@ Event.destroy_all
 
 user_1 = User.create!(
   email: "test@joinsporty.com",
-  first_name: "test",
-  last_name: "test",
+  first_name: "Dirk",
+  last_name: "Nowitzki",
   password: "123456"
 )
 
 user_2 = User.create!(
   email: "may@may.com",
-  first_name: "may",
-  last_name: "dang",
+  first_name: "May",
+  last_name: "Dang",
   password: "123456"
 )
 
-# 01
+user_3 = User.create!(
+  email: "marius@marius.com",
+  first_name: "Marius",
+  last_name: "Hepp",
+  password: "123456"
+)
+
+user_4 = User.create!(
+  email: "aija@aija.com",
+  first_name: "Aija",
+  last_name: "Mezapuke",
+  password: "123456"
+)
+
+user_5 = User.create!(
+  email: "adam@adam.com",
+  first_name: "Adam",
+  last_name: "Tomczyk",
+  password: "123456"
+)
+
+user_6 = User.create!(
+  email: "lebron@lebron.com",
+  first_name: "Lebron",
+  last_name: "James",
+  password: "123456"
+)
 
 Event.create!(
   name: "Test Event 01",
@@ -65,7 +91,7 @@ Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/03/2021 17:00"),
   end_time: DateTime.parse("09/03/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_3.id,
   availability: true
 )
 
@@ -80,7 +106,7 @@ Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/04/2021 17:00"),
   end_time: DateTime.parse("09/04/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_5.id,
   availability: true
 )
 
@@ -140,7 +166,7 @@ Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/08/2021 17:00"),
   end_time: DateTime.parse("09/08/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_2.id,
   availability: true
 )
 
@@ -216,5 +242,21 @@ Event.create!(
   start_time: DateTime.parse("09/12/2021 17:00"),
   end_time: DateTime.parse("09/12/2021 21:00"),
   user_id: user_2.id,
+  availability: true
+)
+
+
+  # 14
+
+    Event.create!(
+  name: "BALL IS LIFE. 5 VS 5",
+  capacity: 10,
+  description: "If you too are a baller, it's time to unite. Meet up at Görlitzer Park. Bring your fav snack and drinks and get ready to get your ass whopped 😁",
+  category: "Basketball",
+  location: "Kreuzberg, Berlin",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("09/12/2021 17:00"),
+  end_time: DateTime.parse("10/12/2021 21:00"),
+  user_id: user_3.id,
   availability: true
 )
