@@ -1,27 +1,13 @@
-
-<h1>Hello!</h1>
-<% if event.user %>
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-      <%= simple_form_for @reviewer do |f| %>
-        <%= f.input :content %>
-        <%= f.input :score, collection: (1..5).to_a, label: "Rate your experience" %>
+      <%# raise %>
+      <%= simple_form_for(@review, url: reviews_path) do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :score, collection: %w[🧨 🧨🧨 🧨🧨🧨 🧨🧨🧨🧨 🧨🧨🧨🧨🧨], label: "Rate your experience" %>
+        <%= f.input :event_id, as: :hidden, input_html: {value: event_id} %>
         <%= f.submit "Send" %>
       <% end %>
     </div>
   </div>
 </div>
-<%else%>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4">
-      <%= simple_form_for @reviewee do |f| %>
-        <%= f.input :content %>
-        <%= f.input :score, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.submit "Send" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<%end%>
