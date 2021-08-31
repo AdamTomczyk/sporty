@@ -44,7 +44,7 @@ const updateCard = (data) => {
 
   console.log(data.weather[0].description);
   const currentContainer = document.getElementById('weather-container');
-  currentContainer.innerHTML = `${data.main.temp}°, ${upcase(data.weather[0].description)} `;
+  currentContainer.innerHTML = `${data.main.temp.toFixed(1)}°, ${upcase(data.weather[0].description)} `;
 
 }
 
