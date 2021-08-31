@@ -1,8 +1,10 @@
 class JoinRequestsController < ApplicationController
 
   def index
+
     #@outgoing_requests = JoinRequest.where(user: current_user) # bookings i made
     #@pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending")
+
 
     events = Event.includes(:join_requests).where(join_requests: { user: current_user, status: "accepted" || "pending"}).or(Event.where(user: current_user)).order(start_time: :desc)
     sorted_events = events.partition do |event|
@@ -13,8 +15,9 @@ class JoinRequestsController < ApplicationController
 
     @upcoming_events = sorted_events[0]
     @past_events = sorted_events[1]
+
     # @pending_requests = Join.Request.where(event_id:...).where(status:"pending")
-    #@requests = JoinRequest.all
+    # @requests = JoinRequest.all
     #ALL EVENTS THAT WILL HAPPEN:
 
     # all accepted requests
@@ -30,7 +33,6 @@ class JoinRequestsController < ApplicationController
   end
 
   def new
-    # we need @brain in our `simple_form_for`
     @event = Event.find(params[:event_id])
     @join_request = JoinRequest.new
   end
