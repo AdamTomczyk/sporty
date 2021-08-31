@@ -1,13 +1,25 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-      <%# raise %>
-      <%= simple_form_for(@review, url: reviews_path) do |f| %>
-        <%= f.input :comment %>
-        <%= f.input :score, collection: %w[🧨 🧨🧨 🧨🧨🧨 🧨🧨🧨🧨 🧨🧨🧨🧨🧨], label: "Rate your experience" %>
-        <%= f.input :event_id, as: :hidden, input_html: {value: event_id} %>
-        <%= f.submit "Send" %>
-      <% end %>
+      <% if event.user == current_user %>
+        <% event.participants.each do |participant| %>
+            <%= simple_form_for([event, @review]) do |f| %>
+              <%= f.input :comment %>
+              <%= f.input :reviewer_id, as: :hidden, value: current_user.id %>
+              <%= f.input :reviewee_id, as: :hidden, value: participant.id %>
+              <%= f.input :score, collection: %w[🧨 🧨🧨 🧨🧨🧨 🧨🧨🧨🧨 🧨🧨🧨🧨🧨], label: "Rate your experience" %>
+              <%= f.submit "Send" %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= simple_form_for([event, @review]) do |f| %>
+            <%= f.input :comment %>
+            <%= f.input :reviewer_id, as: :hidden, value: current_user.id %>
+            <%= f.input :reviewee_id, as: :hidden, value: event.user.id %>
+            <%= f.input :score, collection: %w[🧨 🧨🧨 🧨🧨🧨 🧨🧨🧨🧨 🧨🧨🧨🧨🧨], label: "Rate your experience" %>
+            <%= f.submit "Send" %>
+          <% end %>
+       <% end %>
     </div>
   </div>
 </div>
