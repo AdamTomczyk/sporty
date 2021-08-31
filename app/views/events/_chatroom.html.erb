@@ -69,7 +69,7 @@
             <div class="col-12 mt-5">
               <div class="headline">
                 <span class="circle"></span>
-                <h1 class="ml-3" style="color:white">Basketball 2 v 2</h1>
+                <h1 class="ml-3" style="color:white"><%= @event.name %></h1>
                 <% if @event.user == current_user %>
                     <div class="approved"><p style="font-weight:bold">Host</p></div>
                      <% elsif @event.join_requests.where(status: 1).any? %>
@@ -92,7 +92,7 @@
     <div class="container mt-4">
       <div class="d-flex align-items-center row">
         <div class="col-7">
-          <h5 style="color:#5E5C69;line-height:30px;font-weight:lighter;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </h5>
+          <h5 style="color:#5E5C69;line-height:30px;font-weight:lighter;"><%= @event.description %></h5>
         </div>
         <div class="col-2"></div>
         <div class="col-2">
