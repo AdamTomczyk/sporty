@@ -1,4 +1,4 @@
-
+<%= render "shared/navbar" %>
 <h1>JOIN</h1>
 <%= simple_form_for [ @event, @join_request ] do |f| %>
   <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport], label: "What's your skill-level?" %>
