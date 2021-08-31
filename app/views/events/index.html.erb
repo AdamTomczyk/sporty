@@ -21,7 +21,11 @@
                 <p style = "margin-bottom: 0px; font-weight: bold;"> <%=event.category%> at <%= event.location.chomp(", Berlin") %></p>
                 <p style = "font-size: 10pt; font-style: italic;"> <%= event.start_time.strftime("%m/%d/%Y at %I:%M%p") %></p>
                 <div style="display: flex; justify-content: flex-start; align-items: center">
-                  <a class="card-button <%=event.category%>" href="#"> Join us </a>
+                  <!--<a class="card-button <%=event.category%>" href=""> Join us </a>-->
+                  <%# raise if event.id == 2 %>
+                  <% if event.join_requests.find_by(user: current_user, event: event).nil? && event.user != current_user && event.attendees.count != event.capacity%>
+                    <%= link_to 'Join us', new_event_join_request_path(event), class: "card-button #{event.category}" %>
+                  <% end %>
                 </div>
               </div>
 
