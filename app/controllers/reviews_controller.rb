@@ -1,27 +1,23 @@
 class ReviewsController < ApplicationController
-  resources :reviews, only: [:create]
 
   def create
     @review = Review.new(review_params)
-    @review.user = current_user
+    @review.reviewer = current_user
+    @review.event = Event.find(params[:review][:event_id])
+    @review.reviewee = @review.event.user
     if @review.save
-      redirect_to new_review_path
+      redirect_to event_path(@review.event)
     else
       flash[:alert] = "Try again."
-      render :new
     end
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:content, :score)
+    params.require(:review).permit(:comment, :score)
   end
 end
-
-# Form Should go in the MODAL What is Modal?!!!!
-# Modal pops up once the event has taken the place.
-
 
 #def startCal (amountOfGames, actualrating)
   #TotalGames = amountOfGames * 5;

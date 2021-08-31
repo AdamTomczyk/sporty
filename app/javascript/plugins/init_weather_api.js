@@ -11,9 +11,41 @@ const fetchWeatherByCoordinates = (coordinates) => {
 };
 
 const updateCard = (data) => {
-  console.log(data.main);
+
+  function upcase(string) {
+
+
+    if (string.indexOf(' ') >= 0) {
+
+      const strToArray = string.split("")
+
+      let firstTarget = 0;
+      let secondTarget = 0;
+
+      for (let i = 0; i < string.length; i++) {
+        if (string[i] === " ") {
+          console.log("This is a call from the for loop", i)
+          secondTarget = i;
+        } else {
+
+        }
+      }
+
+      strToArray[firstTarget] = strToArray[firstTarget].toUpperCase();
+      strToArray[secondTarget + 1] = strToArray[secondTarget + 1].toUpperCase();
+
+      return strToArray.join("")
+    }
+    else {
+      return string[0].toUpperCase() + string.substring(1)
+    }
+  }
+
+
+  console.log(data.weather[0].description);
   const currentContainer = document.getElementById('weather-container');
-  currentContainer.innerHTML = `${data.main.temp}°C`;
+  currentContainer.innerHTML = `${data.main.temp.toFixed(1)}° ${upcase(data.weather[0].description)}`;
+
 }
 
 const initWeatherApi = () => {

@@ -1,22 +1,56 @@
-  <h2 style="color:white">You are the host of this event.</h2>
+
   <%# if user is the host, they should see all the pending requests and accept or reject them. Once accepted,
   user should be able to see all the users %>
+
+
+  <%#  link_to "(see event in detail)", event_path(request.event), style: "color:white;" %>
+
+
   <%@my_events = current_user.events # returns collection of my events
     @pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending") %>
 
-  <h2 style="color:white">Requests</h2>
+  <h2 class="mb-4" style="color:#323238">Player Requests</h2>
+
+  <div class="requests">
 
     <% @pending_requests.each do |request|  %>
-      <h3 style="color:white"><%= request.user.first_name %> wants to join</h3>
-      <h5 style="color:white">this event you created: <%= request.event.name %>!</h5>
-      <%= link_to "(see event in detail)", event_path(request.event), style: "color:white;" %>
-      <%= link_to "(accept ✅)", accept_join_request_path(request), method: :patch, style: "color:white;" %>
-      <%= link_to "(reject ❌)", reject_join_request_path(request), method: :patch, style: "color:white;" %> <%#= by default link is get request, need to make this patch %>
+    <div class="userProfileShow mr-5">
+        <div>
+         <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625207249/pjzvzmkcapu1euporrej.jpg", class:"mr-4"%>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+           <p class="" style="color:white;margin:0;padding:0;"><%= request.user.first_name.capitalize %></p>
+           <p class="" style="color:white"><span style="color:#7EF097;">73%</span> Reliability</p>
+        </div>
+    </div>
+
+
+      <div class="ml-5" style="display:flex; align-items:center;">
+      <%= link_to "Accept", accept_join_request_path(request), method: :patch, style: "color:#141316;", class:"acceptbtn mr-5" %>
+      <%= link_to "Reject", reject_join_request_path(request), method: :patch, style: "color:#141316;",  class:"rejectbtn mr-5" %> <%#= by default link is get request, need to make this patch %>
+      </div>
     <% end %>
 
-  <h2 style="color:white"> Ballers</h2>
+  </div>
 
-<%# add button %>
-    <% @event.attendees.each do |request|  %>
-    <h5 style="color:white"><%= request.user.first_name%> accepted </h5>
+
+
+<h2 class="accordion mt-4" style="color:#323238">Accepted Players <span style="position:relative;top:10px">&#x2935;</span></h2>
+<div class="panel">
+  <% @event.attendees.each do |request|  %>
+           <div class="mt-1" style="display:flex;align-items:center;">
+            <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625207249/pjzvzmkcapu1euporrej.jpg", style:"width:40px; border-radius:50%;", class:"mr-4"%>
+           <p style="position:relative;top:5px;"><%= request.user.first_name.capitalize %> <span style="color:#141316;padding-left:5px;padding-right:5px;background:#7ef097;border-radius:10px;margin-left:10px">Accepted</span></p>
+        </div>
+
+         <div class="mt-2" style="display:flex;align-items:center;">
+            <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625207249/pjzvzmkcapu1euporrej.jpg", style:"width:40px; border-radius:50%;", class:"mr-4"%>
+           <p style="position:relative;top:5px;"><%= request.user.first_name.capitalize %> <span style="color:#141316;padding-left:5px;padding-right:5px;background:#7ef097;border-radius:10px;margin-left:10px">Accepted</span></p>
+        </div>
+
+         <div class="mt-2" style="display:flex;align-items:center;">
+            <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625207249/pjzvzmkcapu1euporrej.jpg", style:"width:40px; border-radius:50%;", class:"mr-4"%>
+           <p style="position:relative;top:5px;"><%= request.user.first_name.capitalize %> <span style="color:#141316;padding-left:5px;padding-right:5px;background:#7ef097;border-radius:10px;margin-left:10px">Accepted</span></p>
+        </div>
     <% end %>
+</div>
