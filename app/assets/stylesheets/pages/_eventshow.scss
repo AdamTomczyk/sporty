@@ -1,3 +1,70 @@
+
+ // That is for the event join post form
+.wrapperJoin{
+  width: 100vw;
+  height: 100vh;
+  background-image: asset-url('basketball_game.jpg');
+   background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+ .bgjoinEvent{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.9;
+  }
+
+#join_request_skill_level{
+ background-color: transparent;
+  border:1px solid transparent;
+  color: white;
+  border-radius: 2px;
+  transition: none;
+  padding: 0px;
+  width: 32%;
+}
+
+.positionWrapper{
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+
+
+.joineventbrn{
+            padding: 10px 45px;
+            text-align: center;
+            border: none;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 5px 80px rgba(200, 179, 221, 0.8);
+            font-size: 1.4rem;
+            background-image: linear-gradient(to right, #7769fe 0%, #bb61ec  51%, #7769fe  100%)
+    }
+
+
+
+  .joineventbrn:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+   }
+
+// Event Show
+
 .imageEvent {
   width: 100%;
   height: 40vh;
@@ -92,6 +159,10 @@
     font-size: 10px;
     font-size: bold;
   }
+}
+
+.playerRequests {
+  background-color: transparent;
 }
 
 .requests {
