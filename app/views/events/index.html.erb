@@ -4,6 +4,12 @@
     <div style = "margin: 40px 0px;">
       <h1>Hey sporty! Up for an event in your neighbourhood?</h1>
       <p><%= link_to "Create your own event", new_event_path %></p>
+
+      <div> <%= form_tag events_path, method: :get do %>
+      <%= select_tag(:query, options_for_select(Event::CATEGORY, params[:query]))  %>
+      <%= submit_tag "Select", class: "btn btn-link" %>
+    <% end %>
+  </div>
     </div>
 
     <div class="col-sm-5" id="main">
