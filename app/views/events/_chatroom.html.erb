@@ -4,12 +4,12 @@
       <div class="row">
       <div class="col-8" style="height:100vh;display:flex;flex-direction:column;justify-content:end;">
         <% @chatroom.messages.each do |message| %>
-          <%= render 'messages/message', message: message, placeholder: "Create a message" %>
+          <%= render 'messages/message', message: message %>
             <% end %>
 
           <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-            <%= f.input :content, label: false, placeholder: "Send a message" %>
-            <%= f.button :submit, 'Send', style:"color:white" %>
+            <%= f.input :content, label: false, placeholder: "Create a message..." %>
+            <%= f.button :submit, 'Send', style:"color:white", class:"sendbtn ml-4" %>
           <% end %>
         </div>
         <div class="col-1"></div>

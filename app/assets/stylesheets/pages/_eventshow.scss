@@ -246,7 +246,7 @@ padding-right: 20px;
   color: white;
   border-radius: 2px;
   transition: none;
-  padding: 17px;
+  padding: 4px;
   border-radius: 10px;
 }
 
@@ -281,4 +281,30 @@ padding-right: 20px;
     display: flex;
 flex-direction: column;
 justify-content: end;
+  }
+
+#new_message{
+  display: flex;
+  align-items: center;
+}
+
+ .message_content{
+    width: 100%;
+
+    .btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  }
+
+
+
+  .sendbtn{
+    background-color: #9657D4;
+    height: 20px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+
   }
