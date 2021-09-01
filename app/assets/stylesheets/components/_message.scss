@@ -1,0 +1,33 @@
+.message-author-current-user{
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+
+  p {
+    display: inline-block;
+    background-color: #6C08EC;
+    border-radius: 10px;
+
+    padding: 10px;
+    color: white;
+    margin-right: 20px;
+  }
+
+
+}
+
+.message-author-other-user{
+    margin-bottom: 10px;
+  p {
+     display: inline-block;
+    background-color: #2f2f2fb3;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+     margin-left: 20px;
+  }
+}
+
+.message-author-current-user{
+
+}
