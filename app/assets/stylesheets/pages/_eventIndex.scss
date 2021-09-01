@@ -57,3 +57,35 @@
   color: #5FE1EB;
   box-shadow: 0px 0px 3px 0px snow;
 }
+
+.card_sketch {
+  border-radius: 50%;
+  width: 65px;
+  padding: 10px;
+  margin-right: 25px;
+  margin-left: 10px;
+}
+
+.card_sketch.Soccer {
+  background: linear-gradient(45deg, #CA7CFF, #5414D7);
+}
+
+.card_sketch.Basketball {
+  background: linear-gradient(45deg, #FEB09E, #F953D4);
+}
+
+.card_sketch.Tennis {
+  background: linear-gradient(45deg, #5FE1EB, #B4EC93);
+}
+
+.event_card:hover .card_sketch.Soccer {
+  background: none;
+}
+
+.event_card:hover .card_sketch.Basketball {
+  background: none;
+}
+
+.event_card:hover .card_sketch.Tennis {
+  background: none;
+}
