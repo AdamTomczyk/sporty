@@ -1,7 +1,9 @@
-<div class="message-container" id="message-<%= message.id %>">
+<div class="message-container <%= current_user == message.user ? 'message-author-current-user': 'message-author-other-user' %>" id="message-<%= message.id %>">
     <i class="author">
-        <span><%= message.user.first_name %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+
+       <img class="avatar" src="https://avatars.githubusercontent.com/u/78529684?v=4">
+        <%#=image_tag message.user.photo, class:"avatar"  %>
+
     </i>
   <p><%= message.content %></p>
 </div>

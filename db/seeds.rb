@@ -51,8 +51,9 @@ user_6 = User.create!(
   last_name: "James",
   password: "123456"
 )
+ # 01
 
-Event.create!(
+event_1 = Event.create!(
   name: "Ball is life. 5 vs 5",
   capacity: 5,
   description: "We are a group of 5 hardcore ballers and are looking for another 5 of whatever-type-you-are ballers.
@@ -69,7 +70,7 @@ Event.create!(
 
 # 02
 
-Event.create!(
+event_2 = Event.create!(
   name: "Soccer with the gang",
   capacity: 6,
   description: "We are a group of 6 and would like to meet another grouß of six for some soccer.
@@ -85,23 +86,23 @@ Event.create!(
 
 # 03
 
-Event.create!(
+event_3 = Event.create!(
   name: "Tennis",
   capacity: 1,
   description: "Looking for another person to join a tennis match. Let's play!",
   category: "Tennis",
   location: "Brandenburger Tor, Berlin",
   skill_level: "Beginner",
-  start_time: DateTime.parse("09/03/2021 17:00"),
-  end_time: DateTime.parse("09/03/2021 21:00"),
+  start_time: DateTime.parse("03/09/2021 17:00"),
+  end_time: DateTime.parse("03/09/2021 21:00"),
   user_id: user_3.id,
   availability: true
 )
 
 # 04
 
-Event.create!(
-  name: "50 people. Extreme Soccer. 25 vs 25",
+event_4 = Event.create!(
+  name: "Extreme Soccer. 25 vs 25",
   capacity: 23,
   description: "We are a group of 27 people in our prime. What better way to
   spend our youth than to do things you've never done before. What's one thing
@@ -119,8 +120,8 @@ Event.create!(
 
 # 05
 
-Event.create!(
-  name: "Tennis Newbie interested in learning more",
+event_5 = Event.create!(
+  name: "Tennis Newbie",
   capacity: 3,
   description: "Hey guys! I just started with Tennis and am interested in
   learning more. If you too are new into Tennis, are more an intermediate player
@@ -136,7 +137,7 @@ Event.create!(
 
 # 06
 
-Event.create!(
+event_6 = Event.create!(
   name: "Kobe 🏀",
   capacity: 10,
   description: "looking for more people to join us for this basketball game. If
@@ -152,7 +153,7 @@ Event.create!(
 
 # 07
 
-Event.create!(
+event_7 = Event.create!(
   name: "Soccer Season",
   capacity: 8,
   description: "You heard right – it's soccer season! Join us on a quest to play
@@ -168,7 +169,7 @@ Event.create!(
 
 # 08
 
-Event.create!(
+event_8 = Event.create!(
   name: "Tennis at Tempelhofer",
   capacity: 3,
   description: "We are looking for other Tennis players in the area interested
@@ -184,53 +185,53 @@ Event.create!(
 
 # 09
 
-Event.create!(
+event_9 = Event.create!(
   name: "We like Soccer. Amen.",
   capacity: 10,
   description: "Like the title says",
   category: "Soccer",
   location: "Monumentenstrasse, Berlin",
   skill_level: "Beginner",
-  start_time: DateTime.parse("09/09/2021 17:00"),
-  end_time: DateTime.parse("09/09/2021 21:00"),
+  start_time: DateTime.parse("10/10/2021 17:00"),
+  end_time: DateTime.parse("10/10/2021 21:00"),
   user_id: user_1.id,
   availability: true
 )
 
 # 10
 
-Event.create!(
-  name: "Berlin Basket looking for Berliner Basketball",
+event_10 = Event.create!(
+  name: "Berliner Basketball",
   capacity: 4,
   description: "It's time to play some ball. We are mostly playing it as a hobby,
   so if you are interested, you are free to join.",
   category: "Basketball",
   location: "Hauptbahnhof, Berlin",
   skill_level: "Beginner",
-  start_time: DateTime.parse("09/10/2021 17:00"),
-  end_time: DateTime.parse("09/10/2021 21:00"),
+  start_time: DateTime.parse("11/11/2021 17:00"),
+  end_time: DateTime.parse("11/11/2021 21:00"),
   user_id: user_1.id,
   availability: true
 )
 
 # 11
 
-Event.create!(
+event_11 = Event.create!(
   name: "Tennis 1 vs 1",
   capacity: 1,
   description: "Looking for one more person to join. Let's play some tennis in the afternoon!",
   category: "Tennis",
   location: "Zoologischer Garten, Berlin",
   skill_level: "Beginner",
-  start_time: DateTime.parse("09/11/2021 17:00"),
-  end_time: DateTime.parse("09/11/2021 21:00"),
+  start_time: DateTime.parse("12/12/2021 17:00"),
+  end_time: DateTime.parse("12/12/2021 21:00"),
   user_id: user_1.id,
   availability: true
 )
 
 # 12
 
-Event.create!(
+event_12 = Event.create!(
   name: "Soccer in Neukölln",
   capacity: 10,
   description: "Bring den Fußball",
@@ -243,9 +244,9 @@ Event.create!(
   availability: true
 )
 
-  #13
+  # 13
 
-  Event.create!(
+event_13 = Event.create!(
   name: "Soccer Game @ Neukölln brudi",
   capacity: 10,
   description: "We are a group of 3 guys interested in other players to play soccer with us.
@@ -259,24 +260,24 @@ Event.create!(
   availability: true
 )
 
-
   # 14
 
-  Event.create!(
+event_14 = Event.create!(
   name: "BALL IS LIFE. 5 VS 5",
   capacity: 10,
   description: "If you too are a baller, it's time to unite. Meet up at Görlitzer Park. Bring your fav snack and drinks and get ready to get your ass whopped 😁",
   category: "Basketball",
   location: "Kreuzberg, Berlin",
   skill_level: "I-breathe-this-sport",
-  start_time: DateTime.parse("09/12/2021 17:00"),
+  start_time: DateTime.parse("10/12/2021 17:00"),
   end_time: DateTime.parse("10/12/2021 21:00"),
   user_id: user_3.id,
   availability: true
   )
 
   # 15
-  Event.create!(
+
+event_15 = Event.create!(
   name: "Steglitz Ballers",
   capacity: 5,
   description: "Let's play some basketball",
@@ -287,4 +288,160 @@ Event.create!(
   end_time: DateTime.parse("07/07/2021 21:00"),
   user_id: user_2.id,
   availability: true
+)
+  # 16
+
+event_16 = Event.create!(
+  name: "Soccer is life",
+  capacity: 6,
+  description: "Let's score some balls! See you soccer lovers, lets catch some good vibes while enjoying our fav sports! 😁",
+  category: "Soccer",
+  location: "Spandau, Berlin",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("06/06/2021 13:00"),
+  end_time: DateTime.parse("06/06/2021 17:00"),
+  user_id: user_3.id,
+  availability: true
+  )
+
+  # 17
+
+event_17 = Event.create!(
+  name: "Let's play Tennis!",
+  capacity: 4,
+  description: "Let's score some balls! See you soccer lovers, lets catch some good vibes while enjoying our fav sports! 😁",
+  category: "Tennis",
+  location: "Mitte, Berlin",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("05/03/2021 13:00"),
+  end_time: DateTime.parse("05/03/2021 17:00"),
+  user_id: user_1.id,
+  availability: true
+  )
+
+  # 18
+
+event_18 = Event.create!(
+  name: "Tennis with Kobe!",
+  capacity: 4,
+  description: "I'm brand new to tennis, maybe will swap my careers! 😁",
+  category: "Tennis",
+  location: "Marzan, Berlin",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("04/03/2021 15:00"),
+  end_time: DateTime.parse("04/03/2021 18:00"),
+  user_id: user_6.id,
+  availability: true
+  )
+
+  # 19
+
+event_19 = Event.create!(
+  name: "Tennis with Adam no Eve!",
+  capacity: 4,
+  description: "I breath tennis, I dream about it, I love it! Tennis is life 😁",
+  category: "Tennis",
+  location: "Marzan, Berlin",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("05/05/2021 16:00"),
+  end_time: DateTime.parse("05/05/2021 18:00"),
+  user_id: user_5.id,
+  availability: true
+)
+
+    # 01
+
+join_request_1 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_1.id,
+  event_id: 3,
+  status: 1
+)
+    # 02
+
+join_request_2 = JoinRequest.create!(
+  skill_level: "Beginner",
+  user_id: user_2.id,
+  event_id: 2,
+  status: 1
+)
+    # 03
+
+join_request_3 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_3.id,
+  event_id: 1,
+  status: 1
+)
+    # 04
+
+join_request_4 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_5.id,
+  event_id: 14,
+  status: 1
+)
+    # 05
+
+join_request_5 = JoinRequest.create!(
+  skill_level: "Beginner",
+  user_id: user_2.id,
+  event_id: 10,
+  status: 0
+)
+    # 06
+
+join_request_6 = JoinRequest.create!(
+  skill_level: "Beginner",
+  user_id: user_3.id,
+  event_id:  11,
+  status: 1
+)
+    # 07
+
+join_request_7 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_2.id,
+  event_id: 6,
+  status: 0
+)
+    # 08
+
+join_request_8 = JoinRequest.create!(
+  skill_level: "Beginner",
+  user_id: user_1.id,
+  event_id: 17,
+  status: 1
+)
+    # 09
+
+join_request_9 = JoinRequest.create!(
+  skill_level: "Beginner",
+  user_id: user_1.id,
+  event_id: 15,
+  status: 0
+)
+    # 10
+
+join_request_10 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_4.id,
+  event_id: 5,
+  status: 1
+)
+    # 11
+
+join_request_11 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_4.id,
+  event_id: 8,
+  status: 1
+)
+     # 12
+
+join_request_12 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_3.id,
+  event_id: 16,
+  status: 1
 )

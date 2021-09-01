@@ -2,16 +2,110 @@
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 25px;
+  position: relative;
+  border-radius: 0.75rem !important;
+  transition-timing-function: ease-in-out;
+  transition: 1s;
 }
 
 .request_card.Tennis {
-  background: linear-gradient(45deg, #5FE1EB, #B4EC93);
+  background: linear-gradient(45deg, #5fe1eb, #b4ec93);
 }
 
 .request_card.Basketball {
-  background: linear-gradient(45deg, #FEB09E, #F953D4);
+  background: linear-gradient(45deg, #feb09e, #f953d4);
 }
 
 .request_card.Soccer {
-  background: linear-gradient(45deg, #CA7CFF, #5414D7);
+  background: linear-gradient(45deg, #ca7cff, #5414d7);
+}
+
+.games_card {
+  background: linear-gradient(45deg, #232631, #232631);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 25px 0px;
+  position: relative;
+  transition-timing-function: ease-in-out;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+
+.games_card:hover {
+  transform: scale(1.1);
+}
+
+.main-icon-game-card {
+  height: 38px;
+  width: 38px;
+  margin-bottom: 16px;
+}
+.game-card-title {
+  color: white;
+  font-size: 17px;
+}
+
+.event-description-container {
+  display: flex;
+}
+
+.index-event-icon {
+  height: 24px;
+  width: 24px;
+  margin-right: 16px;
+}
+
+.event-info {
+  color: #5E5C69;
+
+}
+
+.requests-status {
+  background-color: #e85aff;
+  border-radius: 10px;
+  position: absolute;
+  right: 20px;
+  padding: 3px 10px;
+  margin: 0;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin: 0;
+  }
+}
+
+.requests-accepted {
+  background-color: #7ef097;
+  border-radius: 10px;
+  position: absolute;
+  right: 20px;
+  padding: 3px 10px;
+  margin: 0;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin: 0;
+  }
+}
+
+.requests-pending {
+  background-color: #f0d97e;
+  border-radius: 10px;
+  position: absolute;
+  right: 20px;
+  padding: 3px 10px;
+  margin: 0;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin: 0;
+  }
 }

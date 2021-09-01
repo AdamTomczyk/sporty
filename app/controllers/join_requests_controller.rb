@@ -6,16 +6,14 @@ class JoinRequestsController < ApplicationController
     #@pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending")
 
 
-    events = Event.includes(:join_requests).where(join_requests: { user: current_user, status: "accepted" || "pending"}).or(Event.where(user: current_user)).order(start_time: :desc)
+    events = Event.includes(:join_requests).where(join_requests: { user: current_user, status: [ "accepted", "pending"] }).or(Event.where(user: current_user)).order(start_time: :desc)
     sorted_events = events.partition do |event|
-    DateTime.now < event.end_time
+      DateTime.now < event.end_time
     end
     @review = Review.new
 
-
     @upcoming_events = sorted_events[0]
     @past_events = sorted_events[1]
-
     # @pending_requests = Join.Request.where(event_id:...).where(status:"pending")
     # @requests = JoinRequest.all
     #ALL EVENTS THAT WILL HAPPEN:

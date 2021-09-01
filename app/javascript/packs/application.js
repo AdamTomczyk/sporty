@@ -36,7 +36,6 @@ import { showChatBox } from '../pages/chat'
 import { initWeatherApi } from '../plugins/init_weather_api';
 import {showAccordion} from '../pages/eventshow'
 
-
 // All animations will take half the time to accomplish
 document.documentElement.style.setProperty('--animate-delay', '.5s');
 
@@ -48,9 +47,5 @@ document.addEventListener('turbolinks:load', () => {
   canvas();
   showChatBox();
   showAccordion();
-
-
-
   initWeatherApi();
-
 });
