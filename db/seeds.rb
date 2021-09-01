@@ -92,8 +92,8 @@ Event.create!(
   category: "Tennis",
   location: "Brandenburger Tor, Berlin",
   skill_level: "Beginner",
-  start_time: DateTime.parse("09/03/2021 17:00"),
-  end_time: DateTime.parse("09/03/2021 21:00"),
+  start_time: DateTime.parse("03/09/2021 17:00"),
+  end_time: DateTime.parse("03/09/2021 21:00"),
   user_id: user_3.id,
   availability: true
 )
@@ -191,8 +191,8 @@ Event.create!(
   category: "Soccer",
   location: "Monumentenstrasse, Berlin",
   skill_level: "Beginner",
-  start_time: DateTime.parse("09/09/2021 17:00"),
-  end_time: DateTime.parse("09/09/2021 21:00"),
+  start_time: DateTime.parse("10/10/2021 17:00"),
+  end_time: DateTime.parse("10/10/2021 21:00"),
   user_id: user_1.id,
   availability: true
 )
@@ -207,8 +207,8 @@ Event.create!(
   category: "Basketball",
   location: "Hauptbahnhof, Berlin",
   skill_level: "Beginner",
-  start_time: DateTime.parse("09/10/2021 17:00"),
-  end_time: DateTime.parse("09/10/2021 21:00"),
+  start_time: DateTime.parse("11/11/2021 17:00"),
+  end_time: DateTime.parse("11/11/2021 21:00"),
   user_id: user_1.id,
   availability: true
 )
@@ -222,8 +222,8 @@ Event.create!(
   category: "Tennis",
   location: "Zoologischer Garten, Berlin",
   skill_level: "Beginner",
-  start_time: DateTime.parse("09/11/2021 17:00"),
-  end_time: DateTime.parse("09/11/2021 21:00"),
+  start_time: DateTime.parse("12/12/2021 17:00"),
+  end_time: DateTime.parse("12/12/2021 21:00"),
   user_id: user_1.id,
   availability: true
 )
@@ -269,7 +269,7 @@ Event.create!(
   category: "Basketball",
   location: "Kreuzberg, Berlin",
   skill_level: "I-breathe-this-sport",
-  start_time: DateTime.parse("09/12/2021 17:00"),
+  start_time: DateTime.parse("10/12/2021 17:00"),
   end_time: DateTime.parse("10/12/2021 21:00"),
   user_id: user_3.id,
   availability: true
