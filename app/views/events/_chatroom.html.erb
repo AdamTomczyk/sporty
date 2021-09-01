@@ -1,8 +1,10 @@
    <div class="chatbox <%= 'showchat' if coming_ajax %>">
-    <div class="container" id="messages" data-event-id="<%= @event.id %>">
 
+    <div class="container" id="messages" data-event-id="<%= @event.id %>">
+      <div class="row">
+      <div class="col-8" style="height:100vh;display:flex;flex-direction:column;justify-content:end;">
         <% @chatroom.messages.each do |message| %>
-          <%= render 'messages/message', message: message %>
+          <%= render 'messages/message', message: message, placeholder: "Create a message" %>
             <% end %>
 
           <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
@@ -10,6 +12,22 @@
             <%= f.button :submit, 'Send', style:"color:white" %>
           <% end %>
         </div>
+        <div class="col-1"></div>
+        <div class="col-3 chatmembers">
+        <h2 class="leavebutton" style="color:white;">&#x2613;</h2>
+        <h4 style="color:#5E5C69">Chat Members</h4>
+           <% @event.participants.each do |player|  %>
+
+            <div>
+              <img class="avatar" src="https://avatars.githubusercontent.com/u/78529684?v=4">
+              <%#=image_tag player.photo, class:"avatar"  %>
+              <h6 class="ml-3" style="font-weight:lighter;color:#5E5C69;"><%= player.first_name%></h6>
+            </div>
+
+            <% end %>
+        </div>
+        </div>
+      </div>
   </div>
 
   <%= render "shared/navbar" %>
