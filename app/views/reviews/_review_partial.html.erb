@@ -3,21 +3,21 @@
     <div class="col-xs-4">
       <% if event.user == current_user %>
         <% event.participants.each do |participant| %>
-            <%= simple_form_for([event, @review]) do |f| %>
+            <%= simple_form_for([event, @review], remote: true) do |f| %>
               <%= f.input :comment %>
               <%= f.input :reviewer_id, as: :hidden, input_html: {value: current_user.id} %>
               <%= f.input :reviewee_id, as: :hidden, input_html: {value: participant.id} %>
               <%= f.input :score, collection: [[1, "🧨"],[2,"🧨🧨"],[3, "🧨🧨🧨"],[4,"🧨🧨🧨🧨"],[5,"🧨🧨🧨🧨🧨"]], label_method: :last, value_method: :first, label: "Rate your experience" %>
-              <%= f.submit "Send" %>
+              <%= f.submit "Send", class: "submit-review-btn" %>
             <% end %>
           <% end %>
         <% else %>
-          <%= simple_form_for([event, @review]) do |f| %>
+          <%= simple_form_for([event, @review], remote: true) do |f| %>
             <%= f.input :comment %>
             <%= f.input :reviewer_id, as: :hidden, input_html: {value: current_user.id} %>
             <%= f.input :reviewee_id, as: :hidden, input_html:{value: event.user.id} %>
             <%= f.input :score, collection: [[1, "🧨"],[2,"🧨🧨"],[3, "🧨🧨🧨"],[4,"🧨🧨🧨🧨"],[5,"🧨🧨🧨🧨🧨"]], label_method: :last, value_method: :first, label: "Rate your experience" %>
-            <%= f.submit "Send" %>
+            <%= f.submit "Send", class: "submit-review-btn" %>
           <% end %>
        <% end %>
     </div>

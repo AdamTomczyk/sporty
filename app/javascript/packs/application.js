@@ -33,6 +33,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { canvas } from '../pages/home';
 
 import { showChatBox } from '../pages/chat'
+import { hideReview } from '../pages/hide_review'
 import { initWeatherApi } from '../plugins/init_weather_api';
 import {showAccordion} from '../pages/eventshow'
 
@@ -49,6 +50,6 @@ document.addEventListener('turbolinks:load', () => {
   showChatBox();
   showAccordion();
   initWeatherApi();
-
+  hideReview();
 
 });

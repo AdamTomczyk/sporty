@@ -26,8 +26,9 @@
     </div>
     <div class="col-12">
       <h2 style="color:white">Past events</h2>
-      <% @past_events.each do |event|  %>
-        <div style = "display: flex; align-items: center;" class = "request_card <%=event.category%>" >
+
+      <% @past_events.each_with_index do |event, index|  %>
+        <div style = "display: flex; align-items: center;" class = "request_card <%=event.category%> review-<%=index%>">
           <h3 style="color:white"><%= event.name %></h3>
           <p style="color:white;margin-bottom:0;">It's time for <i><%= event.category %></p>
           <p style="color:white;margin-bottom:0;">Where?⛳️ <%= event.location %></p>
@@ -39,8 +40,9 @@
 
             <h5 style="color:white">Your host is 🤠: <%= event.user.first_name %></h5>
           <%end%>
-          <button type="button" class="btn btn-primary monday" data-toggle="modal" data-target="#reviewModal">Review</button>
+          <button type="button" class="btn btn-primary review-button" data-toggle="modal" data-index="<%= index %>" data-target="#reviewModal">Review</button>
         </div>
+
         <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
