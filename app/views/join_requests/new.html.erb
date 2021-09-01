@@ -1,8 +1,23 @@
-<%= render "shared/navbar" %>
-<h1>JOIN</h1>
-<%= simple_form_for [ @event, @join_request ] do |f| %>
-  <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport], label: "What's your skill-level?" %>
-  <%= f.submit "Join this event", class: "btn btn-primary mt-3", data: { confirm: "Are you sure you want to join this event? The host set this event's skill-level as '#{@event.skill_level}'' "} %>
-  <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
+<div class="wrapperJoin">
+<%= render "shared/navbar_home" %>
+<div class="bgjoinEvent"></div>
+  <div class="positionWrapper">
+  <div class="container">
+    <div class="row">
+    <div class="col-12">
+     <h1>Join</h1>
+        <%= simple_form_for [ @event, @join_request ] do |f| %>
+          <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this🏃🏻‍♂️ This-is-my-hobby🏋️ I-breathe-this-sport😱], label: "What's your skill-level?" %>
+           <hr>
 
-<% end %>
+          <%= f.submit "Join this event", class: "joineventbrn mt-3", data: { confirm: "Are you sure you want to join this event? The host set this event's skill-level as '#{@event.skill_level}'' "} %>
+          <br>
+          <%= link_to "Cancel",  :back, class:"btn btn-default mt-2", style:"color:#5E5C69" %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+ </div>
+</div>
