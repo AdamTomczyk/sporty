@@ -1,5 +1,5 @@
 <%= render "shared/navbar" %>
-<div class="container">
+<div class="container ">
   <div class="row">
     <div style = "margin: 40px 0px;">
       <h1>Hey sporty! Up for an event in your neighbourhood?</h1>
@@ -8,23 +8,23 @@
 
     <div class="col-sm-5" id="main">
       <div>
-        <% @events.each do |event| %>
+        <% @events.each_with_index do |event, index| %>
           <%= link_to event_path(event) do %>
 
-              <div style = "display: flex; align-items: center;" class = "event_card <%=event.category%>">
+              <div style = "display: flex; align-items: center;" class = "event_card <%=event.category%> animate__animated animate__fadeInUp animate__delay-<%=index%>s">
 
               <div>
-                <%= image_tag "#{event.category}_sketch.png", style: "border-radius: 25px; width: 100px; padding: 20px; margin-right: 15px;"%>
+                <%= image_tag "#{event.category}_sketch.png", class: "card_sketch #{event.category}"%>
               </div>
 
               <div>
                 <p style = "margin-bottom: 0px; font-weight: bold;"> <%=event.category%> at <%= event.location.chomp(", Berlin") %></p>
-                <p style = "font-size: 10pt; font-style: italic;"> <%= event.start_time.strftime("%m/%d/%Y at %I:%M%p") %></p>
+                <p style = "font-size: 10pt; font-style: italic;"> <%= event.start_time.strftime("%d %b at %I:%M %p") %></p>
                 <div style="display: flex; justify-content: flex-start; align-items: center">
                   <!--<a class="card-button <%=event.category%>" href=""> Join us </a>-->
                   <%# raise if event.id == 2 %>
                   <% if event.join_requests.find_by(user: current_user, event: event).nil? && event.user != current_user && event.attendees.count != event.capacity%>
-                    <%= link_to 'Join us', new_event_join_request_path(event), class: "card-button #{event.category}" %>
+                    <%= link_to 'Join us', new_event_join_request_path(event), class: "card-button #{event.category} animate__animated animate__fadeIn animate__slower" %>
                   <% end %>
                 </div>
               </div>
