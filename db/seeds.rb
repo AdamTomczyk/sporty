@@ -273,4 +273,18 @@ Event.create!(
   end_time: DateTime.parse("10/12/2021 21:00"),
   user_id: user_3.id,
   availability: true
+  )
+
+  # 15
+  Event.create!(
+  name: "Steglitz Ballers",
+  capacity: 5,
+  description: "Let's play some basketball",
+  category: "Basketball",
+  location: "Steglitz, Berlin",
+  skill_level: "Beginner",
+  start_time: DateTime.parse("07/07/2021 17:00"),
+  end_time: DateTime.parse("07/07/2021 21:00"),
+  user_id: user_2.id,
+  availability: true
 )
