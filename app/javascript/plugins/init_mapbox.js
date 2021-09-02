@@ -6,7 +6,10 @@ const initMapbox = () => {
 
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
+    console.log("hello from fit")
+    console.log(markers)
     markers.forEach(marker => bounds.extend([marker.lng, marker.lat]));
+    console.log(bounds)
     map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
@@ -17,6 +20,8 @@ const initMapbox = () => {
       style: 'mapbox://styles/mariushepp/cksriswp3269s17o7dkvk3qsx'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log({markers})
+
     const addMarkersToMap = (map, markers) => {
       markers.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
@@ -34,7 +39,6 @@ const initMapbox = () => {
           .addTo(map);
       });
     };
-
     fitMapToMarkers(map, markers);
     addMarkersToMap(map, markers);
   }

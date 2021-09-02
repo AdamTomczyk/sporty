@@ -3,30 +3,6 @@ class EventsController < ApplicationController
 
 
   def index
-<<<<<<< HEAD
-
-    all_events = Event.all
-    sorted_events = all_events.partition do |event|
-      DateTime.now < event.end_time
-    end
-
-    @upcoming_events = sorted_events[0]
-    @past_events = sorted_events[1]
-
-    if params[:query].present?
-      @events = @upcoming_events.where(category: params[:query])
-    else
-      return @upcoming_events
-    end
-    @markers = @upcoming_events.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url("#{event.category}_icon.png")
-      }
-    end
-=======
     all_events = Event.all
     all_sorted_events = all_events.partition do |event|
       DateTime.now < event.end_time
@@ -56,7 +32,6 @@ class EventsController < ApplicationController
       end
       # the `geocoded` scope filters only events with coordinates (latitude & longitude)
     end
->>>>>>> 2d1182960e9d91f69fa56dd4585b3c80e2b4f18f
   end
 
   def show

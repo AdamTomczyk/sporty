@@ -30,19 +30,6 @@
             <div class="requests-pending">
               <p style="font-weight:bold">Pending</p>
             </div>
-<<<<<<< HEAD
-          <%else %>
-            <%if event.join_requests.where(user: current_user, status: 1).any? %>
-              <div class="requests-accepted">
-                <p style="font-weight:bold">Accepted</p>
-              </div>
-            <% else event.join_requests.where(user: current_user, status: 2).any? %>
-              <div class="requests-pending">
-                <p style="font-weight:bold">Pending</p>
-              </div>
-            <% end %>
-=======
->>>>>>> 2d1182960e9d91f69fa56dd4585b3c80e2b4f18f
           <% end %>
         <% end %>
       </div>

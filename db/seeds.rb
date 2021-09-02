@@ -53,7 +53,7 @@ user_6 = User.create!(
 )
  # 01
 
-event_1 = Event.create!(
+  event_1 = Event.create!(
   name: "Ball is life. 5 vs 5",
   capacity: 5,
   description: "We are a group of 5 hardcore ballers and are looking for another 5 of whatever-type-you-are ballers.
