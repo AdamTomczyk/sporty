@@ -68,7 +68,7 @@ class JoinRequestsController < ApplicationController
     @join_request = JoinRequest.find(params[:id])
     @join_request.accepted!
     @join_request.status = 1
-    redirect_to join_requests_path
+    redirect_to event_path(@join_request.event)
   end
 
   def reject
