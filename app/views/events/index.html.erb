@@ -2,9 +2,10 @@
 
 <div class="container topeventshow-info">
   <div class="row mt-5 mb-5">
-    <div class="col-12" style="display:flex;align-items:center;justify-content:space-between;">
+    <div class="col-12" style="display:flex;align-items:center;justify-content:space-between;margin-left:15px">
       <div>
-        <h2 style="color:white;line-height:48px;">Hey <%= current_user.first_name %> 🤙<br> Check out these events in your neighbourhood?</h2>
+        <h2 class="mb-4" style="color:white;line-height:48px;">Hey <%= current_user.first_name %> 🤙<br> Check out these events in your neighbourhood?</h2>
+        <%= link_to "Create event", new_event_path, class: "create-button" %>
       </div>
       <div>
       <%= form_tag events_path, method: :get do %>
