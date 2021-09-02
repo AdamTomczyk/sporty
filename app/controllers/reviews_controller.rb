@@ -10,6 +10,14 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def sum
+    current_user.reviews.sum(:score) #count?
+  end
+
+  def average
+    current_user.reviews.average(:score)
+  end
+
   private
 
   def review_params
