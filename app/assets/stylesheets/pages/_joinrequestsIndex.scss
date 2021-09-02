@@ -23,14 +23,16 @@
 .games_card {
   background: linear-gradient(45deg, #232631, #232631);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 25px 0px;
   position: relative;
   transition-timing-function: ease-in-out;
   transition: 0.5s;
   display: flex;
   flex-direction: column;
-  width: 220px;
+  max-width: 280px;
+  height: 23vh;
+  justify-content: space-between;
 }
 
 
