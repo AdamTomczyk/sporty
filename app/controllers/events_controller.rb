@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+
+
   def index
     all_events = Event.all
     all_sorted_events = all_events.partition do |event|
