@@ -2,10 +2,10 @@
 
   <div class="container">
    <% if current_user %>
-      <h1 style="color:white">Hey <%= current_user.first_name %>, <br>here are your games 🏓</h1>
+      <h1 class="mt-5 mb-4" style="margin-left:15px;line-height:65px;">Hey <%= current_user.first_name %>, <br>here are your games 🏓</h1>
     <%end%>
 
-    <div class="row">
+    <div class="row" style="margin-left:15px;">
 
       <% @upcoming_events.each do |event|  %>
         <div class = "games_card col-3">
@@ -21,16 +21,16 @@
           </div>
           <%if event.user == current_user %>
             <div class="requests-status">
-              <p style="font-weight:bold"> Request </p>
+              <p style="font-weight:bold;color:#141316;"> Request </p>
             </div>
           <%else %>
             <%if event.join_requests.where(user: current_user, status: 1).any? %>
               <div class="requests-accepted">
-                <p style="font-weight:bold">Accepted</p>
+                <p style="font-weight:bold;color:#141316;">Accepted</p>
               </div>
             <% else event.join_requests.where(user: current_user, status: "pending").any? %>
               <div class="requests-pending">
-                <p style="font-weight:bold">Pending</p>
+                <p style="font-weight:bold;color:#141316;">Pending</p>
               </div>
             <% end %>
           <% end %>
@@ -42,8 +42,8 @@
   </div>
 
   <div class="container">
-  <h1 style="color:white">Reviews ⭐️</h1>
-  <div class="row">
+  <h1 class="mt-5 mb-4" style="color:white;margin-left:15px;">Reviews ⭐️</h1>
+  <div class="row" style="margin-left:15px;">
 
     <% @past_events.each do |event|  %>
     <div class = "games_card col-3" >
