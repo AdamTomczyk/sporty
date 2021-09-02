@@ -13,8 +13,13 @@ class JoinRequestsController < ApplicationController
     @upcoming_events = sorted_events[0]
     @past_events = sorted_events[1]
     # current_user.reviews_as_reviewer
+    event_ids_user_rated = current_user.reviews_as_reviewer.map{|review| review[:event_id]}
+    @past_events.reject!{|event| event_ids_user_rated.include?(event.id) }
 
-raise
+    #event_ids_user_rated = current_user.reviews_as_reviewer.map{|review| review[:event_id]}
+    #@past_events.reject!{|event| event_ids_user_rated.include?(event.id) }
+
+
     # @past_events.filter! do |event|
     #   event.reviews.each{ |review|  review.reviewer == current_user}.uniq.length == 1
     # end
