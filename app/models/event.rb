@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
   has_many :join_requests, dependent: :destroy
+  has_many :reviews
   has_one :chatroom, dependent: :destroy
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
@@ -15,8 +16,8 @@ class Event < ApplicationRecord
   def attendees
     # returns accepted people
     self.join_requests.where(status: "accepted")
-
   end
+
 
   CATEGORY = ["Basketball", "Tennis", "Soccer"]
 

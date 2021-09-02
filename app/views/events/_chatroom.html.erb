@@ -45,11 +45,11 @@
       <div class="col-5 wrapperShow">
         <div>
           <%= image_tag "icons/clock.png" %>
-          <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter;">16:30</h5>
+          <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter;"><%=@event.start_time.strftime("%d %b - %I:%M %p")%></h5>
         </div>
         <div>
           <%= image_tag "icons/pin.png" %>
-          <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter;">Rudi Duschke Str 14</h5>
+          <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter;"><%=@formatedLocation.join("")%></h5>
         </div>
         <div>
           <%= image_tag "icons/calories.png" %>
@@ -131,6 +131,13 @@
         </div>
       </div>
     </div>
+
+    <script>
+   const location = @event.location;
+
+   console.log(location)
+
+</script>
 
 <!---
 
