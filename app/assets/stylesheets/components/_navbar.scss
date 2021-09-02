@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
-   z-index: 99;
+  z-index: 99;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,15 +14,15 @@
 
 .dropdown-menu-right{
   background-color: black;
-border-radius: 10px;
-color: white;
-
-a{
+  border-radius: 10px;
   color: white;
-}
+  z-index: 10;
+  a{
+    color: white;
+  }
 
-a:hover {
-  background-color: #2d2d2d;
-  color:white
-}
+  a:hover {
+    background-color: #2d2d2d;
+    color:white
+  }
 }
