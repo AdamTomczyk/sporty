@@ -48,6 +48,8 @@ class EventsController < ApplicationController
       end
     end
 
+    # 'checkpoint charlie, berlin'.split(',')[0]
+
     for i in 0..@comaIndex-1 do
         @formatedLocation.push(@location[i])
     end
