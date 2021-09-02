@@ -2,17 +2,21 @@
 
     <div class="container" id="messages" data-event-id="<%= @event.id %>">
       <div class="row">
-      <div class="col-8" style="height:100vh;display:flex;flex-direction:column;justify-content:end;">
-        <% @chatroom.messages.each do |message| %>
-          <%= render 'messages/message', message: message %>
+      <div class="col-8">
+        <div class="hello" style="display: flex; align-items: center; height: 100vh;">
+          <div class="sup" style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+            <% @chatroom.messages.each do |message| %>
+              <%= render 'messages/message', message: message %>
             <% end %>
 
-          <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-            <%= f.input :content, label: false, placeholder: "Create a message..." %>
-            <%= f.button :submit, 'Send', style:"color:white", class:"sendbtn ml-4" %>
-          <% end %>
+            <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+              <%= f.input :content, label: false, placeholder: "Create a message..." %>
+              <%= f.button :submit, 'Send', style:"color:white", class:"sendbtn ml-4" %>
+            <% end %>
+          </div>
         </div>
-        <div class="col-1"></div>
+      </div>
+      <div class="col-1"></div>
         <div class="col-3 chatmembers">
         <h2 class="leavebutton" style="color:white;">&#x2613;</h2>
         <h4 style="color:#5E5C69">Chat Members</h4>
@@ -75,6 +79,9 @@
         </div>
       </div>
     </div>
+
+
+
   </div>
 
 
@@ -117,7 +124,7 @@
       </div>
     </div>
 
-    <div class="container my-5">
+    <div class="container mt-5">
       <div class="row">
         <div class="col-12">
           <% if @event.user == current_user %>
