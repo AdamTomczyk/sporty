@@ -354,7 +354,7 @@ event_19 = Event.create!(
 join_request_1 = JoinRequest.create!(
   skill_level: "I-breathe-this-sport",
   user_id: user_1.id,
-  event_id: 3,
+  event: event_3,
   status: 1
 )
     # 02
@@ -362,7 +362,7 @@ join_request_1 = JoinRequest.create!(
 join_request_2 = JoinRequest.create!(
   skill_level: "Beginner",
   user_id: user_2.id,
-  event_id: 2,
+  event: event_2 ,
   status: 1
 )
     # 03
@@ -370,7 +370,7 @@ join_request_2 = JoinRequest.create!(
 join_request_3 = JoinRequest.create!(
   skill_level: "I-breathe-this-sport",
   user_id: user_3.id,
-  event_id: 1,
+  event: event_1,
   status: 1
 )
     # 04
@@ -378,7 +378,7 @@ join_request_3 = JoinRequest.create!(
 join_request_4 = JoinRequest.create!(
   skill_level: "This-is-my-hobby",
   user_id: user_5.id,
-  event_id: 14,
+  event: event_14,
   status: 1
 )
     # 05
@@ -386,7 +386,7 @@ join_request_4 = JoinRequest.create!(
 join_request_5 = JoinRequest.create!(
   skill_level: "Beginner",
   user_id: user_2.id,
-  event_id: 10,
+  event: event_10,
   status: 0
 )
     # 06
@@ -394,7 +394,7 @@ join_request_5 = JoinRequest.create!(
 join_request_6 = JoinRequest.create!(
   skill_level: "Beginner",
   user_id: user_3.id,
-  event_id:  11,
+  event:  event_11,
   status: 1
 )
     # 07
@@ -402,7 +402,7 @@ join_request_6 = JoinRequest.create!(
 join_request_7 = JoinRequest.create!(
   skill_level: "I-breathe-this-sport",
   user_id: user_2.id,
-  event_id: 6,
+  event: event_6,
   status: 0
 )
     # 08
@@ -410,7 +410,7 @@ join_request_7 = JoinRequest.create!(
 join_request_8 = JoinRequest.create!(
   skill_level: "Beginner",
   user_id: user_1.id,
-  event_id: 17,
+  event: event_17,
   status: 1
 )
     # 09
@@ -418,7 +418,7 @@ join_request_8 = JoinRequest.create!(
 join_request_9 = JoinRequest.create!(
   skill_level: "Beginner",
   user_id: user_1.id,
-  event_id: 15,
+  event: event_15,
   status: 0
 )
     # 10
@@ -426,7 +426,7 @@ join_request_9 = JoinRequest.create!(
 join_request_10 = JoinRequest.create!(
   skill_level: "This-is-my-hobby",
   user_id: user_4.id,
-  event_id: 5,
+  event: event_5,
   status: 1
 )
     # 11
@@ -434,7 +434,7 @@ join_request_10 = JoinRequest.create!(
 join_request_11 = JoinRequest.create!(
   skill_level: "I-breathe-this-sport",
   user_id: user_4.id,
-  event_id: 8,
+  event: event_8,
   status: 1
 )
      # 12
@@ -442,6 +442,6 @@ join_request_11 = JoinRequest.create!(
 join_request_12 = JoinRequest.create!(
   skill_level: "This-is-my-hobby",
   user_id: user_3.id,
-  event_id: 16,
+  event: event_16,
   status: 1
 )

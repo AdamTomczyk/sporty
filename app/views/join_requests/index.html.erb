@@ -1,69 +1,60 @@
 <%= render "shared/navbar" %>
-
-  <div class="container">
-   <% if current_user %>
-      <h1 style="color:white">Hey <%= current_user.first_name %>, <br>here are your games 🏓</h1>
-    <%end%>
-
-    <div class="row">
-
-      <% @upcoming_events.each do |event|  %>
-        <div class = "games_card col-3">
-          <%= image_tag "#{event.category}_sketch.png", class: "main-icon-game-card"%>
-          <p class="game-card-title"><%= event.name %></p>
-          <div class="event-description-container">
-            <%= image_tag "icons/pin.png", class: "index-event-icon" %>
-            <p class="event-info"><%= event.location %></p>
-          </div>
-          <div class="event-description-container">
-            <%= image_tag "icons/clock.png", class: "index-event-icon" %>
-            <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
-          </div>
-          <%if event.user == current_user %>
-            <div class="requests-status">
-              <p style="font-weight:bold"> Request </p>
-            </div>
-          <%else %>
-            <%if event.join_requests.where(user: current_user, status: 1).any? %>
-              <div class="requests-accepted">
-                <p style="font-weight:bold">Accepted</p>
-              </div>
-            <% else event.join_requests.where(user: current_user, status: "pending").any? %>
-              <div class="requests-pending">
-                <p style="font-weight:bold">Pending</p>
-              </div>
-            <% end %>
-          <% end %>
-
+<div class="container">
+  <% if current_user %>
+    <h1 style="color:white">Hey <%= current_user.first_name %>, <br>
+      here are your games 🏓</h1>
+  <%end%>
+  <div class="row">
+    <% @upcoming_events.each do |event|  %>
+      <div class = "games_card col-3">
+        <%= image_tag "#{event.category}_sketch.png", class: "main-icon-game-card"%>
+        <p class="game-card-title"><%= event.name %></p>
+        <div class="event-description-container">
+          <%= image_tag "icons/pin.png", class: "index-event-icon" %>
+          <p class="event-info"><%= event.location %></p>
         </div>
-        <div class = "col-1"></div>
-      <%end%>
-    </div>
+        <div class="event-description-container">
+          <%= image_tag "icons/clock.png", class: "index-event-icon" %>
+          <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
+        </div>
+        <%if event.user == current_user %>
+          <div class="requests-status">
+            <p style="font-weight:bold"> Request </p>
+          </div>
+        <%else %>
+          <%if event.join_requests.where(user: current_user, status: 1).any? %>
+            <div class="requests-accepted">
+              <p style="font-weight:bold">Accepted</p>
+            </div>
+          <% else event.join_requests.where(user: current_user, status: "pending").any? %>
+            <div class="requests-pending">
+              <p style="font-weight:bold">Pending</p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class = "col-1"></div>
+    <%end%>
   </div>
-
-  <div class="container">
+</div>
+<div class="container">
   <h1 style="color:white">Reviews ⭐️</h1>
   <div class="row">
-
-    <% @past_events.each do |event|  %>
-    <div class = "games_card col-3" >
-      <%= image_tag "#{event.category}_sketch.png", class: "main-icon-game-card"%>
-      <p style="game-card-title"><%= event.name %></p>
-      <div class="event-description-container">
-        <%= image_tag "icons/pin.png", class: "index-event-icon" %>
-        <p class="event-info"><%= event.location %></p>
+    <% @past_events.each_with_index do |event, index|  %>
+      <div class = "games_card col-3 review-<%=index%>" >
+        <%= image_tag "#{event.category}_sketch.png", class: "main-icon-game-card"%>
+        <p style="game-card-title"><%= event.name %></p>
+        <div class="event-description-container">
+          <%= image_tag "icons/pin.png", class: "index-event-icon" %>
+          <p class="event-info"><%= event.location %></p>
+        </div>
+        <div class="event-description-container">
+          <%= image_tag "icons/clock.png", class: "index-event-icon" %>
+          <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
+        </div>
+        <button type="button" class="btn btn-primary monday review-button" data-toggle="modal" data-target="#reviewModal" data-index="<%= index %>"> Review </button>
+        <%#= link_to "Review","#", class:["btn", "btn-primary", "monday"], params:{event:event.id}, data:{toggle:"modal", target: "#reviewModal"}  %>
       </div>
-      <div class="event-description-container">
-        <%= image_tag "icons/clock.png", class: "index-event-icon" %>
-        <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
-      </div>
-      <%if event.user == current_user %>
-        <button type="button" class="btn btn-primary monday" data-toggle="modal" data-target="#reviewModal"> Review </button>
-      <%else %>
-        <button type="button" class="btn btn-primary monday" data-toggle="modal" data-target="#reviewModal"> Review </button>
-      <%end%>
-      <%#= link_to "Review","#", class:["btn", "btn-primary", "monday"], params:{event:event.id}, data:{toggle:"modal", target: "#reviewModal"}  %>
-
       <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel"           aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -82,5 +73,5 @@
       </div>
     </div>
     <div class = "col-1"></div>
-    <% end %>
-  </div>
+  <% end %>
+</div>
