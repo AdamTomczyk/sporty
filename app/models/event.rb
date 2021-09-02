@@ -17,10 +17,6 @@ class Event < ApplicationRecord
     self.join_requests.where(status: "accepted")
   end
 
-  def participants_with_host
-    User.includes(:join_requests).where(join_requests: {event: self, status: "accepted"}).or(Event.where(event: self, user: current_user)
-  end
-
 
   CATEGORY = ["Basketball", "Tennis", "Soccer"]
 
