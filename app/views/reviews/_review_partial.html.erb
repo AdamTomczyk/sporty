@@ -2,27 +2,31 @@
   <div class="row">
     <div class="col-xs-4">
       <% if event.user == current_user %>
+      <%= event.name %>
         <% event.participants.each do |participant| %>
-
+            <%# Form for a host to review participants %>
+            <%# raise %>
             <%= simple_form_for([event, @review], remote: true) do |f| %>
               <%= f.input :comment %>
-              <%= f.input :banana %>
               <%= f.input :reviewer_id, as: :hidden, input_html: {value: current_user.id} %>
               <%= f.input :reviewee_id, as: :hidden, input_html: {value: participant.id} %>
               <%= f.input :score, collection: [[1, "🧨"],[2,"🧨🧨"],[3, "🧨🧨🧨"],[4,"🧨🧨🧨🧨"],[5,"🧨🧨🧨🧨🧨"]], label_method: :last, value_method: :first, label: "Rate your experience" %>
-              <%= f.submit "Send", class: "submit-review-btn" %>
+              <%= f.submit "Send", class: "submit-review-btn review-person-button", data: {name: participant.first_name} %>
             <% end %>
           <% end %>
-        <% else %>
+      <% else %>
+      <%= event.name %>
 
-          <%= simple_form_for([event, @review], remote: true) do |f| %>
-            <%= f.input :comment %>
-            <%= f.input :reviewer_id, as: :hidden, input_html: {value: current_user.id} %>
-            <%= f.input :reviewee_id, as: :hidden, input_html:{value: event.user.id} %>
-            <%= f.input :score, collection: [[1, "🧨"],[2,"🧨🧨"],[3, "🧨🧨🧨"],[4,"🧨🧨🧨🧨"],[5,"🧨🧨🧨🧨🧨"]], label_method: :last, value_method: :first, label: "Rate your experience" %>
-            <%= f.submit "Send", class: "submit-review-btn" %>
-          <% end %>
-       <% end %>
+<%# Form for the Participants to review the Host %>
+        <%# raise %>
+        <%= simple_form_for([event, @review], remote: true) do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :reviewer_id, as: :hidden, input_html: {value: current_user.id} %>
+          <%= f.input :reviewee_id, as: :hidden, input_html:{value: event.user.id} %>
+          <%= f.input :score, collection: [[1, "🧨"],[2,"🧨🧨"],[3, "🧨🧨🧨"],[4,"🧨🧨🧨🧨"],[5,"🧨🧨🧨🧨🧨"]], label_method: :last, value_method: :first, label: "Rate your experience" %>
+          <%= f.submit "Send", class: "submit-review-btn" %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

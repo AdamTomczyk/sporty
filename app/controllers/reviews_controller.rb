@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @review.reviewer = current_user
     @review.event = Event.find(params[:event_id])
     if @review.save
-      redirect_to join_requests_path
+      redirect_to join_requests_path if @review.event.user != current_user
     else
       render "join_requests"
     end

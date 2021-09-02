@@ -1,7 +1,6 @@
 class JoinRequestsController < ApplicationController
 
   def index
-
     #@outgoing_requests = JoinRequest.where(user: current_user) # bookings i made
     #@pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending")
 
@@ -15,7 +14,7 @@ class JoinRequestsController < ApplicationController
     @past_events = sorted_events[1]
     # current_user.reviews_as_reviewer
     event_ids_user_rated = current_user.reviews_as_reviewer.map{|review| review[:event_id]}
-    @past_events.reject!{|event| event_ids_user_rated.include?(event.id) }
+    @past_events.reject!{|event| event_ids_user_rated.include?(event.id) && event.user != current_user }
 
     #event_ids_user_rated = current_user.reviews_as_reviewer.map{|review| review[:event_id]}
     #@past_events.reject!{|event| event_ids_user_rated.include?(event.id) }
