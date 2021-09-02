@@ -1,19 +1,34 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
-    if params[:query].present?
-      @events = Event.where(category: params[:query])
-    else
-      @events = Event.all
-      # the `geocoded` scope filters only events with coordinates (latitude & longitude)
+    all_events = Event.all
+    all_sorted_events = all_events.partition do |event|
+      DateTime.now < event.end_time
     end
-    @markers = @events.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url("#{event.category}_icon.png")
-      }
+
+    @all_upcoming_events = all_sorted_events[0]
+    @all_past_events = all_sorted_events[1]
+    if params[:query].present?
+      @events = @all_upcoming_events.select {|event| event.category == params[:query]}
+      @markers = @events.map do |event|
+        {
+          lat: event.latitude,
+          lng: event.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { event: event }),
+          image_url: helpers.asset_url("#{event.category}_icon.png")
+        }
+      end
+    else
+      @events = @all_upcoming_events
+      @markers = @events.map do |event|
+        {
+          lat: event.latitude,
+          lng: event.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { event: event }),
+          image_url: helpers.asset_url("#{event.category}_icon.png")
+        }
+      end
+      # the `geocoded` scope filters only events with coordinates (latitude & longitude)
     end
   end
 

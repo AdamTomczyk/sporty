@@ -1,5 +1,6 @@
 <%= render "shared/navbar" %>
 
+
   <div class="container">
    <% if current_user %>
       <h1 class="mt-5 mb-4" style="margin-left:15px;line-height:65px;">Hey <%= current_user.first_name %>, <br>here are your games 🏓</h1>
@@ -33,13 +34,14 @@
                 <p style="font-weight:bold;color:#141316;">Pending</p>
               </div>
             <% end %>
-          <% end %>
 
-        </div>
-        <div class = "col-1"></div>
-      <%end%>
-    </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class = "col-1"></div>
+    <%end%>
   </div>
+
 
   <div class="container">
   <h1 class="mt-5 mb-4" style="color:white;margin-left:15px;">Reviews ⭐️</h1>
@@ -56,14 +58,9 @@
       <div class="event-description-container">
         <%= image_tag "icons/clock.png", class: "index-event-icon" %>
         <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
-      </div>
-      <%if event.user == current_user %>
-        <button type="button" class="btn btn-primary monday" data-toggle="modal" data-target="#reviewModal"> Review </button>
-      <%else %>
-        <button type="button" class="btn btn-primary monday" data-toggle="modal" data-target="#reviewModal"> Review </button>
-      <%end%>
-      <%#= link_to "Review","#", class:["btn", "btn-primary", "monday"], params:{event:event.id}, data:{toggle:"modal", target: "#reviewModal"}  %>
 
+
+      </div>
       <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel"           aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -82,5 +79,5 @@
       </div>
     </div>
     <div class = "col-1"></div>
-    <% end %>
-  </div>
+  <% end %>
+</div>
