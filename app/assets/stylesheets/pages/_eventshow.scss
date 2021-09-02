@@ -65,7 +65,7 @@
 
 // Event Show
 
-.imageEvent {
+.imageEvent-Basketball {
   width: 100%;
   height: 40vh;
   background-image: asset-url("basketball_game.jpg");
@@ -73,6 +73,35 @@
   background-position: center;
   border-radius: 15px;
 }
+
+.imageEvent-Soccer {
+  width: 100%;
+  height: 40vh;
+  background-image: asset-url("soccer_g.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+
+.imageEvent-Tennis {
+  width: 100%;
+  height: 40vh;
+  background-image: asset-url("tennis_game.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.imageEvent-Volleyball {
+  width: 100%;
+  height: 40vh;
+  background-image: asset-url("basketball_game.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
 
 .wrapperShow {
   width: 100%;
