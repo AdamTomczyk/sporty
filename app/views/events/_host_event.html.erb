@@ -16,7 +16,7 @@
     <% @pending_requests.each do |request|  %>
     <div class="userProfileShow mr-5">
         <div>
-         <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625207249/pjzvzmkcapu1euporrej.jpg", class:"mr-4"%>
+         <%= image_tag request.user.avatar, class:"mr-4"%>
         </div>
         <div style="display:flex; flex-direction:column;">
            <p class="" style="color:white;margin:0;padding:0;"><%= request.user.first_name.capitalize %></p>
@@ -35,11 +35,11 @@
 
 
 
-<h2 class="accordion mt-4" style="color:#323238">Accepted Players <span style="position:relative;top:10px">&#x2935;</span></h2>
+<h2 class="accordion my-4" style="color:#323238">Accepted Players <span style="position:relative;top:10px">&#x2935;</span></h2>
 <div class="panel">
   <% @event.attendees.each do |request|  %>
            <div class="mt-1" style="display:flex;align-items:center;">
-            <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625207249/pjzvzmkcapu1euporrej.jpg", style:"width:40px; border-radius:50%;", class:"mr-4"%>
+            <%= image_tag request.user.avatar, class:"mr-4 avatar"%>
            <p style="position:relative;top:5px;"><%= request.user.first_name.capitalize %> <span style="color:#141316;padding-left:5px;padding-right:5px;background:#7ef097;border-radius:10px;margin-left:10px">Accepted</span></p>
         </div>
     <% end %>

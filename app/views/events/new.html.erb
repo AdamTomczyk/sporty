@@ -7,20 +7,41 @@
 
     <h1 class="mb-5" style="color:black">Create a sporty event</h1>
       <%= simple_form_for @event do |f| %>
-      <%= f.input :name %>
+        <div class="form-row">
+          <div class="col">
+            <%= f.input :name %>
+          </div>
+          <div class="col">
+            <%= f.input :category, :collection => %w[Basketball Tennis Soccer] %>
+          </div>
+        </div>
 
-      <%= f.input :category, :collection => %w[Basketball Tennis Soccer] %>
+        <div class="form-row">
+          <div class="col">
+            <%= f.input :description %>
+          </div>
+          <div class="col">
+            <%= f.input :capacity %>
+          </div>
+        </div>
 
-      <%= f.input :description %>
+      <div class="form-row">
+        <div class="col">
+            <%= f.input :location %>
+        </div>
+        <div class="col">
+          <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport]%>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <%= f.input :start_time, as: :datetime, html5: true %>
+        </div>
+        <div class="col">
+          <%= f.input :end_time, as: :datetime, html5: true %>
+        </div>
+      </div>
 
-      <%= f.input :capacity %>
-
-      <%= f.input :location %>
-
-      <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport]%>
-      <%= f.input :start_time, as: :datetime, html5: true %>
-
-      <%= f.input :end_time, as: :datetime, html5: true %>
 
       <%= f.submit class: 'homebutton mt-5' %>
       <% end %>
