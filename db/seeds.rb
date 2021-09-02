@@ -16,7 +16,7 @@ user_2 = User.create!(
 )
 
 user_3 = User.create!(
-  email: "marius@marius.com",
+  email: "marius@user.com",
   first_name: "Marius",
   last_name: "Hepp",
   password: "123456"
@@ -30,7 +30,7 @@ user_4 = User.create!(
 )
 
 user_5 = User.create!(
-  email: "adam@adam.com",
+  email: "adam@host.com",
   first_name: "Adam",
   last_name: "Tomczyk",
   password: "123456"
