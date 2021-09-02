@@ -35,10 +35,21 @@
             </div>
 
             <div class="event_card_secondFlex">
-              <h4 style="font-weight:lighter">6 Attending</h4>
+              <h4 style="font-weight:lighter">
+              <% if event.participants.count == 0 %>
+                <h4> 1 Attendee</h4>
+                <% if event.join_requests.find_by(user: current_user, event: event).nil? && event.user != current_user && event.attendees.count != event.capacity %>
+                  <%= link_to 'Join', new_event_join_request_path(event), class: "joinIndexEvent", style:"position: relative;top: -11px;font-weight:lighter;color:transparent; display: none" %>
+                <% end %>
+              <% else %>
+                <h4><%= event.participants.count + 1 %> Attendees</h4>
+              <% end %>
+              </h4>
               <% if event.join_requests.find_by(user: current_user, event: event).nil? && event.user != current_user && event.attendees.count != event.capacity%>
-                    <%= link_to 'Join', new_event_join_request_path(event), class: "joinIndexEvent", style:"position: relative;top: -11px;font-weight:lighter" %>
-                  <% end %>
+                  <%= link_to 'Join', new_event_join_request_path(event), class: "joinIndexEvent", style:"position: relative;top: -11px;font-weight:lighter" %>
+              <% else %>
+                  <%= link_to 'Join', new_event_join_request_path(event), class: "joinIndexEvent", style:"position: relative;top: -11px;font-weight:lighter;color:transparent; display: none" %>
+              <% end %>
               <!-- <h6 class="joinIndexEvent" style="position: relative;top: -5px;font-weight:lighter;">Join</h6> -->
             </div>
 

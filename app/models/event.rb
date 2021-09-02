@@ -15,8 +15,8 @@ class Event < ApplicationRecord
   def attendees
     # returns accepted people
     self.join_requests.where(status: "accepted")
-
   end
+
 
   CATEGORY = ["Basketball", "Tennis", "Soccer"]
 
