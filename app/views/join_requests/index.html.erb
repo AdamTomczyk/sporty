@@ -1,41 +1,37 @@
 <%= render "shared/navbar" %>
-
-
-  <div class="container">
-   <% if current_user %>
-      <h1 class="mt-5 mb-4" style="margin-left:15px;line-height:65px;">Hey <%= current_user.first_name %>, <br>here are your games 🏓</h1>
-    <%end%>
-
-    <div class="row" style="margin-left:15px;">
-
-      <% @upcoming_events.each do |event|  %>
-        <div class = "games_card col-3">
-          <div>
-            <%= image_tag "#{event.category}_sketch.png", class: "main-icon-game-card"%>
-            <p class="game-card-title"><%= link_to event_path(event) do %><%= event.name %> <% end %></p>
+<div class="container">
+  <% if current_user %>
+    <h1 class="mt-5 mb-4" style="margin-left:15px;line-height:65px;">Hey <%= current_user.first_name %>, <br>
+      here are your games 🏓</h1>
+  <%end%>
+  <div class="row" style="margin-left:15px;">
+    <% @upcoming_events.each do |event|  %>
+      <div class = "games_card col-3">
+        <div>
+          <%= image_tag "#{event.category}_sketch.png", class: "main-icon-game-card"%>
+          <p class="game-card-title"><%= link_to event_path(event) do %><%= event.name %> <% end %></p>
+        </div>
+        <div class="event-description-container">
+          <%= image_tag "icons/pin.png", class: "index-event-icon" %>
+          <p class="event-info"><%= event.location %></p>
+        </div>
+        <div class="event-description-container">
+          <%= image_tag "icons/clock.png", class: "index-event-icon" %>
+          <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
+        </div>
+        <%if event.user == current_user %>
+          <div class="requests-status">
+            <p style="font-weight:bold;color:#141316;"> Request </p>
           </div>
-          <div class="event-description-container">
-            <%= image_tag "icons/pin.png", class: "index-event-icon" %>
-            <p class="event-info"><%= event.location %></p>
+        <%elsif event.join_requests.where(user: current_user, status: 1).any? %>
+          <div class="requests-accepted">
+            <p style="font-weight:bold;color:#141316;">Accepted</p>
           </div>
-
-          <div class="event-description-container">
-            <%= image_tag "icons/clock.png", class: "index-event-icon" %>
-            <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
+        <% else event.join_requests.where(user: current_user, status: "pending").any? %>
+          <div class="requests-pending">
+            <p style="font-weight:bold;color:#141316;">Pending</p>
           </div>
-          <%if event.user == current_user %>
-            <div class="requests-status">
-              <p style="font-weight:bold;color:#141316;"> Request </p>
-            </div>
-            <%elsif event.join_requests.where(user: current_user, status: 1).any? %>
-              <div class="requests-accepted">
-                <p style="font-weight:bold;color:#141316;">Accepted</p>
-              </div>
-            <% else event.join_requests.where(user: current_user, status: "pending").any? %>
-              <div class="requests-pending">
-                <p style="font-weight:bold;color:#141316;">Pending</p>
-              </div>
-            <% end %>
+        <% end %>
       </div>
       <div class = "col-1"></div>
     <%end%>
@@ -56,12 +52,11 @@
           <%= image_tag "icons/clock.png", class: "index-event-icon" %>
           <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
         </div>
-        <button type="button" class="btn btn-primary monday review-button" data-toggle="modal" data-target="#reviewModal" data-index="<%= index %>"> Review </button>
+        <button type="button" class="btn btn-primary monday review-button" data-toggle="modal" data-target="#reviewModal-<%= index %>" data-index="<%= index %>"> Review </button>
         <%#= link_to "Review","#", class:["btn", "btn-primary", "monday"], params:{event:event.id}, data:{toggle:"modal", target: "#reviewModal"}  %>
-
-      </div> <!-- Closing games card -->
-
-      <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel"           aria-hidden="true">
+      </div>
+       <!-- Closing games card -->
+      <div class="modal fade" id="reviewModal-<%= index %>" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -71,15 +66,17 @@
               </button>
             </div>
             <div class="modal-body">
+              <%#= raise %>
               <%= render "reviews/review_partial", review: @review, event: event %>
             </div>
-            <div class="modal-footer"></div>
-
+            <div class="modal-footer">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class = "col-1"></div>
-
+      <div class = "col-1">
+      </div>
     <% end %>
   </div>
+  <div class="flash" ></div>
 </div>

@@ -1,7 +1,6 @@
 const hideReview = () => {
   const reviewButtons = document.querySelectorAll(".review-button");
   if (reviewButtons) {
-    console.log(reviewButtons)
     reviewButtons.forEach((button) => {
       button.addEventListener("click", () => {
         reviewSubmit(button.dataset.index);
