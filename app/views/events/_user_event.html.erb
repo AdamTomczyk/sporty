@@ -2,7 +2,7 @@
   <%#= code for when capacity full %>
 <div style="display:flex;align-items:center;">
   <% @event.join_requests.where(status: 1).each do |player| %>
-        <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625207249/pjzvzmkcapu1euporrej.jpg", class:"avatar"%>
+        <%= image_tag player.user.avatar, class:"avatar"%>
         <h6 style="color:#5e5c69" class="ml-4"><%= player.user.first_name.capitalize %></h6>
   <%end%>
 </div>
