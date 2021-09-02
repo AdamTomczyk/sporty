@@ -7,6 +7,109 @@
   background: black;
 }
 
+.topeventshow-info{
+  box-shadow: 0px 16px 30px 48px #141316;
+  z-index: 100;
+  position: relative;
+}
+
+.event_card {
+  background-color: #232631;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.event_card_secondFlex{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.circlebg-Tennis{
+  padding: 12px;
+  background-color: #9657D4;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circlebg-Basketball{
+  padding: 12px;
+  background-color: #3772FF;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circlebg-Soccer{
+  padding: 12px;
+  background-color: #45B26C;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.eventStart{
+  display: flex;
+  align-items: flex-start;
+}
+
+.startavatar{
+  width: 20px;
+}
+
+.joinIndexEvent{
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 2px 12px;
+  color: white;
+}
+
+.Tennis.event_card:hover {
+  background: linear-gradient(45deg, #5FE1EB, #B4EC93);
+  box-shadow: 0px 0px 5px 0px #B4EC93;
+
+  .circlebg-Tennis{
+    background-color: white;
+  }
+}
+
+.Basketball.event_card:hover {
+  background: linear-gradient(45deg, #FEB09E, #F953D4);
+  box-shadow: 0px 0px 5px 0px #F953D4;
+
+  .circlebg-Basketball{
+    background-color: white;
+  }
+}
+
+.Soccer.event_card:hover {
+  background: linear-gradient(45deg, #CA7CFF, #5414D7);
+  box-shadow: 0px 0px 5px 0px #CA7CFF;
+
+  .circlebg-Soccer{
+    background-color: white;
+
+  }
+}
+
+#query{
+     background-color: #6c6f9d;
+     color:white;
+     border:1px solid transparent;
+     border-radius: 10px;
+     padding: 5px 10px;
+     box-shadow: 3px 5px 57px -10px #FFF;
+  option{
+    color:white;
+    background-color: #6c6f9d;
+    border-radius: 5px;
+  }
+}
+
+/*
 .event_card {
   background-color: #232631;
   padding: 20px;
@@ -92,3 +195,4 @@
   background: none;
   border: solid white 1px;
 }
+*/
