@@ -2,45 +2,51 @@ User.destroy_all
 Event.destroy_all
 
 user_1 = User.create!(
-  email: "aija@joinsporty.com",
+  email: "kobe@joinsporty.com",
   first_name: "Aija",
   last_name: "Mezapuke",
-  password: "123456"
+  password: "123456",
+  avatar: "kobe.png"
 )
 
 user_2 = User.create!(
   email: "may@may.com",
   first_name: "May",
   last_name: "Dang",
-  password: "123456"
+  password: "123456",
+  avatar: "may.png"
 )
 
 user_3 = User.create!(
-  email: "marius@user.com",
+  email: "marius@marius.com",
   first_name: "Marius",
   last_name: "Hepp",
-  password: "123456"
+  password: "123456",
+  avatar: "marius.png"
 )
 
 user_4 = User.create!(
   email: "aija@aija.com",
   first_name: "Aija",
   last_name: "Mezapuke",
-  password: "123456"
+  password: "123456",
+  avatar: "aija.png"
 )
 
 user_5 = User.create!(
   email: "adam@host.com",
   first_name: "Adam",
   last_name: "Tomczyk",
-  password: "123456"
+  password: "123456",
+  avatar: "adam.png"
 )
 
 user_6 = User.create!(
   email: "lebron@lebron.com",
   first_name: "Lebron",
   last_name: "James",
-  password: "123456"
+  password: "123456",
+  avatar: "lebron.png"
 )
  # 01
 
