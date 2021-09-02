@@ -9,6 +9,7 @@
     <div class="row" style="margin-left:15px;">
 
       <% @upcoming_events.each do |event|  %>
+      <%= link_to event_path(event)  do%>
         <div class = "games_card col-3">
           <%= image_tag "#{event.category}_sketch.png", class: "main-icon-game-card"%>
           <p class="game-card-title"><%= event.name %></p>
@@ -32,6 +33,7 @@
               <div class="requests-pending">
                 <p style="font-weight:bold;color:#141316;">Pending</p>
               </div>
+              <% end %>
             <% end %>
       </div>
       <div class = "col-1"></div>
