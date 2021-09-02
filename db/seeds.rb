@@ -54,7 +54,7 @@ user_6 = User.create!(
  # 01
 
   event_1 = Event.create!(
-  name: "Ball is life. 5 vs 5",
+  name: "Ball is life.",
   capacity: 5,
   description: "We are a group of 5 hardcore ballers and are looking for another 5 of whatever-type-you-are ballers.
   I have been a baller since I have come out of my mother's womb, but you don't have to be.
@@ -71,7 +71,7 @@ user_6 = User.create!(
 # 02
 
 event_2 = Event.create!(
-  name: "Soccer with the gang",
+  name: "Soccer w. the gang",
   capacity: 6,
   description: "We are a group of 6 and would like to meet another grouß of six for some soccer.
   Bring some drinks and a towel, because we will get you sweaty ⚽️ ",
@@ -87,7 +87,7 @@ event_2 = Event.create!(
 # 03
 
 event_3 = Event.create!(
-  name: "Tennis",
+  name: "Tennis Tournament",
   capacity: 1,
   description: "Looking for another person to join a tennis match. Let's play!",
   category: "Tennis",
@@ -102,7 +102,7 @@ event_3 = Event.create!(
 # 04
 
 event_4 = Event.create!(
-  name: "Extreme Soccer. 25 vs 25",
+  name: "Extreme Soccer–25 vs 25",
   capacity: 23,
   description: "We are a group of 27 people in our prime. What better way to
   spend our youth than to do things you've never done before. What's one thing
@@ -121,7 +121,7 @@ event_4 = Event.create!(
 # 05
 
 event_5 = Event.create!(
-  name: "Tennis Newbie",
+  name: "Tennis Match!",
   capacity: 3,
   description: "Hey guys! I just started with Tennis and am interested in
   learning more. If you too are new into Tennis, are more an intermediate player
@@ -138,7 +138,7 @@ event_5 = Event.create!(
 # 06
 
 event_6 = Event.create!(
-  name: "Kobe 🏀",
+  name: "Kobes 🏀",
   capacity: 10,
   description: "looking for more people to join us for this basketball game. If
   you too think ball is life, join us. ",
