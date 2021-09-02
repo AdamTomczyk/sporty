@@ -56,7 +56,8 @@
         <button type="button" class="btn btn-primary monday review-button" data-toggle="modal" data-target="#reviewModal" data-index="<%= index %>"> Review </button>
         <%#= link_to "Review","#", class:["btn", "btn-primary", "monday"], params:{event:event.id}, data:{toggle:"modal", target: "#reviewModal"}  %>
 
-      </div>
+      </div> <!-- Closing games card -->
+
       <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel"           aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -70,10 +71,12 @@
               <%= render "reviews/review_partial", review: @review, event: event %>
             </div>
             <div class="modal-footer"></div>
-          </div>
+
         </div>
       </div>
     </div>
     <div class = "col-1"></div>
-  <% end %>
+
+    <% end %>
+  </div>
 </div>
