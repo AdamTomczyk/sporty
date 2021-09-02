@@ -2,7 +2,7 @@ User.destroy_all
 Event.destroy_all
 
 user_1 = User.create!(
-  email: "kobe@joinsporty.com",
+  email: "kobe@kobe.com",
   first_name: "Aija",
   last_name: "Mezapuke",
   password: "123456",
@@ -34,7 +34,7 @@ user_4 = User.create!(
 )
 
 user_5 = User.create!(
-  email: "adam@host.com",
+  email: "adam@adam.com",
   first_name: "Adam",
   last_name: "Tomczyk",
   password: "123456",
