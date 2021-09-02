@@ -18,9 +18,9 @@
       <%= f.input :location %>
 
       <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport]%>
-      <%= f.input :start_time %>
+      <%= f.input :start_time, as: :datetime, html5: true %>
 
-      <%= f.input :end_time %>
+      <%= f.input :end_time, as: :datetime, html5: true %>
 
       <%= f.submit class: 'homebutton mt-5' %>
       <% end %>

@@ -19,6 +19,8 @@ class Event < ApplicationRecord
 
   end
 
+  CATEGORY = ["Basketball", "Tennis", "Soccer"]
+
   private
 
   def initialize_chat
