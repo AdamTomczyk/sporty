@@ -24,8 +24,7 @@
             <div class="requests-status">
               <p style="font-weight:bold;color:#141316;"> Request </p>
             </div>
-          <%else %>
-            <%if event.join_requests.where(user: current_user, status: 1).any? %>
+            <%elsif event.join_requests.where(user: current_user, status: 1).any? %>
               <div class="requests-accepted">
                 <p style="font-weight:bold;color:#141316;">Accepted</p>
               </div>
@@ -34,9 +33,6 @@
                 <p style="font-weight:bold;color:#141316;">Pending</p>
               </div>
             <% end %>
-
-          <% end %>
-        <% end %>
       </div>
       <div class = "col-1"></div>
     <%end%>
