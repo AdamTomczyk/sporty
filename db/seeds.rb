@@ -408,7 +408,7 @@ join_request_8 = JoinRequest.create!(
 
 join_request_9 = JoinRequest.create!(
   skill_level: "Beginner",
-  user_id: user_1.id,
+  user_id: user_4.id,
   event: event_15,
   status: 0
 )
