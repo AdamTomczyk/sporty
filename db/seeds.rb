@@ -442,3 +442,17 @@ join_request_12 = JoinRequest.create!(
   event: event_16,
   status: 1
 )
+
+join_request_13 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_2.id,
+  event: event_15,
+  status: 1
+)
+
+join_request_14 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_4.id,
+  event: event_1,
+  status: 1
+)
