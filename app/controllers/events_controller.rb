@@ -21,6 +21,19 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @chatroom = @event.chatroom
     @message = Message.new
+    @location = @event.location
+    @comaIndex = 0
+    @formatedLocation = []
+
+    for i in 0..@location.length do
+      if @location[i] == ","
+        @comaIndex = i
+      end
+    end
+
+    for i in 0..@comaIndex-1 do
+        @formatedLocation.push(@location[i])
+    end
   end
 
   def new
