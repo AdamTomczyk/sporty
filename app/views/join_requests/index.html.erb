@@ -28,7 +28,7 @@
               <div class="requests-accepted">
                 <p style="font-weight:bold">Accepted</p>
               </div>
-            <% else event.join_requests.where(user: current_user, status: "pending").any? %>
+            <% else event.join_requests.where(user: current_user, status: 2).any? %>
               <div class="requests-pending">
                 <p style="font-weight:bold">Pending</p>
               </div>

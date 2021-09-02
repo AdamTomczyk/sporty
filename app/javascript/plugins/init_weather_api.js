@@ -5,7 +5,7 @@ const coordinates = document.getElementById('weather')
 const fetchWeatherByCoordinates = (coordinates) => {
   // 3. Get the dataset from this element (.dataset)
   // 4. Get the long, and lat
-  fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${API_KEY}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${API_KEY}`)
   .then(response => response.json())
   .then(updateCard);
 };

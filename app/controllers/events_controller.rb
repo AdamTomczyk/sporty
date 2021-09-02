@@ -1,13 +1,23 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+
+
   def index
-    if params[:query].present?
-      @events = Event.where(category: params[:query])
-    else
-      @events = Event.all
-      # the `geocoded` scope filters only events with coordinates (latitude & longitude)
+
+    all_events = Event.all
+    sorted_events = all_events.partition do |event|
+      DateTime.now < event.end_time
     end
-    @markers = @events.geocoded.map do |event|
+
+    @upcoming_events = sorted_events[0]
+    @past_events = sorted_events[1]
+
+    if params[:query].present?
+      @events = @upcoming_events.where(category: params[:query])
+    else
+      return @upcoming_events
+    end
+    @markers = @upcoming_events.geocoded.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
