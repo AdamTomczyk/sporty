@@ -42,7 +42,7 @@
   </div>
 </div>
 <div class="container">
-  <h1 class="mt-5 mb-4" style="color:white;margin-left:15px;">Reviews ⭐️</h1>
+  <h1 class="mt-5 mb-4" style="color:white;margin-left:15px;">Review your Games ⭐️</h1>
   <div class="row" style="margin-left:15px;">
     <% @past_events.each_with_index do |event, index|  %>
       <div class = "games_card col-3 review-<%=index%>" >
@@ -55,17 +55,21 @@
         <div class="event-description-container">
           <%= image_tag "icons/clock.png", class: "index-event-icon" %>
           <p class="event-info"> <%= event.start_time.strftime("%b %e, %l:%M %p") %></p>
+ <button type="button" style="position:relative; left:20px;top:-5px;border:none;" class="btn btn-primary monday review-button reviewbtn" data-toggle="modal" data-target="#reviewModal" data-index="<%= index %>"> Review </button>
         </div>
-        <button type="button" class="btn btn-primary monday review-button" data-toggle="modal" data-target="#reviewModal" data-index="<%= index %>"> Review </button>
+
         <%#= link_to "Review","#", class:["btn", "btn-primary", "monday"], params:{event:event.id}, data:{toggle:"modal", target: "#reviewModal"}  %>
+
+
+
 
       </div> <!-- Closing games card -->
 
-      <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel"           aria-hidden="true">
+      <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel"  aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="reviewModalLabel">Leave Review</h5>
+              <h5 class="modal-title" style="color:white;" id="reviewModalLabel">Leave Review</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
