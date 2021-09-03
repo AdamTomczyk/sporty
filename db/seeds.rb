@@ -79,10 +79,10 @@ event_10 = Event.create!(
 # 09
 
 event_9 = Event.create!(
-  name: "We like Soccer. Amen.",
-  capacity: 10,
+  name: "We like Tennis. Amen.",
+  capacity: 4,
   description: "Like the title says",
-  category: "Soccer",
+  category: "Tennis",
   location: "Monumentenstrasse, Berlin",
   skill_level: "Beginner",
   start_time: DateTime.parse("10/10/2021 17:00"),
@@ -200,13 +200,13 @@ user_2 = User.create!(
 
 # 13
 
-event_13 = Event.create!(
-  name: "Soccer Game @ Neukölln brudi",
+event_19 = Event.create!(
+  name: "Tennis Game @ Neukölln",
   capacity: 10,
-  description: "We are a group of 3 guys interested in other players to play soccer with us.
+  description: "We are a group of 3 guys interested in other players to play tennis with us.
   Bonus points if you bring some snacks",
-  category: "Soccer",
-  location: "Neukölln, Berlin",
+  category: "Tennis",
+  location: "Friedrichshain, Berlin",
   skill_level: "Beginner",
   start_time: DateTime.parse("09/12/2021 17:00"),
   end_time: DateTime.parse("09/12/2021 21:00"),
@@ -228,7 +228,7 @@ event_3 = Event.create!(
 )
 
 event_13 = Event.create!(
-  name: "Soccer Game @ Neukölln brudi ⚽️",
+  name: "Soccer @ Neukölln brudi ⚽️",
   capacity: 10,
   description: "We are a group of 3 guys interested in other players to play soccer with us ⚽️.
   Bonus points if you bring some snacks",
@@ -326,7 +326,7 @@ event_3 = Event.create!(
   capacity: 1,
   description: "Looking for another person to join a tennis match. Let's play!",
   category: "Tennis",
-  location: "Brandenburger Tor, Berlin",
+  location: "Fischerinsel, Berlin",
   skill_level: "Beginner",
   start_time: DateTime.parse("03/09/2021 17:00"),
   end_time: DateTime.parse("03/09/2021 21:00"),
@@ -667,3 +667,278 @@ end
 #   score: 5
 #   )
 # review_2.save
+
+
+# USER FOR PRESENTATION
+
+user_11 = User.create!(
+  email: "user_11@mail.com",
+  first_name: "user_11",
+  last_name: "user_11",
+  password: "user_11",
+  avatar: "may.png"
+)
+
+user_12 = User.create!(
+  email: "user_12@mail.com",
+  first_name: "user_12",
+  last_name: "user_12",
+  password: "user_12",
+  avatar: "may.png"
+)
+
+user_13 = User.create!(
+  email: "user_13@mail.com",
+  first_name: "user_13",
+  last_name: "user_13",
+  password: "user_13",
+  avatar: "may.png"
+)
+
+user_14 = User.create!(
+  email: "user_14@mail.com",
+  first_name: "user_14",
+  last_name: "user_14",
+  password: "user_14",
+  avatar: "may.png"
+)
+
+user_15 = User.create!(
+  email: "user_15@mail.com",
+  first_name: "user_15",
+  last_name: "user_15",
+  password: "user_15",
+  avatar: "may.png"
+)
+
+user_16 = User.create!(
+  email: "user_16@mail.com",
+  first_name: "user_16",
+  last_name: "user_16",
+  password: "user_16",
+  avatar: "may.png"
+)
+
+user_17 = User.create!(
+  email: "user_17@mail.com",
+  first_name: "user_17",
+  last_name: "user_17",
+  password: "user_17",
+  avatar: "may.png"
+)
+
+user_18 = User.create!(
+  email: "user_18@mail.com",
+  first_name: "user_18",
+  last_name: "user_18",
+  password: "user_18",
+  avatar: "may.png"
+)
+
+user_19 = User.create!(
+  email: "user_19@mail.com",
+  first_name: "user_19",
+  last_name: "user_19",
+  password: "user_19",
+  avatar: "may.png"
+)
+
+user_20 = User.create!(
+  email: "user_20@mail.com",
+  first_name: "user_20",
+  last_name: "user_20",
+  password: "user_20",
+  avatar: "may.png"
+)
+
+# JOIN REQUESTS FOR PRESENTATION // EVENT 12
+
+join_request_101 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_11.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_102 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_12.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_103 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_13.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_104 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_14.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_105 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_15.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_106 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_16.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_107 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_17.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_150 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_18.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_151 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_19.id,
+  event: event_12,
+  status: :accepted
+)
+
+join_request_152 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_20.id,
+  event: event_12,
+  status: :accepted
+)
+
+# JOIN REQUESTS FOR PRESENTATION // EVENT 10
+
+join_request_108 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_11.id,
+  event: event_10,
+  status: :accepted
+)
+
+join_request_109 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_12.id,
+  event: event_10,
+  status: :accepted
+)
+
+join_request_110 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_13.id,
+  event: event_10,
+  status: :accepted
+)
+
+join_request_111 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_14.id,
+  event: event_10,
+  status: :accepted
+)
+
+join_request_112 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_15.id,
+  event: event_10,
+  status: :accepted
+)
+
+# JOIN REQUESTS FOR PRESENTATION // EVENT 09
+
+join_request_113 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_11.id,
+  event: event_9,
+  status: :accepted
+)
+
+# JOIN REQUESTS FOR PRESENTATION // EVENT 13
+
+join_request_114 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_11.id,
+  event: event_13,
+  status: :accepted
+)
+
+join_request_115 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_12.id,
+  event: event_13,
+  status: :accepted
+)
+
+join_request_116 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_13.id,
+  event: event_13,
+  status: :accepted
+)
+
+join_request_117 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_14.id,
+  event: event_13,
+  status: :accepted
+)
+
+join_request_118 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_15.id,
+  event: event_13,
+  status: :accepted
+)
+
+join_request_119 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_16.id,
+  event: event_13,
+  status: :accepted
+)
+
+join_request_120 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_17.id,
+  event: event_13,
+  status: :accepted
+)
+
+# JOIN REQUESTS FOR PRESENTATION // EVENT 19
+
+join_request_121 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_11.id,
+  event: event_19,
+  status: :accepted
+)
+
+join_request_122 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_12.id,
+  event: event_19,
+  status: :accepted
+)
+
+join_request_123 = JoinRequest.create!(
+  skill_level: "This-is-my-hobby",
+  user_id: user_13.id,
+  event: event_19,
+  status: :accepted
+)
