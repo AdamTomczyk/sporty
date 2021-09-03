@@ -18,7 +18,7 @@ user_1 = User.create!(
   email: "king@james.me",
   first_name: "King James",
   last_name: "himself",
-  password: "123456"
+  password: "123456",
   avatar: "user2.jpg"
 )
 
@@ -185,7 +185,7 @@ user_2 = User.create!(
   email: "dunking@dirk.me",
   first_name: "7-foot-Schnitzel",
   last_name: "himself",
-  password: "123456"
+  password: "123456",
   avatar: "user1.jpg"
 )
 
@@ -432,8 +432,8 @@ event_20 = Event.create!(
   category: "Basketball",
   location: "American Airlines Arena, Miami",
   skill_level: "I-breathe-this-sport",
-  start_time: DateTime.parse("06/12/2012 16:00"),
-  end_time: DateTime.parse("06/21/2012 18:00"),
+  start_time: DateTime.parse("12/06/2012 16:00"),
+  end_time: DateTime.parse("21/06/2012 18:00"),
   user_id: user_5.id,
   availability: true
 )
@@ -448,7 +448,7 @@ event_21 = Event.create!(
   location: "AT&T Center, San Antonio",
   skill_level: "I-breathe-this-sport",
   start_time: DateTime.parse("06/06/2013 16:00"),
-  end_time: DateTime.parse("05/20/2013 18:00"),
+  end_time: DateTime.parse("20/05/2013 18:00"),
   user_id: user_5.id,
   availability: true
 )
@@ -462,8 +462,8 @@ event_22 = Event.create!(
   category: "Basketball",
   location: "Oracle Arena, Oakland",
   skill_level: "I-breathe-this-sport",
-  start_time: DateTime.parse("06/02/2016 16:00"),
-  end_time: DateTime.parse("06/19/2016 18:00"),
+  start_time: DateTime.parse("02/06/2016 16:00"),
+  end_time: DateTime.parse("19/06/2016 18:00"),
   user_id: user_5.id,
   availability: true
 )
@@ -477,8 +477,8 @@ event_23 = Event.create!(
   category: "Basketball",
   location: "Oracle Arena, Oakland",
   skill_level: "I-breathe-this-sport",
-  start_time: DateTime.parse("09/30/2020 16:00"),
-  end_time: DateTime.parse("10/11/2020 18:00"),
+  start_time: DateTime.parse("30/09/2020 16:00"),
+  end_time: DateTime.parse("11/10/2020 18:00"),
   user_id: user_5.id,
   availability: true
 )
@@ -610,7 +610,7 @@ review_host_1 = Review.new(
     reviewee_id: join_request_event_2.event.user.id,
     event_id: join_request_event_2.event.id,
     comment: comments.sample,
-    score: rand(1..5)
+    score: rand(2..5)
   )
 review_host_1.save
 
@@ -619,7 +619,7 @@ review_host_2 = Review.new(
     reviewee_id: join_request_event_3.event.user.id,
     event_id: join_request_event_3.event.id,
     comment: comments.sample,
-    score: rand(1..5)
+    score: rand(2..5)
   )
 review_host_2.save
 
@@ -628,7 +628,7 @@ review_host_3 = Review.new(
     reviewee_id: join_request_event_1.event.user.id,
     event_id: join_request_event_1.event.id,
     comment: comments.sample,
-    score: rand(1..5)
+    score: rand(2..5)
   )
 review_host_3.save
 
@@ -638,7 +638,7 @@ event_17.attendees.each do |join_request|
     reviewer_id: join_request.event.user.id,
     event_id: join_request.event.id,
     comment: comments.sample,
-    score: rand(1..5)
+    score: rand(2..5)
   )
   review.save
 end
