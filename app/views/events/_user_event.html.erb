@@ -1,9 +1,9 @@
- <h2 style="color:#5e5c69"> Other Players</h2>
+ <h2 style="color:#cecece"> Other Players</h2>
   <%#= code for when capacity full %>
 <div style="display:flex;align-items:center;">
   <% @event.join_requests.where(status: 1).each do |player| %>
         <%= image_tag player.user.avatar, class:"avatar"%>
-        <h6 style="color:#5e5c69" class="ml-4"><%= player.user.first_name.capitalize %></h6>
+        <h6 style="color:#cecece" class="ml-4"><%= player.user.first_name.capitalize %></h6>
   <%end%>
 </div>
 

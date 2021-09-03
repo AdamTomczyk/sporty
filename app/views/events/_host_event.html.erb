@@ -9,7 +9,7 @@
   <%@my_events = current_user.events # returns collection of my events
     @pending_requests = JoinRequest.where(event_id: @my_events.pluck(:id)).where(status: "pending") %>
 
-  <h2 class="mb-4" style="color:#323238">Player Requests</h2>
+  <h2 class="mb-4" style="color:#cecece">Player Requests</h2>
 
   <div class="playerRequests">
 
@@ -41,7 +41,7 @@
 
 
 
-<h2 class="accordion my-4" style="color:#323238">Accepted Players <span style="position:relative;top:10px">&#x2935;</span></h2>
+<h2 class="accordion my-4" style="color:#cecece">Accepted Players <span style="position:relative;top:10px">&#x2935;</span></h2>
 <div class="panel">
   <% @event.attendees.each do |request|  %>
            <div class="mt-1" style="display:flex;align-items:center;">
