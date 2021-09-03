@@ -19,7 +19,9 @@ const initChatroomCable = () => {
           message.classList.remove('message-author-current-user');
           message.classList.add('message-author-other-user');
         }
-        document.querySelector("#new_message").insertAdjacentElement("beforebegin", message);
+        if (!document.getElementById(message.id)) {
+          document.querySelector("#new_message").insertAdjacentElement("beforebegin", message);
+        }
       },
     });
   }
