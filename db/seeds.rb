@@ -2,7 +2,15 @@ User.destroy_all
 Event.destroy_all
 
 
+# USER 3
 
+user_3 = User.create!(
+  email: "marius@marius.com",
+  first_name: "Marius",
+  last_name: "Hepp",
+  password: "123456",
+  avatar: "marius.png"
+)
 
 # USER 1
 
@@ -35,7 +43,7 @@ event_11 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("12/12/2021 17:00"),
   end_time: DateTime.parse("12/12/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -56,7 +64,7 @@ event_12 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/12/2021 17:00"),
   end_time: DateTime.parse("09/12/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -72,7 +80,7 @@ event_10 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("11/11/2021 17:00"),
   end_time: DateTime.parse("11/11/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -87,7 +95,7 @@ event_9 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("10/10/2021 17:00"),
   end_time: DateTime.parse("10/10/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -104,7 +112,7 @@ event_17 = Event.create!(
   skill_level: "I-breathe-this-sport",
   start_time: DateTime.parse("05/03/2021 13:00"),
   end_time: DateTime.parse("05/03/2021 17:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
   )
 
@@ -124,7 +132,7 @@ event_5 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/05/2021 17:00"),
   end_time: DateTime.parse("09/05/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -140,7 +148,7 @@ event_2 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/02/2021 17:00"),
   end_time: DateTime.parse("09/02/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -156,7 +164,7 @@ event_6 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/06/2021 17:00"),
   end_time: DateTime.parse("09/06/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -172,7 +180,7 @@ event_7 = Event.create!(
   skill_level: "This-is-my-hobby",
   start_time: DateTime.parse("09/07/2021 17:00"),
   end_time: DateTime.parse("09/07/2021 21:00"),
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -210,13 +218,13 @@ event_19 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/12/2021 17:00"),
   end_time: DateTime.parse("09/12/2021 21:00"),
-  user_id: user_2.id,
+  user_id: user_3.id,
   availability: true
 )
 
 event_3 = Event.create!(
   name: "Daring Dunking Dirk?",
-  capacity: 1,
+  capacity: 2,
   description: "Yo Little Lee, this Dirk! Yep, the 7-foot-Schnitzel, the Germanator, Dirk Diggler, the one and only Dunking Deutschman. And you know what? The whole f-k-n-g Brandenburger Tor will be a Dunkin' Donuts tonight. Btw, This tennis match is powered by ING Diba: Diba, diba, duuu! 🏀",
   category: "Basketball",
   location: "Brandenburger Tor, Berlin",
@@ -237,7 +245,7 @@ event_13 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/12/2021 17:00"),
   end_time: DateTime.parse("09/12/2021 21:00"),
-  user_id: user_2.id,
+  user_id: user_3.id,
   availability: true
 )
 
@@ -255,7 +263,7 @@ event_15 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("07/07/2021 17:00"),
   end_time: DateTime.parse("07/07/2021 21:00"),
-  user_id: user_2.id,
+  user_id: user_kobe.id,
   availability: true
 )
 
@@ -272,7 +280,7 @@ event_15 = Event.create!(
   skill_level: "I-breathe-this-sport",
   start_time: DateTime.parse("09/01/2021 17:00"),
   end_time: DateTime.parse("09/01/2021 21:00"),
-  user_id: user_2.id,
+  user_id: user_3.id,
   availability: true
 )
 
@@ -288,18 +296,8 @@ event_8 = Event.create!(
   skill_level: "Beginner",
   start_time: DateTime.parse("09/08/2021 17:00"),
   end_time: DateTime.parse("09/08/2021 21:00"),
-  user_id: user_2.id,
+  user_id: user_3.id,
   availability: true
-)
-
-# USER 3
-
-user_3 = User.create!(
-  email: "marius@marius.com",
-  first_name: "Marius",
-  last_name: "Hepp",
-  password: "123456",
-  avatar: "marius.png"
 )
 
 # PAST EVENTS:
@@ -444,6 +442,13 @@ event_20 = Event.create!(
   availability: true
 )
 
+join_request_201 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_1.id,
+  event: event_20,
+  status: 1
+)
+
   # 21
 
 event_21 = Event.create!(
@@ -457,6 +462,13 @@ event_21 = Event.create!(
   end_time: DateTime.parse("20/05/2013 18:00"),
   user_id: user_5.id,
   availability: true
+)
+
+join_request_202 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_1.id,
+  event: event_21,
+  status: 1
 )
 
   # 22
@@ -474,6 +486,13 @@ event_22 = Event.create!(
   availability: true
 )
 
+join_request_203 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_1.id,
+  event: event_22,
+  status: 1
+)
+
   # 23
 
 event_23 = Event.create!(
@@ -489,13 +508,40 @@ event_23 = Event.create!(
   availability: true
 )
 
+join_request_204 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_1.id,
+  event: event_23,
+  status: 1
+)
+
+event_24 = Event.create!(
+  name: "Playoffs x Miami Heat 🔥",
+  capacity: 4,
+  description: "Next game for LeBron James",
+  category: "Basketball",
+  location: "Kreuzberg",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("22/12/2021 16:00"),
+  end_time: DateTime.parse("22/12/2021 23:00"),
+  user_id: user_kobe.id,
+  availability: true
+)
+
+join_request_205 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_1.id,
+  event: event_24,
+  status: 0
+)
+
 # JOIN REQUESTS:
 
 # 01
 
 join_request_1 = JoinRequest.create!(
   skill_level: "I-breathe-this-sport",
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   event: event_3,
   status: 1
 )
@@ -503,8 +549,8 @@ join_request_1 = JoinRequest.create!(
 
 join_request_2 = JoinRequest.create!(
   skill_level: "Beginner",
-  user_id: user_2.id,
-  event: event_2 ,
+  user_id: user_3.id,
+  event: event_2,
   status: 1
 )
     # 03
@@ -527,7 +573,7 @@ join_request_4 = JoinRequest.create!(
 
 join_request_5 = JoinRequest.create!(
   skill_level: "Beginner",
-  user_id: user_2.id,
+  user_id: user_3.id,
   event: event_10,
   status: 0
 )
@@ -543,7 +589,7 @@ join_request_6 = JoinRequest.create!(
 
 join_request_7 = JoinRequest.create!(
   skill_level: "I-breathe-this-sport",
-  user_id: user_2.id,
+  user_id: user_3.id,
   event: event_6,
   status: 0
 )
@@ -551,7 +597,7 @@ join_request_7 = JoinRequest.create!(
 
 join_request_8 = JoinRequest.create!(
   skill_level: "Beginner",
-  user_id: user_1.id,
+  user_id: user_2.id,
   event: event_17,
   status: 1
 )
@@ -559,7 +605,7 @@ join_request_8 = JoinRequest.create!(
 
 join_request_9 = JoinRequest.create!(
   skill_level: "Beginner",
-  user_id: user_1.id,
+  user_id: user_kobe.id,
   event: event_15,
   status: 0
 )
@@ -592,7 +638,7 @@ join_request_12 = JoinRequest.create!(
 # create a bunch of join requests
 join_request_event_1 = JoinRequest.create!(
   skill_level: "This-is-my-hobby",
-  user_id: user_2.id,
+  user_id: user_3.id,
   event: event_17,
   status: :accepted
 )
@@ -604,50 +650,50 @@ join_request_event_2 = JoinRequest.create!(
 )
 join_request_event_3 = JoinRequest.create!(
   skill_level: "This-is-my-hobby",
-  user_id: user_3.id,
+  user_id: user_kobe.id,
   event: event_17,
   status: :accepted
 )
 
-comments = ["Amazing!", "Great!", "Nice person"]
+# comments = ["Amazing!", "Great!", "Nice person"]
 
-review_host_1 = Review.new(
-    reviewer_id: join_request_event_2.user.id,
-    reviewee_id: join_request_event_2.event.user.id,
-    event_id: join_request_event_2.event.id,
-    comment: comments.sample,
-    score: rand(2..5)
-  )
-review_host_1.save
+# review_host_1 = Review.new(
+#     reviewer_id: join_request_event_2.user.id,
+#     reviewee_id: join_request_event_2.event.user.id,
+#     event_id: join_request_event_2.event.id,
+#     comment: comments.sample,
+#     score: rand(2..5)
+#   )
+# review_host_1.save
 
-review_host_2 = Review.new(
-    reviewer_id: join_request_event_3.user.id,
-    reviewee_id: join_request_event_3.event.user.id,
-    event_id: join_request_event_3.event.id,
-    comment: comments.sample,
-    score: rand(2..5)
-  )
-review_host_2.save
+# review_host_2 = Review.new(
+#     reviewer_id: join_request_event_3.user.id,
+#     reviewee_id: join_request_event_3.event.user.id,
+#     event_id: join_request_event_3.event.id,
+#     comment: comments.sample,
+#     score: rand(2..5)
+#   )
+# review_host_2.save
 
-review_host_3 = Review.new(
-    reviewer_id: join_request_event_1.user.id,
-    reviewee_id: join_request_event_1.event.user.id,
-    event_id: join_request_event_1.event.id,
-    comment: comments.sample,
-    score: rand(2..5)
-  )
-review_host_3.save
+# review_host_3 = Review.new(
+#     reviewer_id: join_request_event_1.user.id,
+#     reviewee_id: join_request_event_1.event.user.id,
+#     event_id: join_request_event_1.event.id,
+#     comment: comments.sample,
+#     score: rand(2..5)
+#   )
+# review_host_3.save
 
-event_17.attendees.each do |join_request|
-  review = Review.new(
-    reviewee_id: join_request.user.id,
-    reviewer_id: join_request.event.user.id,
-    event_id: join_request.event.id,
-    comment: comments.sample,
-    score: rand(2..5)
-  )
-  review.save
-end
+# event_17.attendees.each do |join_request|
+#   review = Review.new(
+#     reviewee_id: join_request.user.id,
+#     reviewer_id: join_request.event.user.id,
+#     event_id: join_request.event.id,
+#     comment: comments.sample,
+#     score: rand(2..5)
+#   )
+#   review.save
+# end
 
 # review_1 = Review.new(
 #   reviewee_id: join_request_11.user.id,
