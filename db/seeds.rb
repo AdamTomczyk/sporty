@@ -7,7 +7,7 @@ Event.destroy_all
 # USER 1
 
 user_1 = User.create!(
-  email: "kobe@joinsporty.com",
+  email: "kobe@kobe.com",
   first_name: "Aija",
   last_name: "Mezapuke",
   password: "123456",
@@ -31,7 +31,17 @@ event_11 = Event.create!(
   availability: true
 )
 
+<<<<<<< HEAD
+user_5 = User.create!(
+  email: "adam@adam.com",
+  first_name: "Adam",
+  last_name: "Tomczyk",
+  password: "123456",
+  avatar: "adam.png"
+)
+=======
 # 12
+>>>>>>> 86c745792c493984f845839c16875f2d9d56c783
 
 event_12 = Event.create!(
   name: "Soccer in Neukölln",
