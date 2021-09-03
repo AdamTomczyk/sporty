@@ -39,7 +39,13 @@ event_11 = Event.create!(
   availability: true
 )
 
-# 12
+user_5 = User.create!(
+  email: "adam@adam.com",
+  first_name: "Adam",
+  last_name: "Tomczyk",
+  password: "123456",
+  avatar: "adam.png"
+)
 
 event_12 = Event.create!(
   name: "Soccer in Neukölln",
@@ -661,5 +667,3 @@ end
 #   score: 5
 #   )
 # review_2.save
-
-
