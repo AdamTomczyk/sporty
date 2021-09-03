@@ -100,11 +100,11 @@
                 <h1 class="ml-3" style="color:white"><%= @event.name %></h1>
                 <% if @event.user == current_user %>
                     <div class="approved"><p style="font-weight:bold">Host</p></div>
-                     <% elsif @event.join_requests.where(status: 1).any? %>
+                  <% elsif @event.join_requests.find_by(user: current_user, status: "accepted") %>
                      <div class="approved"><p style="font-weight:bold">Accepted</p></div>
-                     <% elsif @event.join_requests.where(status: "pending").any? %>
-                          <div class="pending"><p style="font-weight:bold">Pending</p></div>
-                    <% else %>
+                  <% elsif @event.join_requests.find_by(user: current_user, status: "pending") %>
+                      <div class="pending"><p style="font-weight:bold">Pending</p></div>
+                  <% else %>
                 <% end %>
               </div>
               <div><h6 style="margin-left: 58px; color:#5E5C69"><%=@event.user.first_name.capitalize()%></h6></div>
