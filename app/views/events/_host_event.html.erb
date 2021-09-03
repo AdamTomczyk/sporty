@@ -19,13 +19,16 @@
          <%= image_tag request.user.avatar, class:"mr-4"%>
         </div>
         <div style="display:flex; flex-direction:column;">
+
            <p class="" style="color:white;margin:0;padding:0;"><%= request.user.first_name.capitalize %></p>
-           <p class="" style="color:white"><span style="color:#7EF097;">
+           <p class="" style="color:white"><span style="color:#7EF097;"><%= rand(1..89)%></span> % Reliability
+           <!--
             <% if request.user.reviews_as_reviewee.any? %>
               <%= request.user.reliability %>%</span> Reliability
             <% else %>
               no review yet
             <% end %>
+            -->
            </p>
         </div>
     </div>
