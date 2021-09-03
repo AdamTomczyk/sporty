@@ -20,7 +20,13 @@
         </div>
         <div style="display:flex; flex-direction:column;">
            <p class="" style="color:white;margin:0;padding:0;"><%= request.user.first_name.capitalize %></p>
-           <p class="" style="color:white"><span style="color:#7EF097;">73%</span> Reliability</p>
+           <p class="" style="color:white"><span style="color:#7EF097;">
+            <% if request.user.reviews_as_reviewee.any? %>
+              <%= request.user.reliability %>%</span> Reliability
+            <% else %>
+              no review yet
+            <% end %>
+           </p>
         </div>
     </div>
 
