@@ -135,6 +135,11 @@
     height: 40px;
     width: 40px;
     line-height: 40px;
+    img {
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+    }
 
     -moz-border-radius: 40px; /* or 50% */
     border-radius: 40px; /* or 50% */
