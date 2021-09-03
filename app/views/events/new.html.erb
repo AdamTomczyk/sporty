@@ -1,44 +1,51 @@
-<%= render "shared/navbar" %>
+
 <div class="bgEventNew">
-  <div class="vantaBG"></div>
   <%= render "shared/navbar_home" %>
 
   <div class="container">
 
-    <h1 class="mb-5" style="color:black">Create a sporty event</h1>
+    <h1 class="mb-5 mt-5" style="color:#5E5C69">Create a sporty event</h1>
       <%= simple_form_for @event do |f| %>
         <div class="form-row">
           <div class="col">
             <%= f.input :name %>
+            <hr style="width:80%">
           </div>
           <div class="col">
             <%= f.input :category, :collection => %w[Basketball Tennis Soccer] %>
+             <hr style="width:80%">
           </div>
         </div>
 
         <div class="form-row">
           <div class="col">
             <%= f.input :description %>
+             <hr style="width:80%">
           </div>
           <div class="col">
             <%= f.input :capacity %>
+             <hr style="width:80%">
           </div>
         </div>
 
       <div class="form-row">
         <div class="col">
             <%= f.input :location %>
+             <hr style="width:80%">
         </div>
         <div class="col">
           <%= f.input :skill_level, :collection => %w[I'd-love-to-try-this This-is-my-hobby I-breathe-this-sport]%>
+           <hr style="width:80%">
         </div>
       </div>
       <div class="form-row">
         <div class="col">
           <%= f.input :start_time, as: :datetime, html5: true %>
+           <hr style="width:80%">
         </div>
         <div class="col">
           <%= f.input :end_time, as: :datetime, html5: true %>
+           <hr style="width:80%">
         </div>
       </div>
 
