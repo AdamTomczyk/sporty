@@ -430,7 +430,7 @@ event_18 = Event.create!(
 # 20
 
 event_20 = Event.create!(
-  name: "2012 NBA Finals 😭",
+  name: "2012 NBA Finals 🏆",
   capacity: 4,
   description: "The Eastern Conference champion Miami Heat defeated the Western Conference champion Oklahoma City Thunder four games to one to win their second NBA title. Heat forward LeBron James was named the Finals MVP.",
   category: "Basketball",
@@ -533,6 +533,33 @@ join_request_205 = JoinRequest.create!(
   user_id: user_1.id,
   event: event_24,
   status: 0
+)
+
+event_25 = Event.create!(
+  name: "NBA Finals 2011 😭",
+  capacity: 4,
+  description: "Next game for LeBron James",
+  category: "Basketball",
+  location: "Kreuzberg",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("21/06/2011 16:00"),
+  end_time: DateTime.parse("30/06/2011 23:00"),
+  user_id: user_kobe.id,
+  availability: true
+)
+
+join_request_206 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_1.id,
+  event: event_25,
+  status: 1
+)
+
+join_request_207 = JoinRequest.create!(
+  skill_level: "I-breathe-this-sport",
+  user_id: user_2.id,
+  event: event_25,
+  status: 1
 )
 
 # JOIN REQUESTS:
