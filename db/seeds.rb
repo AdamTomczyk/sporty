@@ -6,12 +6,20 @@ Event.destroy_all
 
 # USER 1
 
-user_1 = User.create!(
+user_kobe = User.create!(
   email: "kobe@joinsporty.com",
-  first_name: "Aija",
-  last_name: "Mezapuke",
+  first_name: "Kobe",
+  last_name: "Bryant",
   password: "123456",
   avatar: "kobe.png"
+)
+
+user_1 = User.create!(
+  email: "king@james.me",
+  first_name: "King James",
+  last_name: "himself",
+  password: "123456"
+  avatar: "user2.jpg"
 )
 
 # UPCOMING EVENTS:
@@ -165,12 +173,20 @@ event_7 = Event.create!(
 
 # USER 2
 
-user_2 = User.create!(
+user_may = User.create!(
   email: "may@may.com",
   first_name: "May",
   last_name: "Dang",
   password: "123456",
   avatar: "may.png"
+)
+
+user_2 = User.create!(
+  email: "dunking@dirk.me",
+  first_name: "7-foot-Schnitzel",
+  last_name: "himself",
+  password: "123456"
+  avatar: "user1.jpg"
 )
 
 
@@ -192,7 +208,36 @@ event_13 = Event.create!(
   availability: true
 )
 
+event_3 = Event.create!(
+  name: "Daring Dunking Dirk?",
+  capacity: 1,
+  description: "Yo Little Lee, this Dirk! Yep, the 7-foot-Schnitzel, the Germanator, Dirk Diggler, the one and only Dunking Deutschman. And you know what? The whole f-k-n-g Brandenburger Tor will be a Dunkin' Donuts tonight. Btw, This tennis match is powered by ING Diba: Diba, diba, duuu! 🏀",
+  category: "Basketball",
+  location: "Brandenburger Tor, Berlin",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("03/09/2021 20:00"),
+  end_time: DateTime.parse("03/09/2021 23:00"),
+  user_id: user_2.id,
+  availability: true
+)
+
+event_13 = Event.create!(
+  name: "Soccer Game @ Neukölln brudi ⚽️",
+  capacity: 10,
+  description: "We are a group of 3 guys interested in other players to play soccer with us ⚽️.
+  Bonus points if you bring some snacks",
+  category: "Soccer",
+  location: "Neukölln, Berlin",
+  skill_level: "Beginner",
+  start_time: DateTime.parse("09/12/2021 17:00"),
+  end_time: DateTime.parse("09/12/2021 21:00"),
+  user_id: user_2.id,
+  availability: true
+)
+
 # PAST EVENTS:
+
+
 
 # 15
 event_15 = Event.create!(
@@ -317,6 +362,8 @@ user_5 = User.create!(
   avatar: "adam.png"
 )
 
+
+
 # PAST EVENTS:
 
   # 19
@@ -376,6 +423,65 @@ event_18 = Event.create!(
   availability: true
   )
 
+# 20
+
+event_20 = Event.create!(
+  name: "2012 NBA Finals 😭",
+  capacity: 4,
+  description: "The Eastern Conference champion Miami Heat defeated the Western Conference champion Oklahoma City Thunder four games to one to win their second NBA title. Heat forward LeBron James was named the Finals MVP.",
+  category: "Basketball",
+  location: "American Airlines Arena, Miami",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("06/12/2012 16:00"),
+  end_time: DateTime.parse("06/21/2012 18:00"),
+  user_id: user_5.id,
+  availability: true
+)
+
+  # 21
+
+event_21 = Event.create!(
+  name: "2013 NBA Finals 🏆",
+  capacity: 4,
+  description: "In the best-of-seven series, the defending NBA Champion and Eastern Conference champion Miami Heat defeated the Western Conference champion San Antonio Spurs in seven games to win their second consecutive title. The Heat were favored to repeat as champions over the Spurs.[1][2][3] The finals began with Game 1 on June 6, and ended with Game 7 on June 20",
+  category: "Basketball",
+  location: "AT&T Center, San Antonio",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("06/06/2013 16:00"),
+  end_time: DateTime.parse("05/20/2013 18:00"),
+  user_id: user_5.id,
+  availability: true
+)
+
+  # 22
+
+event_22 = Event.create!(
+  name: "2016 NBA Finals 🏆",
+  capacity: 4,
+  description: "The Eastern Conference champion Cleveland Cavaliers defeated the defending NBA champion and Western Conference champion Golden State Warriors four games to three in a rematch of the previous year's Finals. The Cavaliers became the fourth team to win the championship after losing the first two games, joining the 1969 Boston Celtics, 1977 Portland Trail Blazers, and 2006 Miami Heat.",
+  category: "Basketball",
+  location: "Oracle Arena, Oakland",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("06/02/2016 16:00"),
+  end_time: DateTime.parse("06/19/2016 18:00"),
+  user_id: user_5.id,
+  availability: true
+)
+
+  # 23
+
+event_23 = Event.create!(
+  name: "2020 NBA Finals 🏆",
+  capacity: 4,
+  description: "In this best-of-seven playoff series, the Western Conference champion Los Angeles Lakers defeated the Eastern Conference champion Miami Heat, 4–2, winning their first NBA championship in ten years. It was the franchise's 17th title, tying the Boston Celtics for the most in league history.[1] The Lakers' LeBron James was named the NBA Finals Most Valuable Player (MVP) for the fourth time in his career.",
+  category: "Basketball",
+  location: "Oracle Arena, Oakland",
+  skill_level: "I-breathe-this-sport",
+  start_time: DateTime.parse("09/30/2020 16:00"),
+  end_time: DateTime.parse("10/11/2020 18:00"),
+  user_id: user_5.id,
+  availability: true
+)
 
 # JOIN REQUESTS:
 
