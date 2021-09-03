@@ -136,5 +136,18 @@
 
 .reviewbtn{
   background-image: linear-gradient(to right, #7769fe 0%, #bb61ec  51%, #7769fe  100%);
-  background-image: linear-gradient(to right, #7769fe 0%, #bb61ec  51%, #7769fe  100%);
+  padding: 6px;
+            text-align: center;
+            border: none;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 5px 80px rgba(200, 179, 221, 0.8);
+            font-size: 1rem;
+}
+
+#reviewModalLabel{
+  color: white;
 }

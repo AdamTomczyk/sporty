@@ -7,12 +7,12 @@
             <%# Form for a host to review participants %>
             <%# raise %>
             <%= simple_form_for([event, @review], remote: true, data: {participants: event.participants.length}) do |f| %>
-              <h3 style="color: white;">Please write a review for <%= participant.first_name %></h3>
+              <h3 style="color: white;">Please write a review for <%= participant.first_name %> 👨🏻</h3>
               <%= f.input :comment %>
               <%= f.input :reviewer_id, as: :hidden, input_html: {value: current_user.id} %>
               <%= f.input :reviewee_id, as: :hidden, input_html: {value: participant.id} %>
               <%= f.input :score, collection: [[1, "🧨"],[2,"🧨🧨"],[3, "🧨🧨🧨"],[4,"🧨🧨🧨🧨"],[5,"🧨🧨🧨🧨🧨"]], label_method: :last, value_method: :first, label: "Rate your experience" %>
-              <%= f.submit "Send", class: "submit-review-btn review-person-button", data: {name: participant.first_name} %>
+              <%= f.submit "Send", class: "submit-review-btn review-person-button reviewbtn", data: {name: participant.first_name} %>
             <% end %>
           <% end %>
       <% else %>
