@@ -65,7 +65,13 @@
         </div>
         <div>
           <%= image_tag "icons/sec.png" %>
-          <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter;"><span style="color:#85FFAB">87%</span> Reliability</h5>
+          <h5 class="mt-3" style="color:#5E5C69;font-weight:lighter;"><span style="color:#85FFAB">
+            <% if @event.user.reviews_as_reviewee.any? %>
+              <%= @event.user.reliability %>%</span> Reliability
+            <% else %>
+              no review yet
+            <% end %>
+            </h5>
         </div>
         <div>
         <% if @event.join_requests.where(status: 1).any? || @event.user == current_user %>
