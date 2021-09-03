@@ -11,7 +11,7 @@
 
             <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
               <%= f.input :content, label: false, placeholder: "Create a message..." %>
-              <%= f.button :submit, 'Send', style:"color:white", class:"sendbtn ml-4" %>
+              <%= f.button :submit, 'Send', style:"color:white", class:"sendbtn ml-4", style:"border-radius:10px" %>
             <% end %>
           </div>
         </div>
@@ -23,7 +23,7 @@
            <% @event.participants.each do |player|  %>
 
             <div>
-              <img class="avatar" src="https://avatars.githubusercontent.com/u/78529684?v=4">
+              <%= image_tag player.avatar, class:"avatar" %>
               <%#=image_tag player.photo, class:"avatar"  %>
               <h6 class="ml-3" style="font-weight:lighter;color:#5E5C69;"><%= player.first_name%></h6>
             </div>
