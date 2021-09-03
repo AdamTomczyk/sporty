@@ -1,6 +1,6 @@
    <div class="chatbox <%= 'showchat' if coming_ajax %>">
 
-    <div class="container" id="messages" data-event-id="<%= @event.id %>">
+    <div class="container" id="messages" data-event-id="<%= @event.id %>" data-current-user-id="<%= current_user.id %>">
       <div class="row">
       <div class="col-8">
         <div class="hello" style="display: flex; align-items: center; height: 100vh;">

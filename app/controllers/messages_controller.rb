@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if @message.save
-      ChatroomChannel.broadcast_to(@chatroom.event, render_to_string(partial: "message", locals: { message: @message }))
+      ChatroomChannel.broadcast_to(@chatroom.event, { author_id: @message.user.id, partial: render_to_string(partial: "message", locals: { message: @message }) })
       redirect_to event_path(@chatroom.event, anchor: "message-#{@message.id}", coming_ajax: true)
     else
       render "events/show"

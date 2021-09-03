@@ -1,8 +1,7 @@
 <div class="message-container <%= current_user == message.user ? 'message-author-current-user': 'message-author-other-user' %>" id="message-<%= message.id %>">
     <i class="author">
 
-        <%= "user1.jpg", class:"avatar" %>
-        <%#=image_tag message.user.photo, class:"avatar"  %>
+        <%=image_tag message.user.avatar, class:"avatar"  %>
 
     </i>
   <p><%= message.content %></p>

@@ -5,12 +5,21 @@ const initChatroomCable = () => {
   console.log(messagesContainer)
   if (messagesContainer) {
     const id = messagesContainer.dataset.eventId;
+    const currentUserId = messagesContainer.dataset.currentUserId;
 
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
-        document.querySelector("#new_message").insertAdjacentHTML("beforebegin", data)
-        console.log(messagesContainer)
-        console.log(data, "here there should be data")
+        let message = document.createElement('div')
+        message.innerHTML = data.partial;
+        message = message.firstElementChild;
+        if (parseInt(currentUserId, 10) === parseInt(data.author_id, 10)) {
+          message.classList.remove('message-author-current-user');
+          message.classList.add('message-author-current-user');
+        } else {
+          message.classList.remove('message-author-current-user');
+          message.classList.add('message-author-other-user');
+        }
+        document.querySelector("#new_message").insertAdjacentElement("beforebegin", message);
       },
     });
   }
