@@ -719,80 +719,80 @@ join_request_event_3 = JoinRequest.create!(
 
 user_11 = User.create!(
   email: "user_11@mail.com",
-  first_name: "user_11",
-  last_name: "user_11",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_11",
   avatar: "may.png"
 )
 
 user_12 = User.create!(
   email: "user_12@mail.com",
-  first_name: "user_12",
-  last_name: "user_12",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_12",
   avatar: "may.png"
 )
 
 user_13 = User.create!(
   email: "user_13@mail.com",
-  first_name: "user_13",
-  last_name: "user_13",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_13",
   avatar: "may.png"
 )
 
 user_14 = User.create!(
   email: "user_14@mail.com",
-  first_name: "user_14",
-  last_name: "user_14",
+   first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_14",
   avatar: "may.png"
 )
 
 user_15 = User.create!(
   email: "user_15@mail.com",
-  first_name: "user_15",
-  last_name: "user_15",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_15",
   avatar: "may.png"
 )
 
 user_16 = User.create!(
   email: "user_16@mail.com",
-  first_name: "user_16",
-  last_name: "user_16",
+   first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_16",
   avatar: "may.png"
 )
 
 user_17 = User.create!(
   email: "user_17@mail.com",
-  first_name: "user_17",
-  last_name: "user_17",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_17",
   avatar: "may.png"
 )
 
 user_18 = User.create!(
   email: "user_18@mail.com",
-  first_name: "user_18",
-  last_name: "user_18",
+   first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_18",
   avatar: "may.png"
 )
 
 user_19 = User.create!(
   email: "user_19@mail.com",
-  first_name: "user_19",
-  last_name: "user_19",
+   first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_19",
   avatar: "may.png"
 )
 
 user_20 = User.create!(
   email: "user_20@mail.com",
-  first_name: "user_20",
-  last_name: "user_20",
+   first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
   password: "user_20",
   avatar: "may.png"
 )
