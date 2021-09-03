@@ -113,3 +113,28 @@
     margin: 0;
   }
 }
+
+#review_comment{display: none;color:white;}
+
+.modal-content{
+  background-color: rgb(23, 31, 41);
+  border-radius: 10px;
+
+
+  .modal-header, .modal-footer{border-bottom: none; border-top: none;}
+}
+
+
+
+#review_score{
+  background-color: #c197ff;
+  border:none;
+  border-radius:10px;
+
+
+}
+
+.reviewbtn{
+  background-image: linear-gradient(to right, #7769fe 0%, #bb61ec  51%, #7769fe  100%);
+  background-image: linear-gradient(to right, #7769fe 0%, #bb61ec  51%, #7769fe  100%);
+}
