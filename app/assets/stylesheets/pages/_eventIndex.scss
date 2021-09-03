@@ -33,21 +33,21 @@
 
 .circlebg-Tennis{
   padding: 12px;
-  background-color: #9657D4;
+  background: linear-gradient(45deg, #5FE1EB, #B4EC93);
   border-radius: 50%;
   display: inline-block;
 }
 
 .circlebg-Basketball{
   padding: 12px;
-  background-color: #3772FF;
+  background: linear-gradient(45deg, #FEB09E, #F953D4);
   border-radius: 50%;
   display: inline-block;
 }
 
 .circlebg-Soccer{
   padding: 12px;
-  background-color: #45B26C;
+  background: linear-gradient(45deg, #CA7CFF, #5414D7);
   border-radius: 50%;
   display: inline-block;
 }
@@ -73,7 +73,7 @@
   box-shadow: 0px 0px 5px 0px #B4EC93;
 
   .circlebg-Tennis{
-    background-color: white;
+     background: white;
   }
 }
 
@@ -82,7 +82,7 @@
   box-shadow: 0px 0px 5px 0px #F953D4;
 
   .circlebg-Basketball{
-    background-color: white;
+    background: white;
   }
 }
 
@@ -91,13 +91,13 @@
   box-shadow: 0px 0px 5px 0px #CA7CFF;
 
   .circlebg-Soccer{
-    background-color: white;
+     background: white;
 
   }
 }
 
 #query{
-     background-color: #6c6f9d;
+     background-color: #353847;
      color:white;
      border:1px solid transparent;
      border-radius: 10px;
