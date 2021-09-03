@@ -19,7 +19,7 @@ class Event < ApplicationRecord
   end
 
 
-  CATEGORY = ["Basketball", "Tennis", "Soccer"]
+  CATEGORY = ["All", "Basketball", "Tennis", "Soccer"]
 
   private
 
